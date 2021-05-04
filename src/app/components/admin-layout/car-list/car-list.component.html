@@ -1,0 +1,83 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 color="primary">Liste des véhicules</h4>
+        </div>
+        <div class="col-sm-11">
+          <div
+            class="btn-group btn-group-toggle float-right"
+            data-toggle="buttons"
+          >
+            <ion-button
+              value="default"
+              expand="round"
+              (click)="goToAddPage('addCar')"
+            >
+              Ajouter une véhicule
+            </ion-button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter">
+              <thead class="text-primary">
+                <th>Matricule</th>
+                <th>Type de véhicule</th>
+                <th>Année de fabrication</th>
+                <th>marque</th>
+                <th>Type de carburant</th>
+                <th>Puissance</th>
+                <th>Kilométrage</th>
+                <th>Consommation de carburant</th>
+                <th>Nombre des places</th>
+                <th>Capacité en Kg</th>
+                <th>Type de permis</th>
+                <th>Mot clé</th>
+                <th>Disponibilité</th>
+                <th>action</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let l of list">
+                  <td>{{ l.Matricule }}</td>
+                  <td>{{ l.TypeVehicule }}</td>
+                  <td>{{ l.AnneeFabrication | date: "dd/MM/yyyy" }}</td>
+                  <td>{{ l.Marque }}</td>
+                  <td>{{ l.Puissance }}</td>
+                  <td>{{ l.Kilometrage }}</td>
+                  <td>{{ l.ConsommationCarburant }}</td>
+                  <td>{{ l.TypeCarburant }}</td>
+                  <td>{{ l.NombrePlace }}</td>
+                  <td>{{ l.Capacite }}</td>
+                  <td>{{ l.TypePermis }}</td>
+                  <td>{{ l.MotCle }}</td>
+                  <td>{{ l.Disponibilite }}</td>
+                  <td>
+                    <div class="col-sm-11">
+                      <div
+                        class="btn-group btn-group-toggle float-right"
+                        data-toggle="buttons"
+                      >
+                        <label>
+                          <ion-item [routerLink]="['/updateCar']">
+                            <ion-icon name="create-outline"></ion-icon>
+                          </ion-item>
+                        </label>
+                        <label>
+                          <ion-item (click)="delete(el)">
+                            <ion-icon name="trash-outline"></ion-icon>
+                          </ion-item>
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
