@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Supervisor } from '../models/supervisor';
+import { SupervisorService } from './supervisor.service';
 
 @Component({
   selector: 'app-supervisor-list',
@@ -7,8 +10,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupervisorListComponent implements OnInit {
 
-  constructor() { }
+  list:Supervisor[];
 
-  ngOnInit() {}
+  currentSupervisor = new Supervisor()
+  constructor(private supervisorService:SupervisorService,private router:Router,private activatedRoute :ActivatedRoute) {
+
+
+  }
+  goToAddPage(AddPage:string):void{
+    this.router.navigate([`${AddPage}`]);
+}
+goToUpdatePage(UpdatePage:string, id:number):void{
+  this.router.navigate([`${UpdatePage}/${id}`]);
+}
+
+  ngOnInit(): void {
+    this.supervisorService.listeSupervisor().subscribe(dr => {
+      this.list = dr;
+      for(let l of this.list){
+        console.log(l)
+
+      }
+
+      });
+  }
+
+
+
+   deleteSupervisor(id : number)
+   {
+
+   let conf = confirm("Etes-vous sûr ?");
+   if (conf)
+     this.supervisorService.deleteSupervisor(id).subscribe(()=>{
+      console.log("superviseur supprimé");
+
+
+     });
+
+     this.router.navigate(['listSupervisor']).then(() => {
+      window.location.reload();
+      });
+   }
 
 }

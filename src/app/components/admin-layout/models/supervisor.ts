@@ -1,6 +1,5 @@
-export class Driver{
-  IDChauffeur:number;
-  NomSuperviseur:string;
+export class Supervisor{
+  IDSuperviseur:number;
   Nom:string;
   prenom:string;
   Telephone:string;

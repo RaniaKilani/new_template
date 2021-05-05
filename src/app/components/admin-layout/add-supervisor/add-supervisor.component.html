@@ -1,3 +1,87 @@
-<p>
-  add-supervisor works!
-</p>
+
+<ion-content fullscreen="true">
+  <div class="ion-padding">
+    <div class="container">
+      <div class="row bg_1">
+        <h2><i>ajouter un superviseur</i></h2>
+        <ion-list>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom</ion-label>
+              <ion-input type="text" [(ngModel)]="newSupervisor.Nom"
+                    name="Nom"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Prénom</ion-label>
+              <ion-input type="text"  [(ngModel)]="newSupervisor.prenom"
+                    name="prenom"></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date de naissance</ion-label>
+              <ion-input type="date"
+               [(ngModel)]="newSupervisor.DateNaissance"
+                    name="DateNaissance"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"
+                >Email</ion-label
+              >
+              <ion-input type="text"
+               [(ngModel)]="newSupervisor.Email"
+                    name="Email"></ion-input>></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date d'embauche</ion-label>
+              <ion-input type="date" [(ngModel)]="newSupervisor.DateEmbauche"
+                    name="DateEmbauche"></ion-input>></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Adresse</ion-label>
+              <ion-input type="text"  [(ngModel)]="newSupervisor.Adresse"
+                    name="Adresse"></ion-input>></ion-input>
+            </ion-item>
+          </div>
+
+
+          <div class="col-3">
+            <ion-item>
+            <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-input type="date"  [(ngModel)]="newSupervisor.Telephone"
+                    name="Telephone"></ion-input>></ion-input>
+            </ion-item>
+          </div>
+
+
+
+
+
+          <div class="col-3">
+            <div class="container-form-btn">
+              <ion-button
+                shape="round"
+                type="submit"
+                (click)="addSupervisor()"
+                (click)="goToListPage('listSupervisor')"
+                >Ajouter</ion-button
+              >
+            </div>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

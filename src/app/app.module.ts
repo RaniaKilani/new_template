@@ -15,12 +15,18 @@ import { UpdateCarComponent } from './components/admin-layout/update-car/update-
 import { UpdateDriverComponent } from './components/admin-layout/update-driver/update-driver.component';
 import { UpdateSupervisorComponent } from './components/admin-layout/update-supervisor/update-supervisor.component';
 import { AddSupervisorComponent } from './components/admin-layout/add-supervisor/add-supervisor.component';
+import { SupervisorListComponent } from './components/admin-layout/supervisor-list/supervisor-list.component';
+import { DriverListComponent } from './components/admin-layout/driver-list/driver-list.component';
+import { AddDriverComponent } from './components/admin-layout/add-driver/add-driver.component';
 
 @NgModule({
   declarations: [AppComponent,AdminLayoutComponent,
     CarListComponent,
+    SupervisorListComponent,
+    DriverListComponent,
     AddCarComponent,
     AddSupervisorComponent,
+    AddDriverComponent,
     UpdateCarComponent,
     UpdateSupervisorComponent,
     UpdateDriverComponent

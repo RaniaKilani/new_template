@@ -1,10 +1,93 @@
+
+
+
 <ion-header class="menu-header">
 
   <ion-toolbar translucent>
-    <ion-title>Liste des chauffeurs</ion-title>
+    <ion-title>Liste des véhicules</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu" ></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
-<ion-content> </ion-content>
+
+<div class="main-content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 color="primary">Liste des chauffeurs</h4>
+        </div>
+        <div class="col-sm-11">
+          <div
+            class="btn-group btn-group-toggle float-right"
+            data-toggle="buttons"
+          >
+            <ion-button
+              value="default"
+              expand="round"
+              (click)="goToAddPage('addDriver')"
+            >
+              Ajouter un chauffeur
+            </ion-button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter">
+              <thead class="text-primary">
+                <th>nom superviseur</th>
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>Numéro de téléphone</th>
+                  <th>Adresse</th>
+                  <th>Date de naissance</th>
+                  <th class="text-center">date d'embauche</th>
+                  <th>Email</th>
+                  <th>action</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let l of list">
+                 <td>{{l.IDChauffeur}}</td>
+                  <td>{{l.NomSuperviseur}}</td>
+                  <td>{{l.Nom}}</td>
+                  <td>{{l.prenom}}</td>
+                  <td>{{l.Telephone}}</td>
+                  <td>{{l.Adresse}}</td>
+                  <td class="text-center">
+                    {{l.DateNaissance}}
+                  </td>
+                  <td>{{l.DateEmbauche}}</td>
+                  <td>{{l.Email}}</td>
+                  <td>
+                    <div class="col-sm-11">
+                      <div
+                        class="btn-group btn-group-toggle float-right"
+                        data-toggle="buttons"
+                      >
+                        <label>
+                          <ion-item [routerLink]="['/updateDriver']">
+                            <ion-icon name="create-outline"></ion-icon>
+                          </ion-item>
+                        </label>
+                        <label>
+                          <ion-item (click)="delete(el)">
+                            <ion-icon name="trash-outline"></ion-icon>
+                          </ion-item>
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

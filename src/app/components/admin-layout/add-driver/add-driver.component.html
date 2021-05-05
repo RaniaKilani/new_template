@@ -1,3 +1,107 @@
-<p>
-  add-driver works!
-</p>
+<ion-content fullscreen="true">
+  <div class="ion-padding">
+    <div class="container">
+      <div class="row bg_1">
+        <h2><i>ajouter un chauffeur</i></h2>
+        <ion-list>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.Nom"
+                name="Nom"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Prénom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.prenom"
+                name="prenom"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date de naissance</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="newDriver.DateNaissance"
+                name="DateNaissance"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.Email"
+                name="Email"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date d'embauche</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="newDriver.DateEmbauche"
+                name="DateEmbauche"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Adresse</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.Adresse"
+                name="Adresse"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="newDriver.Telephone"
+                name="Telephone"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom Superviseur</ion-label>
+              <ion-input
+                type="number"
+                [(ngModel)]="newDriver.NomSuperviseur"
+                name="NomSuperviseur"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <div class="container-form-btn">
+              <ion-button
+                shape="round"
+                type="submit"
+                (click)="addDriver()"
+                (click)="goToListPage('listDriver')"
+                >Ajouter</ion-button
+              >
+            </div>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>
