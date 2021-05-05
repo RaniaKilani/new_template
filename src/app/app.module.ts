@@ -18,6 +18,8 @@ import { AddSupervisorComponent } from './components/admin-layout/add-supervisor
 import { SupervisorListComponent } from './components/admin-layout/supervisor-list/supervisor-list.component';
 import { DriverListComponent } from './components/admin-layout/driver-list/driver-list.component';
 import { AddDriverComponent } from './components/admin-layout/add-driver/add-driver.component';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent,AdminLayoutComponent,
@@ -29,11 +31,12 @@ import { AddDriverComponent } from './components/admin-layout/add-driver/add-dri
     AddDriverComponent,
     UpdateCarComponent,
     UpdateSupervisorComponent,
-    UpdateDriverComponent
+    UpdateDriverComponent,
+
 
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
