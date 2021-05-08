@@ -1,96 +1,85 @@
 
 
 
-<ion-header class="menu-header">
 
+
+<ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title>Liste des véhicules</ion-title>
+    <ion-title> véhicules</ion-title>
     <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu" ></ion-menu-button>
+      <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<div class="main-content">
+<ion-content>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 color="primary">Liste des véhicules</h4>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Détails de la véhicule</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+
+
+      <ion-list>
+        <div>
+          <ion-label>Matricule :</ion-label>
         </div>
-        <div class="col-sm-11">
-          <div
-            class="btn-group btn-group-toggle float-right"
-            data-toggle="buttons"
-          >
-            <ion-button
-              value="default"
-              expand="round"
-              (click)="goToAddPage('addCar')"
-            >
-              Ajouter une véhicule
-            </ion-button>
-          </div>
+        <div>
+          <ion-label>Marque:</ion-label>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table tablesorter">
-              <thead class="text-primary">
-                <th>Matricule</th>
-                <th>Type de véhicule</th>
-                <th>Année de fabrication</th>
-                <th>marque</th>
-                <th>Type de carburant</th>
-                <th>Puissance</th>
-                <th>Kilométrage</th>
-                <th>Consommation de carburant</th>
-                <th>Nombre des places</th>
-                <th>Capacité en Kg</th>
-                <th>Type de permis</th>
-                <th>Mot clé</th>
-                <th>Disponibilité</th>
-                <th>action</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let l of list">
-                  <td>{{ l.Matricule }}</td>
-                  <td>{{ l.TypeVehicule }}</td>
-                  <td>{{ l.AnneeFabrication | date: "dd/MM/yyyy" }}</td>
-                  <td>{{ l.Marque }}</td>
-                  <td>{{ l.Puissance }}</td>
-                  <td>{{ l.Kilometrage }}</td>
-                  <td>{{ l.ConsommationCarburant }}</td>
-                  <td>{{ l.TypeCarburant }}</td>
-                  <td>{{ l.NombrePlace }}</td>
-                  <td>{{ l.Capacite }}</td>
-                  <td>{{ l.TypePermis }}</td>
-                  <td>{{ l.MotCle }}</td>
-                  <td>{{ l.Disponibilite }}</td>
-                  <td>
-                    <div class="col-sm-11">
-                      <div
-                        class="btn-group btn-group-toggle float-right"
-                        data-toggle="buttons"
-                      >
-                        <label>
-                          <ion-item [routerLink]="['/updateCar']">
-                            <ion-icon name="create-outline"></ion-icon>
-                          </ion-item>
-                        </label>
-                        <label>
-                          <ion-item (click)="delete(el)">
-                            <ion-icon name="trash-outline"></ion-icon>
-                          </ion-item>
-                        </label>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div>
+          <ion-label>Type de véhicule:</ion-label>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div>
+          <ion-label>Année de fabrication:</ion-label>
+        </div>
+        <ion-label>Type de carburant:</ion-label>
+        <div>
+          <ion-label>consommation de carburant:</ion-label>
+        </div>
+        <div>
+          <ion-label>Puissance</ion-label>
+        </div>
+        <div>
+          <ion-label>Kilométrage:</ion-label>
+        </div>
+        <div>
+          <ion-label>Nombre des places:</ion-label>
+        </div>
+        <div>
+          <ion-label>capacité en kg:</ion-label>
+        </div>
+        <div>
+          <ion-label>Type de permis:</ion-label>
+        </div>
+        <div>
+          <ion-label>Mot clé:</ion-label>
+        </div>
+        <div>
+          <ion-label>Disponibilité:</ion-label>
+        </div>
+      </ion-list>
+      <ion-button size ="small" color="success"  [routerLink]="['/updateCar']">
+       modifier
+      </ion-button>
+      <ion-button size="small" color="danger" [routerLink]="['/historiqueCar']">
+       voir historique
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>localisation</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    <img src="https://www.softfluent.fr/wp-content/uploads/2019/10/g%C3%A9olocalisation.png"/>
+    </ion-card-content>
+    </ion-card>
+
+
+
+
+</ion-content>

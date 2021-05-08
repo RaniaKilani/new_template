@@ -1,0 +1,66 @@
+
+<ion-header class="menu-header">
+  <ion-toolbar translucent>
+    <ion-title> véhicules</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div>
+<div>
+    <ion-button size="small" color="light" expand="round" slot="end" (click)="goToAddPage('addCar')">
+      Ajouter une véhicule
+      <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+    </ion-button>
+    </div>
+    <div>
+     <ion-button size="small" expand="round" color="light" >
+      supprimer tous!
+      <ion-icon name="close-circle-outline" slot="end"></ion-icon>
+    </ion-button>
+    </div>
+
+  </div>
+  <br/>
+
+
+<ion-card>
+ <ion-card-header>
+      <ion-card-title> liste des véhicules</ion-card-title>
+    </ion-card-header>
+
+     <ion-grid>
+
+   <ion-item routerLink="/listCar">
+   <ion-icon name="trash-outline" slot="end" color="danger"></ion-icon>
+      <ion-avatar>
+        <ion-img src="assets/images/car1.jpg">
+        </ion-img>
+      </ion-avatar>
+      <ion-label class="ion-margin-horizontal"> Marque  type de carburant </ion-label>
+    </ion-item>
+
+
+
+    <ion-item   routerLink="/listCar">
+    <ion-icon name="trash-outline" slot = "end" color="danger"></ion-icon>
+
+    <ion-avatar>
+        <ion-img src="assets/images/car1.jpg">
+        </ion-img>
+      </ion-avatar>
+      <ion-label class="ion-margin-horizontal"> Marque type de carburant </ion-label>
+</ion-item>
+
+
+
+  </ion-grid>
+
+  </ion-card>
+
+
+
+
+</ion-content>

@@ -1,11 +1,15 @@
 export class Driver{
-  IDChauffeur:number;
-  NomSuperviseur:string;
+  id:number;
+  Email:string;
   Nom:string;
   prenom:string;
-  Telephone:string;
-  Adresse  :string;
+  NumTel:string;
   DateNaissance:Date;
   DateEmbauche:Date;
-  Email:string;
+  Adresse:string;
+  pwd:string;
+  nomSup:string;
+
+
+
   }

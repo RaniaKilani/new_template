@@ -1,9 +1,29 @@
+
+<ion-header class="menu-header">
+  <ion-toolbar translucent >
+    <ion-title class="ion-text-center">ajouter un  chauffeur</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content fullscreen="true">
-  <div class="ion-padding">
-    <div class="container">
-      <div class="row bg_1">
-        <h2><i>ajouter un chauffeur</i></h2>
+
+
+
+
         <ion-list>
+
+        <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.Email"
+                name="Email"
+              ></ion-input>
+            </ion-item>
+          </div>
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Nom</ion-label>
@@ -25,6 +45,17 @@
               ></ion-input>
             </ion-item>
           </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="newDriver.NumTel"
+                name="NumTel"
+              ></ion-input>
+            </ion-item>
+          </div>
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Date de naissance</ion-label>
@@ -36,16 +67,7 @@
             </ion-item>
           </div>
 
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Email</ion-label>
-              <ion-input
-                type="text"
-                [(ngModel)]="newDriver.Email"
-                name="Email"
-              ></ion-input>
-            </ion-item>
-          </div>
+
 
           <div class="col-3">
             <ion-item>
@@ -70,22 +92,36 @@
 
           <div class="col-3">
             <ion-item>
-              <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-label position="stacked"> Mot de passe</ion-label>
               <ion-input
-                type="date"
-                [(ngModel)]="newDriver.Telephone"
-                name="Telephone"
+                type="text"
+                [(ngModel)]="newDriver.pwd"
+                name="pwd"
               ></ion-input>
             </ion-item>
           </div>
+
           <div class="col-3">
             <ion-item>
-              <ion-label position="stacked">Nom Superviseur</ion-label>
+              <ion-label position="stacked">Nom de superviseur</ion-label>
               <ion-input
-                type="number"
-                [(ngModel)]="newDriver.NomSuperviseur"
-                name="NomSuperviseur"
+                type="text"
+                [(ngModel)]="newDriver.nomSup"
+                name="nomSup"
               ></ion-input>
+            </ion-item>
+          </div>
+           <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Type de permis</ion-label>
+              <ion-select type="text">
+                <ion-select-option>A</ion-select-option>
+                <ion-select-option>B</ion-select-option>
+                <ion-select-option>C</ion-select-option>
+                <ion-select-option>D</ion-select-option>
+                <ion-select-option>E</ion-select-option>
+                <ion-select-option>H</ion-select-option>
+              </ion-select>
             </ion-item>
           </div>
 
@@ -93,15 +129,15 @@
             <div class="container-form-btn">
               <ion-button
                 shape="round"
+
                 type="submit"
                 (click)="addDriver()"
-                (click)="goToListPage('listDriver')"
-                >Ajouter</ion-button
-              >
+                (click)="goToListPage('allDrivers')"
+
+                >Ajouter</ion-button>
             </div>
           </div>
         </ion-list>
-      </div>
-    </div>
-  </div>
+
+
 </ion-content>

@@ -13,9 +13,8 @@ export class CarListComponent implements OnInit {
   constructor(private router:Router, private carService:CarService) {
     this.list = carService.listeCar();
    }
-   goToAddPage(AddPage:string):void{
-    this.router.navigate([`${AddPage}`]);
-}
+
+
 goToUpdatePage(UpdatePage:string):void{
   this.router.navigate([`${UpdatePage}`]);}
 

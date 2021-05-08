@@ -4,12 +4,15 @@ import { Driver } from '../models/driver';
 import { DriverService } from './driver.service';
 
 
+
 @Component({
   selector: 'app-driver-list',
   templateUrl: './driver-list.component.html',
   styleUrls: ['./driver-list.component.scss']
 })
 export class DriverListComponent implements OnInit {
+
+
 
   list: Driver[];
 
@@ -18,9 +21,7 @@ export class DriverListComponent implements OnInit {
 
     /* this.list = driverService.listeDriver(); */
   }
-  goToAddPage(AddPage:string):void{
-    this.router.navigate([`${AddPage}`]);
-}
+
 goToUpdatePage(UpdatePage:string, id:number):void{
   this.router.navigate([`${UpdatePage}/${id}`]);
 }

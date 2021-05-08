@@ -1,0 +1,60 @@
+<ion-header class="menu-header">
+  <ion-toolbar translucent>
+    <ion-title> chauffeurs</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>
+    <div>
+      <ion-button
+        size="small"
+        color="light"
+        expand="round"
+        slot="end"
+        (click)="goToAddPage('addDriver')"
+      >
+        Ajouter un chaffeur
+        <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+    <div>
+      <ion-button size="small" expand="round" color="light">
+        supprimer tous!
+        <ion-icon name="close-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <br />
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        liste des chauffeurs</ion-card-title
+      >
+    </ion-card-header>
+
+    <ion-grid>
+      <ion-item (click)="_openPopover()">
+        <ion-avatar>
+          <ion-img src="assets/images/rania1.jpg"> </ion-img>
+        </ion-avatar>
+
+        <ion-label class="ion-margin-horizontal" >
+         Rania Kilani
+        </ion-label>
+
+
+      </ion-item>
+
+      <ion-item (click)="_openPopover()">
+        <ion-avatar>
+          <ion-img src="assets/images/rania2.jpg"> </ion-img>
+        </ion-avatar>
+        <ion-label class="ion-margin-horizontal"> Ons Chehed </ion-label>
+      </ion-item>
+    </ion-grid>
+  </ion-card>
+</ion-content>

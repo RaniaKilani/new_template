@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DriverService {
-  apiURL: string = 'http://127.0.0.1:5000/api/Chauffeur';
+  apiURL: string = 'http://127.0.0.1:5000/chauffeur';
   list: Driver[];
   driver : Driver;
 

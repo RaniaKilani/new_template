@@ -20,6 +20,10 @@ import { DriverListComponent } from './components/admin-layout/driver-list/drive
 import { AddDriverComponent } from './components/admin-layout/add-driver/add-driver.component';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AllCarsComponent } from './components/admin-layout/all-cars/all-cars.component';
+import { HistpriqueCarComponent } from './components/admin-layout/histprique-car/histprique-car.component';
+import { AllDriversComponent } from './components/admin-layout/all-drivers/all-drivers.component';
+import { AllSupervisorComponent } from './components/admin-layout/all-supervisor/all-supervisor.component';
 
 @NgModule({
   declarations: [AppComponent,AdminLayoutComponent,
@@ -32,8 +36,10 @@ import { FormsModule } from '@angular/forms';
     UpdateCarComponent,
     UpdateSupervisorComponent,
     UpdateDriverComponent,
-
-
+    AllCarsComponent,
+    HistpriqueCarComponent,
+    AllDriversComponent,
+    AllSupervisorComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule],

@@ -3,8 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddCarComponent } from './components/admin-layout/add-car/add-car.component';
 import { AddDriverComponent } from './components/admin-layout/add-driver/add-driver.component';
 import { AddSupervisorComponent } from './components/admin-layout/add-supervisor/add-supervisor.component';
+import { AllCarsComponent } from './components/admin-layout/all-cars/all-cars.component';
+import { AllDriversComponent } from './components/admin-layout/all-drivers/all-drivers.component';
+import { AllSupervisorComponent } from './components/admin-layout/all-supervisor/all-supervisor.component';
+
 import { CarListComponent } from './components/admin-layout/car-list/car-list.component';
 import { DriverListComponent } from './components/admin-layout/driver-list/driver-list.component';
+import { HistpriqueCarComponent } from './components/admin-layout/histprique-car/histprique-car.component';
 import { SupervisorListComponent } from './components/admin-layout/supervisor-list/supervisor-list.component';
 import { UpdateCarComponent } from './components/admin-layout/update-car/update-car.component';
 import { UpdateDriverComponent } from './components/admin-layout/update-driver/update-driver.component';
@@ -25,6 +30,17 @@ const routes: Routes = [
   { path: 'listCar',   component: CarListComponent},
   { path: 'listSupervisor', component: SupervisorListComponent },
   { path: 'listDriver',     component: DriverListComponent },
+  { path: 'allCars',         component: AllCarsComponent },
+  { path: 'allCars',         component: AllCarsComponent },
+  { path: 'allDrivers',         component: AllDriversComponent },
+  { path: 'allSupervisors',         component: AllSupervisorComponent },
+
+
+  { path: 'historiqueCar',         component:HistpriqueCarComponent },
+
+
+
+
   { path: 'addCar',         component: AddCarComponent },
   { path: 'updateCar',      component: UpdateCarComponent },
   { path: 'addDriver',      component: AddDriverComponent },
