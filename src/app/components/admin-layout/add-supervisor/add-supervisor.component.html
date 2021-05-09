@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content fullscreen="true">
+<ion-card>
   <div class="ion-padding">
     <div class="container">
       <div class="row bg_1">
@@ -70,6 +71,12 @@
                     name="Telephone"></ion-input>
             </ion-item>
           </div>
+           <div class="col-3">
+            
+              <ion-input type="file"  [(ngModel)]="newSupervisor.image"
+                    name="image"></ion-input>
+           
+          </div>
 
 
 
@@ -90,5 +97,6 @@
       </div>
     </div>
   </div>
+  </ion-card>
 
 </ion-content>

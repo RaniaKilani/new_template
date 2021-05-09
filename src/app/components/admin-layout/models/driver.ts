@@ -9,6 +9,7 @@ export class Driver{
   Adresse:string;
   pwd:string;
   nomSup:string;
+  image:string;
 
 
 

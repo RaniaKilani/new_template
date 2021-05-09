@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-histprique-car',
   templateUrl: './histprique-car.component.html',

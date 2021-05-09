@@ -140,11 +140,7 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
 .effect-9:focus ~ .focus-border i:before,
 .effect-9:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
 .effect-9:focus ~ .focus-border i:after{transition-delay: 0.4s;}
-#raff {
-background-image: url("./rania.jpg");
-background-size: 100% ;
-background-size: cover;
-}
+
 .container-form-btn {
   display: flex;
   justify-content: center;

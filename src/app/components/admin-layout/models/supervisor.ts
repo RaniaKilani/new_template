@@ -7,4 +7,5 @@ export class Supervisor{
   DateNaissance:Date;
   DateEmbauche:Date;
   Email:string;
+  image:string;
   }

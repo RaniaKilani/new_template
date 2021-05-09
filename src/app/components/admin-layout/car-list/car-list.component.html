@@ -1,8 +1,3 @@
-
-
-
-
-
 <ion-header class="menu-header">
   <ion-toolbar translucent>
     <ion-title> véhicules</ion-title>
@@ -12,74 +7,72 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Détails de la véhicule</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-label>Matricule :</ion-label>
+            <br />
 
+            <ion-label>Marque:</ion-label>
+            <br />
+            <ion-label>Type de véhicule:</ion-label>
+            <br />
+            <ion-label>Année de fabrication:</ion-label>
+            <br />
+            <ion-label>Type de carburant:</ion-label>
+            <br />
+            <ion-label>consommation de carburant:</ion-label>
+            <br />
+            <ion-label>Puissance</ion-label>
+            <br />
+            <ion-label>Kilométrage:</ion-label>
+            <br />
 
+            <ion-label>Nombre des places:</ion-label>
+            <br />
+            <ion-label>capacité en kg:</ion-label>
+            <br />
+            <ion-label>Type de permis:</ion-label>
+            <br />
+            <ion-label>Mot clé:</ion-label>
+            <br />
+            <ion-label>Disponibilité:</ion-label>
+          </ion-list>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Détails de la véhicule</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
+          <ion-button
+            size="small"
+            color="success"
+            [routerLink]="['/updateCar']"
+          >
+            modifier
+          </ion-button>
+          <ion-button
+            size="small"
+            color="danger"
+            [routerLink]="['/historiqueCar']"
+          >
+            voir historique
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
 
-
-
-      <ion-list>
-        <div>
-          <ion-label>Matricule :</ion-label>
-        </div>
-        <div>
-          <ion-label>Marque:</ion-label>
-        </div>
-        <div>
-          <ion-label>Type de véhicule:</ion-label>
-        </div>
-        <div>
-          <ion-label>Année de fabrication:</ion-label>
-        </div>
-        <ion-label>Type de carburant:</ion-label>
-        <div>
-          <ion-label>consommation de carburant:</ion-label>
-        </div>
-        <div>
-          <ion-label>Puissance</ion-label>
-        </div>
-        <div>
-          <ion-label>Kilométrage:</ion-label>
-        </div>
-        <div>
-          <ion-label>Nombre des places:</ion-label>
-        </div>
-        <div>
-          <ion-label>capacité en kg:</ion-label>
-        </div>
-        <div>
-          <ion-label>Type de permis:</ion-label>
-        </div>
-        <div>
-          <ion-label>Mot clé:</ion-label>
-        </div>
-        <div>
-          <ion-label>Disponibilité:</ion-label>
-        </div>
-      </ion-list>
-      <ion-button size ="small" color="success"  [routerLink]="['/updateCar']">
-       modifier
-      </ion-button>
-      <ion-button size="small" color="danger" [routerLink]="['/historiqueCar']">
-       voir historique
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>localisation</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-    <img src="https://www.softfluent.fr/wp-content/uploads/2019/10/g%C3%A9olocalisation.png"/>
-    </ion-card-content>
-    </ion-card>
-
-
-
-
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>localisation</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img
+            src="https://www.softfluent.fr/wp-content/uploads/2019/10/g%C3%A9olocalisation.png"
+          />
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

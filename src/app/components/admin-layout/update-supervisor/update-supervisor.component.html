@@ -1,3 +1,113 @@
-<p>
-  update-supervisor works!
-</p>
+<ion-header class="menu-header">
+  <ion-toolbar translucent>
+    <ion-title class="ion-text-center"> modifier un superviseur </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="ion-padding">
+    <div class="container">
+      <div class="row bg_1">
+        <ion-list>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentSupervisor.Nom"
+                name="Nom"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Prénom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentSupervisor.prenom"
+                name="prenom"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date de naissance</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="currentSupervisor.DateNaissance"
+                name="DateNaissance"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+
+              <ion-input
+                type="text"
+                [(ngModel)]="currentSupervisor.Email"
+                name="Email"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date d'embauche</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="currentSupervisor.DateEmbauche"
+                name="DateEmbauche"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Adresse</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentSupervisor.Adresse"
+                name="Adresse"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-input
+                type="texte"
+                [(ngModel)]="currentSupervisor.NumTel"
+                name="Telephone"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-input
+              type="file"
+              [(ngModel)]="currentSupervisor.image"
+              name="image"
+            ></ion-input>
+          </div>
+
+          <div class="col-3">
+            <div class="container-form-btn">
+              <ion-button
+                shape="round"
+                type="submit"
+                (click)="updateSupervisor()"
+                (click)="goToListPage('allSupervisors')"
+                >modifier</ion-button
+              >
+            </div>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

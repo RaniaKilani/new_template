@@ -1,3 +1,154 @@
-<p>
-  update-driver works!
-</p>
+
+
+<ion-header class="menu-header">
+  <ion-toolbar translucent >
+    <ion-title class="ion-text-center">modifier un  chauffeur</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+
+
+
+
+        <ion-list>
+
+        <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.Email"
+                name="Email"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.Nom"
+                name="Nom"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Prénom</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.prenom"
+                name="prenom"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"> N° téléphone</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.NumTel"
+                name="NumTel"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date de naissance</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="currentDriver.DateNaissance"
+                name="DateNaissance"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Date d'embauche</ion-label>
+              <ion-input
+                type="date"
+                [(ngModel)]="currentDriver.DateEmbauche"
+                name="DateEmbauche"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Adresse</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.Adresse"
+                name="Adresse"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked"> Mot de passe</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.pwd"
+                name="pwd"
+              ></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Nom de superviseur</ion-label>
+              <ion-input
+                type="text"
+                [(ngModel)]="currentDriver.nomSup"
+                name="nomSup"
+              ></ion-input>
+            </ion-item>
+          </div>
+           <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Type de permis</ion-label>
+              <ion-select type="text">
+                <ion-select-option>A</ion-select-option>
+                <ion-select-option>B</ion-select-option>
+                <ion-select-option>C</ion-select-option>
+                <ion-select-option>D</ion-select-option>
+                <ion-select-option>E</ion-select-option>
+                <ion-select-option>H</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+          <div class="col-3">
+           
+              <ion-input
+                type="file"
+                [(ngModel)]="currentDriver.image"
+                name="image"
+              ></ion-input>
+         
+          </div>
+
+          <div class="col-3">
+            <div class="container-form-btn">
+              <ion-button
+                shape="round"
+
+                type="submit"
+                (click)="updateDriver()"
+                (click)="goToListPage('allDrivers')"
+
+                >Ajouter</ion-button>
+            </div>
+          </div>
+        </ion-list>
+
+
+</ion-content>
