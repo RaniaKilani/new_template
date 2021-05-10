@@ -7,28 +7,53 @@
     </ion-header>
     <ion-content>
       <ion-list>
-      <ion-menu-toggle>
-       <ion-item routerLink="/allCars" >
-       <ion-icon name="car-sharp" slot="start"></ion-icon>
-          <ion-label>Mes véhicules</ion-label>
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Acceuil</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/allCars">
+            <ion-icon name="car-sharp" slot="start"></ion-icon>
+            <ion-label>Mes véhicules</ion-label>
+          </ion-item>
         </ion-menu-toggle>
 
         <ion-menu-toggle>
-        <ion-item routerLink="/allDrivers">
-
-
-<ion-icon name="people-circle-sharp" slot="start"></ion-icon>
-          <ion-label>chauffeurs</ion-label>
-        </ion-item>
+          <ion-item routerLink="/allDrivers">
+            <ion-icon name="people-circle-sharp" slot="start"></ion-icon>
+            <ion-label>chauffeurs</ion-label>
+          </ion-item>
         </ion-menu-toggle>
 
         <ion-menu-toggle>
-        <ion-item routerLink="/allSupervisors">
-<ion-icon name="people-circle-sharp" slot="start"></ion-icon>
-          <ion-label>superviseurs</ion-label>
-        </ion-item></ion-menu-toggle>
+          <ion-item routerLink="/allSupervisors">
+            <ion-icon name="people-circle-sharp" slot="start"></ion-icon>
+            <ion-label>superviseurs</ion-label>
+          </ion-item></ion-menu-toggle
+        >
 
+        <ion-menu-toggle>
+          <ion-item routerLink="/entretien">
+            <ion-icon name="notifications" slot="start"></ion-icon>
+            <ion-label>Rappel</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="location" slot="start"></ion-icon>
+            <ion-label>Localisation</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="alert" slot="start"></ion-icon>
+            <ion-label>Réclamations</ion-label>
+          </ion-item></ion-menu-toggle
+        >
       </ion-list>
     </ion-content>
   </ion-menu>

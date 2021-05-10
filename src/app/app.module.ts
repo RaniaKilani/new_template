@@ -24,6 +24,16 @@ import { AllCarsComponent } from './components/admin-layout/all-cars/all-cars.co
 import { HistpriqueCarComponent } from './components/admin-layout/histprique-car/histprique-car.component';
 import { AllDriversComponent } from './components/admin-layout/all-drivers/all-drivers.component';
 import { AllSupervisorComponent } from './components/admin-layout/all-supervisor/all-supervisor.component';
+import { EntretienComponent } from './components/admin-layout/entretien/entretien.component';
+import { UpdateEntretienComponent } from './components/admin-layout/update-entretien/update-entretien.component';
+import { AddEntrtienComponent } from './components/admin-layout/add-entrtien/add-entrtien.component';
+import { ReparationComponent } from './components/admin-layout/reparation/reparation.component';
+import { AddReparationComponent } from './components/admin-layout/add-reparation/add-reparation.component';
+import { UpdateReparationComponent } from './components/admin-layout/update-reparation/update-reparation.component';
+import { AddDemandeComponent } from './components/customer-layout/add-demande/add-demande.component';
+import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
+import { ReservationComponent } from './components/customer-layout/reservation/reservation.component';
+import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
 
 @NgModule({
   declarations: [AppComponent,AdminLayoutComponent,
@@ -40,6 +50,16 @@ import { AllSupervisorComponent } from './components/admin-layout/all-supervisor
     HistpriqueCarComponent,
     AllDriversComponent,
     AllSupervisorComponent,
+    EntretienComponent,
+    UpdateEntretienComponent,
+    AddEntrtienComponent,
+    ReparationComponent,
+    AddReparationComponent,
+    UpdateReparationComponent,
+    AddDemandeComponent,
+    DispoCarComponent,
+    ReservationComponent,
+    DashboardCComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule],

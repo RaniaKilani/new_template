@@ -1,0 +1,61 @@
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Détails de la demande</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-label>Matricule :</ion-label>
+            <br />
+
+            <ion-label>Objet:</ion-label>
+            <br />
+            <ion-label>Type de véhicule:</ion-label>
+            <br />
+
+            <ion-label>Capacité en kg:</ion-label>
+            <br />
+
+            <ion-label>Nombre des places:</ion-label>
+
+            <br />
+            <ion-label>Date début:</ion-label>
+            <br />
+            <ion-label>Date fin:</ion-label>
+
+            <ion-label>Mot clé:</ion-label>
+            <br />
+            <ion-label>Région:</ion-label>
+            <br />
+            <ion-label>Département:</ion-label>
+            <br />
+            <ion-label>Rue:</ion-label>
+            <br />
+            <ion-label>Chauffeur:</ion-label>
+
+
+
+
+          <ion-button
+            size="small"
+            color="success"
+            [routerLink]="['/dashboardC']"
+          >
+            Comfirmer
+          </ion-button>
+          <ion-button
+            size="small"
+            color="danger"
+            [routerLink]="['/historiqueCar']"
+          >
+            Annuler
+          </ion-button>
+           </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
