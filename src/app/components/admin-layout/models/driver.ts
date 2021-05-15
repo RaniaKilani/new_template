@@ -1,16 +1,14 @@
 export class Driver{
   id:number;
-  Email:string;
-  Nom:string;
-  prenom:string;
-  NumTel:string;
-  DateNaissance:Date;
-  DateEmbauche:Date;
-  Adresse:string;
+  mail:string;
+  nom:string;
+  pre:string;
+  num:string;
+  dn:Date;
+  de:Date;
+  adr:string;
   pwd:string;
-  nomSup:string;
+  nomsup:string;
+  permis:any;
   image:string;
-
-
-
   }

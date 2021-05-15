@@ -1,11 +1,12 @@
 export class Supervisor{
-  IDSuperviseur:number;
-  Nom:string;
-  prenom:string;
-  Telephone:string;
-  Adresse  :string;
-  DateNaissance:Date;
-  DateEmbauche:Date;
-  Email:string;
+  id:number;
+  mail:string;
+  nom:string;
+  pre:string;
+  ntel:string;
+  dn:Date;
+  de:Date;
+  adr:string;
+  pwd:string;
   image:string;
   }

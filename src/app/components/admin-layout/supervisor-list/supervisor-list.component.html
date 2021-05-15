@@ -6,37 +6,37 @@
     <ion-card-title class="ion-text-center">détails superviseur </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-
-
-
       <div>
-        <ion-label>Nom :</ion-label>
+        <ion-label color="dark"><b>Nom </b> :{{currentSupervisor.nom}} </ion-label>
       </div>
       <div>
-        <ion-label>prenom:</ion-label>
+        <ion-label color="dark"><b>prenom:</b>{{currentSupervisor.pre}}</ion-label>
       </div>
       <div>
-        <ion-label>Date de naissance:</ion-label>
+        <ion-label color="dark"><b>Date de naissance:</b>{{currentSupervisor.dn}}</ion-label>
       </div>
       <div>
-        <ion-label>Email:</ion-label>
+        <ion-label color="dark"><b>Email:</b> {{currentSupervisor.mail}}</ion-label>
+      </div>
+       <div>
+        <ion-label color="dark"><b>N° téléphone:</b> {{currentSupervisor.ntel}}</ion-label>
       </div>
 <div>
-      <ion-label>Date d'embauche:</ion-label>
+      <ion-label color="dark"><b>Date d'embauche:</b>{{currentSupervisor.de}}</ion-label>
 </div>
 
       <div>
-        <ion-label>Disponibilté</ion-label>
+        <ion-label color="dark"><b>Disponibilté:</b>{{currentSupervisor.Dispo}} </ion-label>
       </div>
 
       <div>
-        <ion-label>Adresse:</ion-label>
+        <ion-label color="dark"><b>Adresse:</b>{{currentSupervisor.adr}}</ion-label>
       </div>
 
-<ion-button size ="small" color="success"  [routerLink]="['/updateSupervisor']">
+    <ion-button size ="small" color="success"  [routerLink]="['/updateSupervisor']">
        modifier
       </ion-button>
-      <ion-button size="small" color="danger">
+      <ion-button size="small" color="danger" (click)="deleteSupervisor(currentSuervisor._id)">
       supprimer
       </ion-button>
 

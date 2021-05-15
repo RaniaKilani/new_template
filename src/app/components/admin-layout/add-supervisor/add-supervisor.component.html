@@ -1,102 +1,98 @@
 <ion-header class="menu-header">
-  <ion-toolbar translucent >
+  <ion-toolbar translucent>
     <ion-title class="ion-text-center"> ajouter un superviseur </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content fullscreen="true">
-<ion-card>
-  <div class="ion-padding">
-    <div class="container">
-      <div class="row bg_1">
-        <ion-list>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Nom</ion-label>
-              <ion-input type="text" [(ngModel)]="newSupervisor.Nom"
-                    name="Nom"></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Prénom</ion-label>
-              <ion-input type="text"  [(ngModel)]="newSupervisor.prenom"
-                    name="prenom"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Date de naissance</ion-label>
-              <ion-input type="date"
-               [(ngModel)]="newSupervisor.DateNaissance"
-                    name="DateNaissance"></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked"
-                >Email</ion-label>
-
-              <ion-input type="text"
-               [(ngModel)]="newSupervisor.Email"
-                    name="Email"></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Date d'embauche</ion-label>
-              <ion-input type="date" [(ngModel)]="newSupervisor.DateEmbauche"
-                    name="DateEmbauche"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Adresse</ion-label>
-              <ion-input type="text"  [(ngModel)]="newSupervisor.Adresse"
-                    name="Adresse"></ion-input>
-            </ion-item>
-          </div>
-
-
-          <div class="col-3">
-            <ion-item>
-            <ion-label position="stacked"> N° téléphone</ion-label>
-              <ion-input type="texte"  [(ngModel)]="newSupervisor.Telephone"
-                    name="Telephone"></ion-input>
-            </ion-item>
-          </div>
-           <div class="col-3">
-            
-              <ion-input type="file"  [(ngModel)]="newSupervisor.image"
-                    name="image"></ion-input>
-           
-          </div>
-
-
-
-
-
-          <div class="col-3">
-            <div class="container-form-btn">
-              <ion-button
-                shape="round"
-                type="submit"
-                (click)="addSupervisor()"
-                (click)="goToListPage('listSupervisor')"
-                >Ajouter</ion-button
-              >
+  <ion-card>
+    <div class="ion-padding">
+      <div class="container">
+        <div class="row bg_1">
+          <form [formGroup]="form" (ngSubmit)="addSupervisor()">
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input
+                  formControlName="mail"
+                  type="text"
+                  name="mail"
+                ></ion-input>
+              </ion-item>
             </div>
-          </div>
-        </ion-list>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Nom</ion-label>
+                <ion-input
+                  formControlName="nom"
+                  type="text"
+                  name="nom"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Prénom</ion-label>
+                <ion-input
+                  formControlName="pre"
+                  type="text"
+                  name="pre"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked"> N° téléphone</ion-label>
+                <ion-input
+                  formControlName="ntel"
+                  type="text"
+                  name="ntel"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Date de naissance</ion-label>
+                <ion-input
+                  formControlName="dn"
+                  type="date"
+                  name="dn"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Date d'embauche</ion-label>
+                <ion-input
+                  formControlName="de"
+                  type="date"
+                  name="de"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Adresse</ion-label>
+                <ion-input
+                  formControlName="adr"
+                  type="text"
+                  name="adr"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div class="col-3">
+              <div class="container-form-btn">
+                <ion-button shape="round" type="submit">Ajouter</ion-button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </ion-card>
-
 </ion-content>

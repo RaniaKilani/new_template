@@ -1,17 +1,17 @@
 export class Car{
   Matricule:string;
-  TypeVehicule:string;
-  AnneeFabrication:Date;
+  Typev:string;
+  AnFab:Date;
   Marque:string;
-  TypeCarburant:string;
-  Puissance:number;
-  Kilometrage:number;
-  ConsommationCarburant:number;
-  NombrePlace: number;
-  Capacite:number;
-  Disponibilite:string;
-  TypePermis:any;
-  MotCle:string;
+  TypeC:string;
+  Puiss:number;
+  Kilo:number;
+  ConsoC:number;
+  NbrPlace: number;
+  Cap:number;
+  Dispo:string;
+  TypeP:any;
+  Mot:string;
 
 
 }

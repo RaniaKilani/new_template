@@ -33,34 +33,15 @@
 
      <ion-grid>
 
-   <ion-item routerLink="/listCar">
+   <ion-item  *ngFor="let l of list" routerLink="/listCar">
 
       <ion-avatar>
         <ion-img src="assets/images/car1.jpg">
         </ion-img>
       </ion-avatar>
-      <ion-label class="ion-margin-horizontal"> Marque  type de carburant </ion-label>
+      <ion-label class="ion-margin-horizontal"> {{l.Marque}}  {{l.typeC}} </ion-label>
     </ion-item>
-
-
-
-    <ion-item   routerLink="/listCar">
-
-
-    <ion-avatar>
-        <ion-img src="assets/images/car1.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label class="ion-margin-horizontal"> Marque type de carburant </ion-label>
-</ion-item>
-
-
-
   </ion-grid>
 
   </ion-card>
-
-
-
-
 </ion-content>

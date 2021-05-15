@@ -28,7 +28,6 @@
     </div>
   </div>
   <br />
-
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">
@@ -36,25 +35,29 @@
       >
     </ion-card-header>
 
-    <ion-grid>
-      <ion-item (click)="_openPopover()">
+    <ion-grid *ngFor="let l of list">
+      <ion-card (click)="goToListPage('listDriver',l.id)">
+
+<ion-card-header>
+
         <ion-avatar>
           <ion-img src="assets/images/rania1.jpg"> </ion-img>
         </ion-avatar>
+       
 
-        <ion-label class="ion-margin-horizontal" >
-         Rania Kilani
-        </ion-label>
+         <ion-card-title  class="ion-margin-horizontal">
+          {{ l.Nom }} {{ l.prenom }}
+        </ion-card-title>
 
 
-      </ion-item>
+         <ion-card-subtitle class="ion-margin-horizontal">
+          {{ l.Email }}   {{l.Disponibilite}}
+        </ion-card-subtitle>
+       
 
-      <ion-item (click)="_openPopover()">
-        <ion-avatar>
-          <ion-img src="assets/images/rania2.jpg"> </ion-img>
-        </ion-avatar>
-        <ion-label class="ion-margin-horizontal"> Ons Chehed </ion-label>
-      </ion-item>
+        </ion-card-header>
+
+      </ion-card>
     </ion-grid>
   </ion-card>
 </ion-content>

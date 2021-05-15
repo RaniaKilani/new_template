@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class SupervisorService {
-  apiURL: string = 'http://127.0.0.1:5000/api/Chauffeur';
+  apiURL: string = 'http://127.0.0.1:5000/superviseur';
   list: Supervisor[];
   supervisor : Supervisor;
 
@@ -26,19 +26,17 @@ export class SupervisorService {
 
   }
 
- addSupervisor( spv: Supervisor):Observable<Supervisor>{
-  return this.http.post<Supervisor>(this.apiURL, spv, httpOptions);
+  addSupervisor(fordata:FormData){
+    return this.http.post(this.apiURL, fordata);
 
-}
-
+  }
  deleteSupervisor(id : number){
-    const url = `${this.apiURL}/${id}`;
+    const url = `${this.apiURL}/?id=${id}`;
     return this.http.delete(url, httpOptions);
     }
 
- //update
  consulterSupervisor(id:number): Observable<Supervisor>{
-  const url = `${this.apiURL}/${id}`;
+  const url = `${this.apiURL}/?id=${id}`;
   return this.http.get<Supervisor>(url);
  }
 

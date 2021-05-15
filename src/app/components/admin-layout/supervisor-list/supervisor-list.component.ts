@@ -9,37 +9,29 @@ import { SupervisorService } from './supervisor.service';
   styleUrls: ['./supervisor-list.component.scss'],
 })
 export class SupervisorListComponent implements OnInit {
-
   list:Supervisor[];
-
   currentSupervisor = new Supervisor()
-  constructor(private supervisorService:SupervisorService,private router:Router,private activatedRoute :ActivatedRoute) {
+  constructor(
+    private supervisorService:SupervisorService,
+    private router:Router,
+    private activatedRoute :ActivatedRoute)
+    {
 
-
-  }
+    }
   goToAddPage(AddPage:string):void{
     this.router.navigate([`${AddPage}`]);
 }
 goToUpdatePage(UpdatePage:string, id:number):void{
   this.router.navigate([`${UpdatePage}/${id}`]);
 }
-
   ngOnInit(): void {
-    this.supervisorService.listeSupervisor().subscribe(dr => {
-      this.list = dr;
-      for(let l of this.list){
-        console.log(l)
-
-      }
-
-      });
-  }
-
-
+    this.supervisorService.consulterSupervisor(this.activatedRoute.snapshot.params.id).
+    subscribe( sp =>{ this.currentSupervisor = sp[1]; console.log(sp[1]) });
+    console.log(this.activatedRoute.snapshot.params.id);
+}
 
    deleteSupervisor(id : number)
    {
-
    let conf = confirm("Etes-vous sûr ?");
    if (conf)
      this.supervisorService.deleteSupervisor(id).subscribe(()=>{

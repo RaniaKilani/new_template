@@ -1,53 +1,72 @@
-<ion-header class="menu-header">
-
-
-</ion-header>
+<ion-header class="menu-header"> </ion-header>
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">détails chauffeur</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <div>
+          <ion-label color="dark"
+            ><b>Nom </b> :{{ currentDriver.nom }}
+          </ion-label>
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>prenom:</b>{{ currentDriver.pre }}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>N° téléphone:</b>{{ currentDriver.num}}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Date de naissance:</b>{{ currentDriver.dn }}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Email:</b> {{ currentDriver.mail }}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Date d'embauche:</b>{{ currentDriver.de }}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"><b>Type de permis:</b></ion-label>
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Disponibilté:</b>{{ currentDriver.Dispo }}
+          </ion-label>
+        </div>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title class="ion-text-center">détails chauffeur</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <div>
-        <ion-label>Nom :</ion-label>
-      </div>
-      <div>
-        <ion-label>prenom:</ion-label>
-      </div>
-      <div>
-        <ion-label>Date de naissance:</ion-label>
-      </div>
-      <div>
-        <ion-label>Email:</ion-label>
-      </div>
-<div>
-      <ion-label>Date d'embauche:</ion-label>
-</div>
-      <div>
-        <ion-label>Type de permis:</ion-label>
-      </div>
-      <div>
-        <ion-label>Disponibilté</ion-label>
-      </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Adresse:</b>{{ currentDriver.adr }}</ion-label
+          >
+        </div>
+        <div>
+          <ion-label color="dark"
+            ><b>Nom de superviseur:</b>{{ currentDriver.nomsup }}</ion-label
+          >
+        </div>
 
-      <div>
-        <ion-label>Adresse:</ion-label>
-      </div>
-      <div>
-        <ion-label>Nom de superviseur:</ion-label>
-      </div>
-    </ion-list>
-    <ion-button size ="small" color="success"  [routerLink]="['/updateDriver']">
-       modifier
+      <ion-button size="small" color="success" [routerLink]="['/updateDriver']">
+        modifier
       </ion-button>
-      <ion-button size="small" color="danger">
-      supprimer
+      <ion-button
+        size="small"
+        color="danger"
+        (click)="deleteDriver(currentDriver._id)"
+      >
+        supprimer
       </ion-button>
-  </ion-card-content>
-</ion-card>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
-
-
-

@@ -34,6 +34,11 @@ import { AddDemandeComponent } from './components/customer-layout/add-demande/ad
 import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
 import { ReservationComponent } from './components/customer-layout/reservation/reservation.component';
 import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
+import { DriverLayoutComponent } from './components/driver-layout/driver-layout.component';
+import { DashboardComponent } from './components/driver-layout/dashboard/dashboard.component';
+import { TrajetComponent } from './components/driver-layout/trajet/trajet.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent,AdminLayoutComponent,
@@ -60,9 +65,12 @@ import { DashboardCComponent } from './components/customer-layout/dashboard-c/da
     DispoCarComponent,
     ReservationComponent,
     DashboardCComponent,
+    DriverLayoutComponent,
+    DashboardComponent,
+    TrajetComponent,
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

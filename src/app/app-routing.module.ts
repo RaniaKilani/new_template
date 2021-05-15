@@ -24,6 +24,9 @@ import { AddDemandeComponent } from './components/customer-layout/add-demande/ad
 import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
 import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
 import { ReservationComponent } from './components/customer-layout/reservation/reservation.component';
+import { DashboardComponent } from './components/driver-layout/dashboard/dashboard.component';
+import { DriverLayoutComponent } from './components/driver-layout/driver-layout.component';
+import { TrajetComponent } from './components/driver-layout/trajet/trajet.component';
 
 const routes: Routes = [
   {
@@ -38,8 +41,8 @@ const routes: Routes = [
   },
 
   { path: 'listCar',   component: CarListComponent},
-  { path: 'listSupervisor', component: SupervisorListComponent },
-  { path: 'listDriver',     component: DriverListComponent },
+  { path: 'listSupervisor/:id', component: SupervisorListComponent },
+  { path: 'listDriver/:id',     component: DriverListComponent },
   { path: 'allCars',         component: AllCarsComponent },
   { path: 'allCars',         component: AllCarsComponent },
   { path: 'allDrivers',         component: AllDriversComponent },
@@ -54,13 +57,19 @@ const routes: Routes = [
   { path: 'addCar',         component: AddCarComponent },
   { path: 'updateCar',      component: UpdateCarComponent },
   { path: 'addDriver',      component: AddDriverComponent },
-  { path: 'updateDriver',   component: UpdateDriverComponent },
+  { path: 'updateDriver/:id',   component: UpdateDriverComponent },
   { path: 'addSupervisor',  component: AddSupervisorComponent },
   { path: 'updateSupervisor',component: UpdateSupervisorComponent },
-  { path: 'updateEntretien',component:   UpdateEntretienComponent},
+  { path: 'updateEntretien',component: UpdateEntretienComponent},
   { path: 'dispoCar',component:   DispoCarComponent},
-  { path: 'reservation',component:   ReservationComponent},
-  { path: 'dashboardC',component:   DashboardCComponent},
+  { path: 'reservation', component: ReservationComponent},
+  { path: 'dashboardC', component: DashboardCComponent},
+
+  { path: 'dashboardDriver', component: DashboardComponent},
+
+
+  { path: 'trajet', component: TrajetComponent},
+
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Supervisor } from '../models/supervisor';
 import { SupervisorService } from '../supervisor-list/supervisor.service';
@@ -10,21 +11,41 @@ import { SupervisorService } from '../supervisor-list/supervisor.service';
 })
 export class AddSupervisorComponent implements OnInit {
 newSupervisor = new Supervisor();
-  constructor( private supervisorService:SupervisorService, private router:Router) { }
+form:FormGroup;
+  constructor( private supervisorService:SupervisorService, private fb:FormBuilder,private router:Router) {
+
+    this.form=this.fb.group({
+      mail:[''],
+      nom:[''],
+      pre:[''],
+      ntel:[''],
+      adr:[''],
+      dn:[''],
+      de:[''],});
+   }
 
   goToListPage( ListPage:string){
     this.router.navigate([`${ListPage}`]);}
+
 
   ngOnInit(): void {
   }
 
   addSupervisor(){
-    this.supervisorService.addSupervisor(this.newSupervisor).subscribe(spv => {
-    console.log(spv);
-    });
-    this.router.navigate(['listSupervisor']).then(() => {
-
+    var formdata= new FormData();
+    formdata.append('mail',this.form.get('mail').value);
+    formdata.append('nom',this.form.get('nom').value)
+    formdata.append('pre',this.form.get('pre').value)
+    formdata.append('ntel',this.form.get('ntel').value)
+    formdata.append('adr',this.form.get('adr').value)
+    formdata.append('dn',this.form.get('dn').value)
+    formdata.append('de',this.form.get('de').value)
+    this.supervisorService.addSupervisor(formdata).subscribe(spv => {
+      console.log(spv);
       });
+     this.router.navigate(['allSupervisors']).then(() => {
+      window.location.reload();
+       });
 }
 
 }

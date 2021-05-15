@@ -15,6 +15,7 @@ export class DriverListComponent implements OnInit {
 
 
   list: Driver[];
+  selectedDriver=Driver;
 
   currentDriver = new Driver()
   constructor(private driverService:DriverService,private router:Router,private activatedRoute :ActivatedRoute) {
@@ -25,34 +26,26 @@ export class DriverListComponent implements OnInit {
 goToUpdatePage(UpdatePage:string, id:number):void{
   this.router.navigate([`${UpdatePage}/${id}`]);
 }
-
   ngOnInit(): void {
-    this.driverService.listeDriver().subscribe(dr => {
-      this.list = dr;
-      for(let l of this.list){
-        console.log(l)
-
-      }
-
-      });
-  }
-
-
-
-   deleteDriver(id : number)
+      this.driverService.consulterDriver(this.activatedRoute.snapshot.params.id).
+    subscribe( dr =>{ this.currentDriver = dr[1]; console.log(dr[1]) });
+    console.log(this.activatedRoute.snapshot.params.id);
+}
+   deleteDriver(id : any, i:any)
    {
+     console.log(id)
 
    let conf = confirm("Etes-vous sûr ?");
    if (conf)
-     this.driverService.deleteDriver(id).subscribe(()=>{
+      this.driverService.deleteDriver(id).subscribe(()=>{
       console.log("chauffeur supprimé");
 
 
      });
 
-     this.router.navigate(['listDriver']).then(() => {
-      window.location.reload();
-      });
+    //  this.router.navigate(['allDrivers']).then(() => {
+    //   window.location.reload();
+    //   });
    }
 
 

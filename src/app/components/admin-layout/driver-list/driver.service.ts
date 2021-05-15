@@ -17,35 +17,35 @@ export class DriverService {
   list: Driver[];
   driver : Driver;
 
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http : HttpClient) {
 
   }
-  listeDriver(): Observable<Driver[]>{ //tab de driver de type observable
-    return this.http.get<Driver[]>(this.apiURL); //retourner liste des chauffeurs
+  listeDriver(): Observable<Driver[]>{
+    return this.http.get<Driver[]>(this.apiURL);
   }
 
- addDriver( drv: Driver):Observable<Driver>{
-  return this.http.post<Driver>(this.apiURL, drv, httpOptions);
+ addDriver(fordata:FormData){
+  return this.http.post(this.apiURL, fordata);
 
 }
-  //delete
- deleteDriver(id : number){
-    const url = `${this.apiURL}/${id}`;
-    return this.http.delete(url, httpOptions);
+
+ deleteDriver(id : any):Observable<any>{
+    const url = `${this.apiURL}/edit/?id=${id}`;
+    return this.http.delete(url,httpOptions);
     }
 
- //update
- consulterDriver(id:number): Observable<Driver>{// pour parcourir tableau de driver
-  const url = `${this.apiURL}/${id}`;
+ consulterDriver(id:number): Observable<Driver>{
+  const url = `${this.apiURL}/edit/?id=${id}`;
   return this.http.get<Driver>(url);
  }
 
- updateDriver(dr :Driver) : Observable<Driver>
-{
-return this.http.put<Driver>(this.apiURL, dr, httpOptions);
+ editDriver(fordata:FormData, id:number){
+  const url = `${this.apiURL}/edit/?id=${id}`;
+  return this.http.post(this.apiURL, fordata);
+
+
 }
-
-
 
 }
 
