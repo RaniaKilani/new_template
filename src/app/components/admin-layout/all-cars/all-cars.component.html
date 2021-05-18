@@ -1,4 +1,3 @@
-
 <ion-header class="menu-header">
   <ion-toolbar translucent>
     <ion-title> véhicules</ion-title>
@@ -8,40 +7,76 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<div>
-<div>
-    <ion-button size="small" color="light" expand="round" slot="end" (click)="goToAddPage('addCar')">
-      Ajouter une véhicule
-      <ion-icon name="add-circle-outline" slot="end"></ion-icon>
-    </ion-button>
+  <div>
+    <div>
+      <ion-button
+        size="small"
+        color="light"
+        expand="round"
+        slot="end"
+        (click)="goToAddPage('addCar')"
+      >
+        Ajouter une véhicule
+        <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+      </ion-button>
     </div>
     <div>
-     <ion-button size="small" expand="round" color="light" >
-      supprimer tous!
-      <ion-icon name="close-circle-outline" slot="end"></ion-icon>
-    </ion-button>
+      <ion-button size="small" expand="round" color="light">
+        supprimer tous!
+        <ion-icon name="close-circle-outline" slot="end"></ion-icon>
+      </ion-button>
     </div>
-
   </div>
-  <br/>
+  <br />
 
-
-<ion-card>
- <ion-card-header>
-      <ion-card-title> liste des véhicules</ion-card-title>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"> <b>liste des véhicules</b></ion-card-title>
     </ion-card-header>
+    <ion-grid *ngFor="let l of list">
+      <ion-card >
+      <ion-card-header color ="light" (click)= "goToListPage('listCar',l.Matricule)">
+      <ion-label > Matricule: {{ l.Matricule }}</ion-label>
+    </ion-card-header>
+        <ion-card-content>
+            <ion-label ><b>Type de véhicule:</b> {{l.Typev}}</ion-label>
+            <br />
 
-     <ion-grid>
 
-   <ion-item  *ngFor="let l of list" routerLink="/listCar">
 
-      <ion-avatar>
-        <ion-img src="assets/images/car1.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label class="ion-margin-horizontal"> {{l.Marque}}  {{l.typeC}} </ion-label>
-    </ion-item>
-  </ion-grid>
+            <br />
+            <ion-label ><b>Puissance:</b>{{l.Power}}</ion-label>
+            <br />
 
+            <br />
+            <ion-label ><b>Nombre des places:</b>{{l.NbrPlace}}</ion-label>
+            <br />
+
+            <br />
+            <ion-label  ><b>Type de permis:</b>{{l.Permis}} </ion-label>
+            <br />
+            <br />
+            <ion-label ><b>Disponibilité:</b>{{l.Dispo}} </ion-label>
+          <br/>
+          <br />
+
+             <ion-button
+            size="small"
+            color="success"
+            [routerLink]="['/updateCar']"
+          >
+            modifier
+          </ion-button>
+          <ion-button  (click)= "goToListPage('historiqueCar',l.Matricule)"
+            size="small"
+            color="danger"
+
+          >
+            Historique
+          </ion-button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
   </ion-card>
 </ion-content>

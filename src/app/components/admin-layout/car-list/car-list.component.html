@@ -14,36 +14,39 @@
           <ion-card-title>Détails du véhicule</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <ion-list>
-            <ion-label>Matricule :</ion-label>
-            <br/>
 
-            <ion-label>Marque:</ion-label>
+
+        <ion-label><b>Matricule:</b> {{currentCar.mat}}</ion-label>
+        <br/>
+ <ion-label><b>Marque:</b> {{currentCar.mr}}</ion-label>
+
+
+<br />
+
+            <ion-label><b>Type de véhicule:</b> {{currentCar.ty}}</ion-label>
             <br />
-            <ion-label>Type de véhicule:</ion-label>
+            <ion-label><b>Année de fabrication:</b> {{currentCar.an}}</ion-label>
             <br />
-            <ion-label>Année de fabrication:</ion-label>
+            <ion-label><b>Type de carburant:</b> {{currentCar.tyC}}</ion-label>
             <br />
-            <ion-label>Type de carburant:</ion-label>
+            <ion-label><b>consommation de carburant:</b> {{currentCar.conso}}</ion-label>
             <br />
-            <ion-label>consommation de carburant:</ion-label>
+            <ion-label><b>Puissance:</b>{{currentCar.powr}}</ion-label>
             <br />
-            <ion-label>Puissance</ion-label>
-            <br />
-            <ion-label>Kilométrage:</ion-label>
+            <ion-label><b>Kilométrage:</b>{{currentCar.kilo}}</ion-label>
             <br />
 
-            <ion-label>Nombre des places:</ion-label>
+            <ion-label><b>Nombre des places:</b>{{currentCar.nb}}</ion-label>
             <br />
-            <ion-label>capacité en kg:</ion-label>
+            <ion-label><b>Capacité en kg:</b>{{currentCar.cap}} </ion-label>
             <br />
-            <ion-label>Type de permis:</ion-label>
+            <ion-label><b>Type de permis:</b>{{currentCar.tyP}} </ion-label>
             <br />
-            <ion-label>Mot clé:</ion-label>
+            <ion-label><b>Mot clé:</b>{{currentCar.mot}} </ion-label>
             <br />
-            <ion-label>Disponibilité:</ion-label>
-          </ion-list>
+            <ion-label><b>Disponibilité:</b>{{currentCar.dispo}} </ion-label>
 
+<br/>
           <ion-button
             size="small"
             color="success"
@@ -51,10 +54,10 @@
           >
             modifier
           </ion-button>
-          <ion-button
+          <ion-button (click)= "goToListPage('historiqueCar',currentCar.Matricule)"
             size="small"
             color="danger"
-            [routerLink]="['/historiqueCar']"
+
           >
             voir historique
           </ion-button>

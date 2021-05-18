@@ -57,26 +57,32 @@
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Nom de superviseur</ion-label>
-        <ion-input formControlName="nomsup" type="text" name="nomsup"></ion-input>
+        <ion-input
+          formControlName="nomsup"
+          type="text"
+          name="nomsup"
+        ></ion-input>
       </ion-item>
     </div>
 
-<div class="col-3">
+    <div class="col-3">
       <ion-item>
-              <ion-label position="stacked">Type permis</ion-label>
+        <ion-label position="stacked">Type permis</ion-label>
 
-    <select formControlName="typ" id="typ">
-    <option *ngFor="let p of typ; let i = index" [value]="typ[i].id">
-      {{typ[i].name}}
-    </option>
-  </select>
-    </ion-item>
+        <ion-select formControlName="typ" id="typ">
+          <ion-select-option
+            *ngFor="let p of typ; let i = index"
+            [value]="typ[i].id"
+          >
+            {{ typ[i].name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
     </div>
-
 
     <div class="col-3">
       <div class="container-form-btn">
-        <ion-button shape="round" type="submit" >Ajouter</ion-button>
+        <ion-button shape="round" type="submit">Ajouter</ion-button>
       </div>
     </div>
   </form>

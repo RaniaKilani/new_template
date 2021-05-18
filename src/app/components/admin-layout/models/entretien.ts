@@ -1,5 +1,5 @@
-export class Entrtien{
-  CodeEntre:number;
-  NomEntre:string;
+export class Entretien{
+  codeEnt:number;
+  libelle:string;
 
   }

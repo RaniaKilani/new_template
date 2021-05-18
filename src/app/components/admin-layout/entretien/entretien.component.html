@@ -14,9 +14,10 @@
   </ion-button>
   <ion-button size="small" color="light" [routerLink]="['/addReparation']" > ajouter une réparation </ion-button>
 
-  <ion-card>
-    <ion-item> Code Entretien: </ion-item>
-    <ion-item> Nom Entretien: </ion-item>
+  <ion-card *ngFor="let l of listE">
+    <ion-item>
+    <b> Code Entretien:</b>{{l.CodeEntretien}} </ion-item>
+    <ion-item > <b>Nom Entretien:</b>{{l.NomEntretien}} </ion-item>
     <ion-button size="small" color="danger"> supprimer </ion-button>
     <ion-button size="small" color="success" (click)="_Popover()">
       modifier

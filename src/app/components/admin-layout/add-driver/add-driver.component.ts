@@ -29,7 +29,7 @@ export class AddDriverComponent implements OnInit {
   de:[''],
   nomsup:[''],
   typ:[''],
-  
+
 
     })
     this.typ= this.getPermis();
@@ -64,9 +64,9 @@ export class AddDriverComponent implements OnInit {
     this.driverService.addDriver(formdata).subscribe(drv => {
     console.log(drv);
     });
-   this.router.navigate(['allDrivers']).then(() => {
-    window.location.reload();
-     });
+  //  this.router.navigate(['allDrivers']).then(() => {
+  //   window.location.reload();
+  //    });
 }
 
 }

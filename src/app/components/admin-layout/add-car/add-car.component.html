@@ -1,6 +1,5 @@
-
 <ion-header class="menu-header">
-  <ion-toolbar translucent >
+  <ion-toolbar translucent>
     <ion-title class="ion-text-center"> ajouter un véhicule</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -8,113 +7,129 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
+  <form [formGroup]="form" (ngSubmit)="addCar()">
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Matricule</ion-label>
+        <ion-input
+          type="text"
+          formControlName="Matricule"
+          name="Matricule"
+        ></ion-input>
+      </ion-item>
+    </div>
 
-        <form>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Matricule</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Type de véhicule</ion-label>
+        <ion-input type="text" formControlName="  TypeV" name="TypeV"></ion-input>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Marque</ion-label>
+        <ion-input
+          type="text"
+          formControlName="Marque"
+          name="Marque"
+        ></ion-input>
+      </ion-item>
+    </div>
 
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Type de véhicule</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Marque</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Consommation de carburant</ion-label>
+        <ion-input
+          type="number"
+          formControlName="ConsoC"
+          name="ConsoC"
+        ></ion-input>
+      </ion-item>
+    </div>
 
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked"
-                >Consommation de carburant</ion-label
-              >
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Type de carburant</ion-label>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Puissance</ion-label>
+        <ion-input
+          type="number"
+          formControlName="Puiss"
+          name="Puiss"
+        ></ion-input>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Capacité</ion-label>
+        <ion-input type="number" formControlName="Cap" name="Cap"></ion-input>
+      </ion-item>
+    </div>
 
-              <ion-select type="text">
-                <ion-select-option value="1">Essence</ion-select-option>
-                <ion-select-option value="2">Diesel</ion-select-option>
-                <ion-select-option value="3"
-                  >Carburants gazeux</ion-select-option
-                >
-              </ion-select>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Puissance</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Capacité</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked"> Année de fabrication</ion-label>
+        <ion-input
+          type="number"
+          formControlName="AnFab"
+          name="AnFab"
+        ></ion-input>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Kilométrage</ion-label>
+        <ion-input type="number" formControlName="Kilo" name="Kilo"></ion-input>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Nombre de place</ion-label>
+        <ion-input
+          type="number"
+          formControlName="NbrPlace"
+          name="NbrPlace"
+        ></ion-input>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Type de Carburant</ion-label>
+        <ion-select formControlName="TypeC" name="TypeC">
+          <ion-select-option>Essence</ion-select-option>
+          <ion-select-option>Diesel</ion-select-option>
+          <ion-select-option> Carburants gazeux </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Mot clé</ion-label>
+        <ion-select formControlName="Mot" name="Mot">
+          <ion-select-option>Location</ion-select-option>
+          <ion-select-option>Livraison </ion-select-option>
+          <ion-select-option>Maintenance</ion-select-option>
+          <ion-select-option>Transportation </ion-select-option>
+          <ion-select-option>Déplacement </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Type de permis</ion-label>
+        <ion-select formControlName="TypeP" name="TypeP">
+          <ion-select-option>A</ion-select-option>
+          <ion-select-option>B </ion-select-option>
+          <ion-select-option>C</ion-select-option>
+          <ion-select-option>D </ion-select-option>
+          <ion-select-option>E </ion-select-option>
+          <ion-select-option>H</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
 
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Mot Clé</ion-label>
-              <ion-select type="text">
-                <ion-select-option>Livraison</ion-select-option>
-                <ion-select-option>Maintenance</ion-select-option>
-                <ion-select-option>Transportation</ion-select-option>
-                <ion-select-option>Déplacement</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked"> Année de fabrication</ion-label>
-              <ion-input type="date"></ion-input>
-            </ion-item>
-          </div>
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Kilométrage</ion-label>
-              <ion-input type="number"></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Type de permis</ion-label>
-              <ion-select type="text">
-                <ion-select-option>A</ion-select-option>
-                <ion-select-option>B</ion-select-option>
-                <ion-select-option>C</ion-select-option>
-                <ion-select-option>D</ion-select-option>
-                <ion-select-option>E</ion-select-option>
-                <ion-select-option>H</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </div>
-
-
-          <div class="col-3">
-            <div class="container-form-btn">
-              <ion-button
-                shape="round"
-                type="submit"
-                (click)="addCar()"
-                (click)="goToListPage('tables')"
-                >Ajouter</ion-button
-              >
-            </div>
-          </div>
-        </form>
-
-
+    <div class="col-3">
+      <div class="container-form-btn">
+        <ion-button shape="round" type="submit">Ajouter</ion-button>
+      </div>
+    </div>
+  </form>
 </ion-content>

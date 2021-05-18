@@ -1,7 +1,7 @@
 export class Car{
   Matricule:string;
-  Typev:string;
-  AnFab:Date;
+  TypeV:string;
+  AnFab:number;
   Marque:string;
   TypeC:string;
   Puiss:number;
@@ -15,3 +15,4 @@ export class Car{
 
 
 }
+

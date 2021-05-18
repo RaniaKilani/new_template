@@ -7,33 +7,17 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-card>
-  <ion-card-header>
-    <ion-card-title class="ion-text-center">Liste des historiques </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-
-
-
-
-
-
-<ion-item>
-Matricule:
-</ion-item>
-<ion-item>
-opération:
-</ion-item>
-<ion-item>
-description:
-</ion-item>
-<ion-item>
-Date:
-</ion-item>
-<ion-button size="small" color="danger" >
-      supprimer
-      </ion-button>
-</ion-card-content>
-
-</ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"
+        >Liste des historiques
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <ion-item> Matricule:{{currentHisto.mat}} </ion-item>
+      <ion-item> opération:{{currentHisto.Op}} </ion-item>
+      <ion-item> Date:{{currentHisto.date}} </ion-item>
+      <ion-button size="small" color="danger"> supprimer </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from '../models/car';
 import { CarService } from './car.service';
 
@@ -10,12 +10,22 @@ import { CarService } from './car.service';
 })
 export class CarListComponent implements OnInit {
   list: Car[];
-  constructor(private router:Router, private carService:CarService) {
-    this.list = carService.listeCar();
+  currentCar = new Car();
+  constructor(
+    private router:Router,
+    private carService:CarService,
+    private activatedRoute:ActivatedRoute
+    ) {
+    this.carService.consulterCar(this.activatedRoute.snapshot.params.id).
+    subscribe( cr =>{ this.currentCar = cr; console.log(this.currentCar) });
+    console.log(this.activatedRoute.snapshot.params.id);
+
    }
+   goToListPage(ListPage:string, Matricule:string):void{
+    this.router.navigate([`${ListPage}/${Matricule}`]);}
 
 
-goToUpdatePage(UpdatePage:string):void{
+   goToUpdatePage(UpdatePage:string):void{
   this.router.navigate([`${UpdatePage}`]);}
 
   ngOnInit() {}

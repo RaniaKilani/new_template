@@ -13,7 +13,12 @@ import { Driver } from '../models/driver';
 export class AllDriversComponent implements OnInit {
   list: Driver[];
 
-  constructor(public popoverController: PopoverController,private router:Router,private activatedRoute :ActivatedRoute,private driverService:DriverService) { }
+  constructor(public popoverController: PopoverController,
+    private router:Router,
+    private activatedRoute :ActivatedRoute,
+    private driverService:DriverService) {
+      
+     }
   goToAddPage(AddPage:string):void{
     this.router.navigate([`${AddPage}`]);}
 
@@ -39,10 +44,6 @@ export class AllDriversComponent implements OnInit {
   ngOnInit() {
     this.driverService.listeDriver().subscribe(dr => {
       this.list = dr;
-      for(let l of this.list){
-        console.log(l)
-
-      }
 
       });
   }

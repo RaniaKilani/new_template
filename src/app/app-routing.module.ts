@@ -40,14 +40,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  { path: 'listCar',   component: CarListComponent},
+  { path: 'listCar/:id',   component: CarListComponent},
   { path: 'listSupervisor/:id', component: SupervisorListComponent },
   { path: 'listDriver/:id',     component: DriverListComponent },
   { path: 'allCars',         component: AllCarsComponent },
   { path: 'allCars',         component: AllCarsComponent },
   { path: 'allDrivers',         component: AllDriversComponent },
   { path: 'allSupervisors',         component: AllSupervisorComponent },
-  { path: 'historiqueCar',         component:HistpriqueCarComponent },
+  { path: 'historiqueCar/:id',         component:HistpriqueCarComponent },
   { path: 'entretien',         component:EntretienComponent },
   { path: 'reparation',         component:ReparationComponent },
   { path: 'addReparation',         component:AddReparationComponent },

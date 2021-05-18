@@ -12,15 +12,12 @@ import { DriverService } from './driver.service';
 })
 export class DriverListComponent implements OnInit {
 
-
-
   list: Driver[];
-  selectedDriver=Driver;
-
   currentDriver = new Driver()
-  constructor(private driverService:DriverService,private router:Router,private activatedRoute :ActivatedRoute) {
-
-    /* this.list = driverService.listeDriver(); */
+  constructor(
+    private driverService:DriverService,
+    private router:Router,
+    private activatedRoute:ActivatedRoute) {
   }
 
 goToUpdatePage(UpdatePage:string, id:number):void{

@@ -9,6 +9,6 @@ export class Driver{
   adr:string;
   pwd:string;
   nomsup:string;
-  permis:any;
+  typ:string;
   image:string;
   }

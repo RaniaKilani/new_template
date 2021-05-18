@@ -5,16 +5,18 @@
     <ion-card-title class="ion-text-center"> Ajouter une entretien</ion-card-title>
   </ion-card-header>
   <ion-card-content>
+  <form [formGroup]="form" (ngSubmit)="addEntretien()">
     <ion-item>
-      <ion-input placeholder="code Entretien" type="number"></ion-input>
+      <ion-input placeholder="code Entretien" type="number"  formControlName="codeEnt" name="codeEnt"></ion-input>
       </ion-item>
       <ion-item>
-      <ion-input placeholder="Nom Entretien" type="texte"></ion-input>
+      <ion-input placeholder="Nom Entretien" formControlName="libelle" type="text" name="libelle"></ion-input>
 
       </ion-item>
 
 
-      <ion-button size="small" color="success"> ajouter </ion-button>
+      <ion-button size="small" color="success" type="submit"> ajouter </ion-button>
+      </form>
 
        </ion-card-content>
 </ion-card>
