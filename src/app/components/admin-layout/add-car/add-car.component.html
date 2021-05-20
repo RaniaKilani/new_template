@@ -22,7 +22,7 @@
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Type de véhicule</ion-label>
-        <ion-input type="text" formControlName="  TypeV" name="TypeV"></ion-input>
+        <ion-input type="text" formControlName="TypeV" name="TypeV"></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
@@ -100,18 +100,7 @@
         </ion-select>
       </ion-item>
     </div>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Mot clé</ion-label>
-        <ion-select formControlName="Mot" name="Mot">
-          <ion-select-option>Location</ion-select-option>
-          <ion-select-option>Livraison </ion-select-option>
-          <ion-select-option>Maintenance</ion-select-option>
-          <ion-select-option>Transportation </ion-select-option>
-          <ion-select-option>Déplacement </ion-select-option>
-        </ion-select>
-      </ion-item>
-    </div>
+
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Type de permis</ion-label>
@@ -125,11 +114,24 @@
         </ion-select>
       </ion-item>
     </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked" >Objet</ion-label>
+        <ion-select formControlName="Mot" name="Mot"  multiple>
+          <ion-select-option>Location</ion-select-option>
+          <ion-select-option>Livraison </ion-select-option>
+          <ion-select-option>Maintenance</ion-select-option>
+          <ion-select-option>Transportation </ion-select-option>
+          <ion-select-option>Déplacement </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
 
     <div class="col-3">
       <div class="container-form-btn">
         <ion-button shape="round" type="submit">Ajouter</ion-button>
       </div>
     </div>
+   
   </form>
 </ion-content>

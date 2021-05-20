@@ -28,21 +28,21 @@ goToUpdatePage(UpdatePage:string, id:number):void{
     subscribe( dr =>{ this.currentDriver = dr[1]; console.log(dr[1]) });
     console.log(this.activatedRoute.snapshot.params.id);
 }
-   deleteDriver(id : any, i:any)
+   deleteDriver()
    {
-     console.log(id)
+     console.log(this.activatedRoute.snapshot.params.id)
 
    let conf = confirm("Etes-vous sûr ?");
    if (conf)
-      this.driverService.deleteDriver(id).subscribe(()=>{
+      this.driverService.deleteDriver(this.activatedRoute.snapshot.params.id).subscribe(()=>{
       console.log("chauffeur supprimé");
 
 
      });
 
-    //  this.router.navigate(['allDrivers']).then(() => {
-    //   window.location.reload();
-    //   });
+     this.router.navigate(['allDrivers']).then(() => {
+      window.location.reload();
+      });
    }
 
 

@@ -13,7 +13,6 @@ import { Car } from '../models/car';
 export class AddCarComponent implements OnInit {
 
   newCar = new Car();
-
   form:FormGroup;
   constructor(private carService:CarService,
     private router:Router,
@@ -33,6 +32,7 @@ export class AddCarComponent implements OnInit {
       Mot:[''],
       TypeP:[''],
 
+
     })
       }
   /*goToListPage( ListPage:string){
@@ -45,6 +45,9 @@ export class AddCarComponent implements OnInit {
   }
 
   addCar(){
+    let selected = this.form.get('Mot').value.toString().split(",").map(x=>x.trim())
+     //console.log(selected)
+
     var formdata= new FormData();
     formdata.append('Matricule',this.form.get('Matricule').value);
     formdata.append('TypeV',this.form.get('TypeV').value);
@@ -56,8 +59,15 @@ export class AddCarComponent implements OnInit {
     formdata.append('NbrPlace',this.form.get('NbrPlace').value);
     formdata.append('Cap',this.form.get('Cap').value);
     formdata.append('TypeC',this.form.get('TypeC').value);
-    formdata.append('Mot',this.form.get('Mot').value);
+    for(let i of selected){
+      formdata.append('Mot',i);
+      //console.log(i)
+    }
+
     formdata.append('TypeP',this.form.get('TypeP').value);
+
+    console.log(formdata.getAll("Mot"));
+
 
 
 

@@ -30,9 +30,9 @@ export class DriverService {
 
 }
 
- deleteDriver(id : any):Observable<any>{
+ deleteDriver(id : number):Observable<any>{
     const url = `${this.apiURL}/edit/?id=${id}`;
-    return this.http.delete(url,httpOptions);
+    return this.http.delete(url);
     }
 
  consulterDriver(id:number): Observable<Driver>{

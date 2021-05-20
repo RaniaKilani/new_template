@@ -16,7 +16,10 @@ export class HistpriqueCarComponent implements OnInit {
     private router:Router,
     private activatedRoute:ActivatedRoute) {
     this.carService.consulterHistorique(this.activatedRoute.snapshot.params.id).
-    subscribe( hs =>{ this.currentHisto = hs; console.log(hs) });
+    subscribe( hs =>{ 
+      this.list  = hs; 
+     
+     console.log(hs) });
     console.log(this.activatedRoute.snapshot.params.id);
    }
 

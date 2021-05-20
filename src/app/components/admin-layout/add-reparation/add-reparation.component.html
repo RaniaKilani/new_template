@@ -6,37 +6,43 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content fullscreen="true">
-  <ion-item>
-    <ion-label position="stacked">Reférence</ion-label>
-
-    <ion-input type="texte"></ion-input>
-  </ion-item>
-
+<ion-content fullscreen="true" >
+<form [formGroup]="form" (ngSubmit)="addReparation()">
   <ion-item>
     <ion-label position="stacked">Matricule</ion-label>
 
-    <ion-select type="text"></ion-select>
+     <ion-select formControlName="Matricule" type="text" name="Matricule" >
+    <ion-select-option
+            *ngFor="let l of list">
+            {{ l.Matricule }}
+          </ion-select-option>
+    </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Code Entretien</ion-label>
 
-    <ion-select type="text"></ion-select>
+    <ion-select  formControlName="codeEnt" type="text" name="codeEnt">
+     <ion-select-option
+            *ngFor="let l of listE">
+            {{ l.CodeEntretien }}
+          </ion-select-option>
+   
+    </ion-select>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Date de réparartion</ion-label>
 
-    <ion-input type="Date"></ion-input>
+    <ion-input type="Date" formControlName="date" name="date"></ion-input>
   </ion-item>
+
 
   <ion-button
     color="success"
     size="small"
     shape="round"
     type="submit"
-    (click)="addReparation()"
-    (click)="goToListPage('reparation')"
     >Ajouter</ion-button
   >
+  </form>
 </ion-content>

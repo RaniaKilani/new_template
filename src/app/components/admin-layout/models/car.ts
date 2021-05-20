@@ -10,8 +10,8 @@ export class Car{
   NbrPlace: number;
   Cap:number;
   Dispo:string;
-  TypeP:any;
-  Mot:string;
+  TypeP:string;
+  Mot:string[];
 
 
 }

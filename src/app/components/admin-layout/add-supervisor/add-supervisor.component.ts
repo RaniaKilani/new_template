@@ -21,7 +21,8 @@ form:FormGroup;
       ntel:[''],
       adr:[''],
       dn:[''],
-      de:[''],});
+      de:[''],
+      pwd:[''],});
    }
 
   goToListPage( ListPage:string){
@@ -40,6 +41,7 @@ form:FormGroup;
     formdata.append('adr',this.form.get('adr').value)
     formdata.append('dn',this.form.get('dn').value)
     formdata.append('de',this.form.get('de').value)
+    formdata.append('pwd',this.form.get('pwd').value);
     this.supervisorService.addSupervisor(formdata).subscribe(spv => {
       console.log(spv);
       });

@@ -9,29 +9,33 @@
 </ion-header>
 <ion-content>
     <ion-title class="ion-text-center">Liste des Réparations</ion-title>
+ <ion-select [(ngModel)]="Mat" type="text" name="Matricule" >
+    <ion-select-option
+            *ngFor="let l of list">
+            {{ l.Matricule }}
+          </ion-select-option>
 
+    </ion-select>
+    <ion-button (click)="listRepMatr(Mat)">search</ion-button>
 <ion-card>
   <ion-card-header>
   </ion-card-header>
-  <ion-card-content>
-    <ion-list>
+  <ion-card-content *ngFor = "let l of listR" >
+   
       <div>
-        <ion-label>Reférence :</ion-label>
+        <ion-label>Reférence : {{l.ref}}</ion-label>
       </div>
       <div>
-        <ion-label>Matricule :</ion-label>
+        <ion-label>Matricule :{{l.vh}} </ion-label>
       </div>
 
       <div>
-        <ion-label>Code Entretien:</ion-label>
+        <ion-label>Code Entretien:{{l.En}} </ion-label>
       </div>
 <div>
-      <ion-label>Date de réparation:</ion-label>
+      <ion-label>Date de réparation:{{l.date}}</ion-label>
 </div>
 
-
-
-    </ion-list>
     <ion-button size ="small" color="success"  [routerLink]="['/updateReparation']">
        modifier
       </ion-button>

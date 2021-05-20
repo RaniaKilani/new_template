@@ -9,6 +9,6 @@ export class Driver{
   adr:string;
   pwd:string;
   nomsup:string;
-  typ:string;
+  typ:Array<string>;
   image:string;
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DriverService } from '../driver-list/driver.service';
 import { Driver } from '../models/driver';
@@ -13,6 +13,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class AddDriverComponent implements OnInit {
   newDriver = new Driver();
   form:FormGroup;
+  fo:FormArray;
   typ=[];
 
   constructor(private driverService:DriverService,
@@ -29,11 +30,23 @@ export class AddDriverComponent implements OnInit {
   de:[''],
   nomsup:[''],
   typ:[''],
+  pwd:[''],
 
 
     })
     this.typ= this.getPermis();
   }
+
+
+//   const typ: Array<{id: number, name: string}> = [
+//     { id: '1', name: 'A' },
+//     { id: '2', name: 'B' },
+//     { id: '3', name: 'C' },
+//     { id: '4', name: 'D' },
+//     { id: '5', name: 'E' },
+//     { id: '6', name: 'H' },
+// ];
+
   getPermis() {
     return [
       { id: '1', name: 'A' },
@@ -58,8 +71,8 @@ export class AddDriverComponent implements OnInit {
     formdata.append('dn',this.form.get('dn').value);
     formdata.append('de',this.form.get('de').value);
     formdata.append('nomsup',this.form.get('nomsup').value);
-    formdata.append('typ',this.form.get('typ').value);
-
+    formdata.append('typ',this.fo.get('typ').value);
+    formdata.append('pwd',this.form.get('pwd').value);
 
     this.driverService.addDriver(formdata).subscribe(drv => {
     console.log(drv);

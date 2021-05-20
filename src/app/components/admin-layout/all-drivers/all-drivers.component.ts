@@ -17,7 +17,7 @@ export class AllDriversComponent implements OnInit {
     private router:Router,
     private activatedRoute :ActivatedRoute,
     private driverService:DriverService) {
-      
+
      }
   goToAddPage(AddPage:string):void{
     this.router.navigate([`${AddPage}`]);}
@@ -40,10 +40,10 @@ export class AllDriversComponent implements OnInit {
     const { role } = await popover.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
-
   ngOnInit() {
     this.driverService.listeDriver().subscribe(dr => {
       this.list = dr;
+      console.log(dr)
 
       });
   }

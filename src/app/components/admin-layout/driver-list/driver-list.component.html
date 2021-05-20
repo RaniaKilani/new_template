@@ -21,10 +21,10 @@
           >
         </div>
         <div>
-          <ion-label color="dark"
-            ><b>Date de naissance:</b>{{ currentDriver.dn }}</ion-label
-          >
+          <ion-label color="dark" (ngModelChange)="currentDriver.dn= $event"  ><b>Date de naissance:</b>{{ currentDriver.dn | date: 'yyyy-MM-dd' }}</ion-label
+           >
         </div>
+
         <div>
           <ion-label color="dark"
             ><b>Email:</b> {{ currentDriver.mail }}</ion-label
@@ -61,7 +61,8 @@
       <ion-button
         size="small"
         color="danger"
-        (click)="deleteDriver(currentDriver._id)"
+        shape="round"
+        (click)="deleteDriver()"
       >
         supprimer
       </ion-button>

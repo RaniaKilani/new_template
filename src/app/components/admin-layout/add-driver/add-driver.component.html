@@ -64,12 +64,22 @@
         ></ion-input>
       </ion-item>
     </div>
+    <div class="col-3">
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input
+          formControlName="pwd"
+          type="text"
+          name="pwd"
+        ></ion-input>
+      </ion-item>
+    </div>
 
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Type permis</ion-label>
 
-        <ion-select formControlName="typ" id="typ">
+        <ion-select formControlName="typ" id="typ" multiple>
           <ion-select-option
             *ngFor="let p of typ; let i = index"
             [value]="typ[i].id"

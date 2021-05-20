@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Historique } from '../models/historique';
 import { Entretien } from '../models/entretien';
+import { Reparation } from '../models/reparation';
 const httpOptions = {
   headers: new HttpHeaders( {'Content-Type': 'application/json'} )
   };
@@ -37,9 +38,9 @@ consulterCar(Matricule:string): Observable<Car>{
 }
 
 apiH: string = 'http://127.0.0.1:5000/histo';
-consulterHistorique(Matricule:string): Observable<Historique>{
+consulterHistorique(Matricule:string): Observable<Historique[]>{
   const url = `${this.apiH}/?Matricule=${Matricule}`;
-  return this.http.get<Historique>(url);
+  return this.http.get<Historique[]>(url);
 }
 // listeHisto(): Observable<Historique[]>{
 //   return this.http.get<Historique[]>(this.apiH);}
@@ -57,5 +58,19 @@ listeEntretien(): Observable<Entretien[]>{
   //   const urlE = `${this.apiE}/?code=${code}`;
   //   return this.http.delete(urlE,httpOptions);
   //   }
+  apiR: string = 'http://127.0.0.1:5000/reparation';
+ listR :Reparation[];
+listeReparation(): Observable<Reparation[]>{
+  return this.http.get<Reparation[]>(this.apiR);}
 
+  AddReparation(fordata:FormData){
+    return this.http.post(this.apiR, fordata);
+
+  }
+
+listRepMat(matricule:string): Observable<Reparation[]>{
+  const url = `${this.apiR}/vehicule/?matricule=${matricule}`;
+  return this.http.get<Reparation[]>(url);
+}
  }
+ 
