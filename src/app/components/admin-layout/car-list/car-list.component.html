@@ -47,6 +47,7 @@
 
           <br />
           <ion-button
+          shape="round"
             size="small"
             color="success"
             [routerLink]="['/updateCar']"
@@ -54,11 +55,12 @@
             modifier
           </ion-button>
           <ion-button
-            (click)="goToListPage('historiqueCar', currentCar.Matricule)"
             size="small"
             color="danger"
+            shape="round"
+            (click)="deleteCar()"
           >
-            voir historique
+            supprimer
           </ion-button>
         </ion-card-content>
       </ion-card>

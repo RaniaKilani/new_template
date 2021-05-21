@@ -19,7 +19,7 @@
       <ion-item> Matricule:{{current.mat}} </ion-item>
       <ion-item> opération:{{current.op}} </ion-item>
       <ion-item> Date:{{current.date}} </ion-item>
-      <ion-button size="small" color="danger"> supprimer </ion-button>
+      <ion-button size="small" color="danger" shape="round" (click)="deleteHisto(current.Matricule)"> supprimer </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

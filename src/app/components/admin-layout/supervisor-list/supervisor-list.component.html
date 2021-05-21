@@ -33,10 +33,10 @@
         <ion-label color="dark"><b>Adresse:</b>{{currentSupervisor.adr}}</ion-label>
       </div>
 
-    <ion-button size ="small" color="success"  [routerLink]="['/updateSupervisor']">
+    <ion-button size ="small" color="success"  shape="round" [routerLink]="['/updateSupervisor']">
        modifier
       </ion-button>
-      <ion-button size="small" color="danger" (click)="deleteSupervisor(currentSuervisor._id)">
+      <ion-button size="small" color="danger"  shape="round" (click)="deleteSupervisor()">
       supprimer
       </ion-button>
 

@@ -30,11 +30,11 @@ goToUpdatePage(UpdatePage:string, id:number):void{
     console.log(this.activatedRoute.snapshot.params.id);
 }
 
-   deleteSupervisor(id : number)
+   deleteSupervisor()
    {
    let conf = confirm("Etes-vous sûr ?");
    if (conf)
-     this.supervisorService.deleteSupervisor(id).subscribe(()=>{
+     this.supervisorService.deleteSupervisor(this.activatedRoute.snapshot.params.id).subscribe(()=>{
       console.log("superviseur supprimé");
 
 

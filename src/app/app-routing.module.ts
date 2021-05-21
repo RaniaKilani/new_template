@@ -5,6 +5,7 @@ import { AddDriverComponent } from './components/admin-layout/add-driver/add-dri
 import { AddEntrtienComponent } from './components/admin-layout/add-entrtien/add-entrtien.component';
 import { AddReparationComponent } from './components/admin-layout/add-reparation/add-reparation.component';
 import { AddSupervisorComponent } from './components/admin-layout/add-supervisor/add-supervisor.component';
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 import { AllCarsComponent } from './components/admin-layout/all-cars/all-cars.component';
 import { AllDriversComponent } from './components/admin-layout/all-drivers/all-drivers.component';
 import { AllSupervisorComponent } from './components/admin-layout/all-supervisor/all-supervisor.component';
@@ -24,8 +25,10 @@ import { AddDemandeComponent } from './components/customer-layout/add-demande/ad
 import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
 import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
 import { ReservationComponent } from './components/customer-layout/reservation/reservation.component';
+import { AddBilanComponent } from './components/driver-layout/add-bilan/add-bilan.component';
 import { DashboardComponent } from './components/driver-layout/dashboard/dashboard.component';
 import { DriverLayoutComponent } from './components/driver-layout/driver-layout.component';
+import { PlanningComponent } from './components/driver-layout/planning/planning.component';
 import { TrajetComponent } from './components/driver-layout/trajet/trajet.component';
 
 const routes: Routes = [
@@ -64,11 +67,13 @@ const routes: Routes = [
   { path: 'dispoCar',component:   DispoCarComponent},
   { path: 'reservation', component: ReservationComponent},
   { path: 'dashboardC', component: DashboardCComponent},
-
   { path: 'dashboardDriver', component: DashboardComponent},
-
-
   { path: 'trajet', component: TrajetComponent},
+  { path: 'bilan', component: AddBilanComponent},
+  { path: 'planning', component: PlanningComponent},
+  { path: 'admin', component: AdminLayoutComponent},
+
+
 
 
 

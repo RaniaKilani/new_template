@@ -4,6 +4,7 @@ import { AddEntrtienComponent } from '../add-entrtien/add-entrtien.component';
 import { UpdateEntretienComponent } from '../update-entretien/update-entretien.component';
 import { Entretien } from '../models/entretien';
 import { CarService } from '../car-list/car.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,10 +14,12 @@ import { CarService } from '../car-list/car.service';
 })
 export class EntretienComponent implements OnInit {
   listE: Entretien[];
+ 
 
   constructor(
     public popoverController: PopoverController,
-    private entretienService:CarService) {
+    private carService:CarService,
+    private activatedRoute:ActivatedRoute) {
 
      }
   async _openPopover(ev: any) {
@@ -46,10 +49,25 @@ export class EntretienComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.entretienService.listeEntretien().subscribe(en => {
+    this.carService.listeEntretien().subscribe(en => {
       this.listE = en;
       for(let l of this.listE){
         console.log(l)}
   });
 
-}}
+}
+deleteEnt(code:number)
+{
+  console.log(code)
+
+let conf = confirm("Etes-vous sûr ?");
+if (conf)
+   this.carService.deleteEntretien(code).subscribe(()=>{
+   console.log("entretien supprimé");
+  });
+
+  // this.router.navigate(['entrtient']).then(() => {
+  //  window.location.reload();
+  //  });
+}
+}

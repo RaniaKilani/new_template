@@ -18,8 +18,8 @@
     <ion-item>
     <b> Code Entretien:</b>{{l.CodeEntretien}} </ion-item>
     <ion-item > <b>Nom Entretien:</b>{{l.NomEntretien}} </ion-item>
-    <ion-button size="small" color="danger"> supprimer </ion-button>
-    <ion-button size="small" color="success" (click)="_Popover()">
+    <ion-button size="small" color="danger" shape="round" (click)="deleteEnt(l.code)"> supprimer </ion-button>
+    <ion-button size="small" color="success" (click)="_Popover()" shape="round">
       modifier
     </ion-button>
   </ion-card>

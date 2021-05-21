@@ -36,8 +36,6 @@ goToUpdatePage(UpdatePage:string, id:number):void{
    if (conf)
       this.driverService.deleteDriver(this.activatedRoute.snapshot.params.id).subscribe(()=>{
       console.log("chauffeur supprimé");
-
-
      });
 
      this.router.navigate(['allDrivers']).then(() => {

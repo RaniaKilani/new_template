@@ -29,5 +29,19 @@ export class CarListComponent implements OnInit {
   this.router.navigate([`${UpdatePage}`]);}
 
   ngOnInit() {}
+  deleteCar()
+  {
+    console.log(this.activatedRoute.snapshot.params.id)
+
+  let conf = confirm("Etes-vous sûr ?");
+  if (conf)
+     this.carService.deleteCar(this.activatedRoute.snapshot.params.id).subscribe(()=>{
+     console.log("véhicule supprimé");
+    });
+
+    this.router.navigate(['allCars']).then(() => {
+     window.location.reload();
+     });
+  }
 
 }

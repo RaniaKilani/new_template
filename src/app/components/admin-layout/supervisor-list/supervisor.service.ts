@@ -30,7 +30,7 @@ export class SupervisorService {
     return this.http.post(this.apiURL, fordata);
 
   }
- deleteSupervisor(id : number){
+ deleteSupervisor(id : number):Observable<any>{
     const url = `${this.apiURL}/?id=${id}`;
     return this.http.delete(url, httpOptions);
     }

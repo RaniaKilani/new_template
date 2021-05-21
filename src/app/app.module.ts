@@ -38,6 +38,8 @@ import { DriverLayoutComponent } from './components/driver-layout/driver-layout.
 import { DashboardComponent } from './components/driver-layout/dashboard/dashboard.component';
 import { TrajetComponent } from './components/driver-layout/trajet/trajet.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddBilanComponent } from './components/driver-layout/add-bilan/add-bilan.component';
+import { PlanningComponent } from './components/driver-layout/planning/planning.component';
 
 
 @NgModule({
@@ -68,6 +70,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DriverLayoutComponent,
     DashboardComponent,
     TrajetComponent,
+    AddBilanComponent,
+    PlanningComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule,ReactiveFormsModule],

@@ -9,7 +9,7 @@
       <ion-list>
         <ion-menu-toggle>
           <ion-item>
-            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-icon name="home" slot="start"></ion-icon>
             <ion-label>Acceuil</ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -36,8 +36,14 @@
 
         <ion-menu-toggle>
           <ion-item routerLink="/entretien">
-            <ion-icon name="notifications" slot="start"></ion-icon>
-            <ion-label>Rappel</ion-label>
+            <ion-icon name="menu" slot="start"></ion-icon>
+            <ion-label>Entretien</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+        <ion-menu-toggle>
+          <ion-item routerLink="/reparation">
+            <ion-icon name="menu" slot="start"></ion-icon>
+            <ion-label>Réparation</ion-label>
           </ion-item></ion-menu-toggle
         >
 
@@ -52,6 +58,31 @@
           <ion-item>
             <ion-icon name="alert" slot="start"></ion-icon>
             <ion-label>Réclamations</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+         <ion-menu-toggle>
+          <ion-item routerLink="/dashboardC">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label >Acceuil Client</ion-label> 
+          </ion-item></ion-menu-toggle
+        >
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboardDriver">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Acceuil Chauffeur</ion-label> 
+          </ion-item></ion-menu-toggle
+        >
+        
+         <ion-menu-toggle>
+          <ion-item routerLink="/bilan">
+            <ion-icon name="browsers" slot="start"></ion-icon>
+            <ion-label>Bilan</ion-label> 
+          </ion-item></ion-menu-toggle
+        >
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="alert" slot="start"></ion-icon>
+            <ion-label>Réclamation chauffeur</ion-label> 
           </ion-item></ion-menu-toggle
         >
       </ion-list>
