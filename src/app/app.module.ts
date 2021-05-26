@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -40,6 +38,8 @@ import { TrajetComponent } from './components/driver-layout/trajet/trajet.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddBilanComponent } from './components/driver-layout/add-bilan/add-bilan.component';
 import { PlanningComponent } from './components/driver-layout/planning/planning.component';
+import { ClaimComponent } from './components/admin-layout/claim/claim.component';
+import { AddClaimComponent } from './components/admin-layout/add-claim/add-claim.component';
 
 
 @NgModule({
@@ -72,6 +72,8 @@ import { PlanningComponent } from './components/driver-layout/planning/planning.
     TrajetComponent,
     AddBilanComponent,
     PlanningComponent,
+    ClaimComponent,
+    AddClaimComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule,ReactiveFormsModule],

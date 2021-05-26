@@ -26,7 +26,7 @@ goToUpdatePage(UpdatePage:string, id:number):void{
 }
   ngOnInit(): void {
     this.supervisorService.consulterSupervisor(this.activatedRoute.snapshot.params.id).
-    subscribe( sp =>{ this.currentSupervisor = sp[1]; console.log(sp[1]) });
+    subscribe( sp =>{ this.currentSupervisor = sp; console.log(sp) });
     console.log(this.activatedRoute.snapshot.params.id);
 }
 

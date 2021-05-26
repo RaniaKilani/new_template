@@ -7,45 +7,52 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<div>
-<div>
-    <ion-button size="small" color="light" expand="round" slot="end" (click)="goToAddPage('addSupervisor')">
-      Ajouter un superviseur
-      <ion-icon name="add-circle-outline" slot="end"></ion-icon>
-    </ion-button>
+  <div>
+    <div>
+      <ion-button
+        size="small"
+        color="light"
+        expand="round"
+        slot="end"
+        (click)="goToAddPage('addSupervisor')"
+      >
+        Ajouter un superviseur
+        <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+      </ion-button>
     </div>
     <div>
-     <ion-button size="small" expand="round" color="light" >
-      supprimer tous!
-      <ion-icon name="close-circle-outline" slot="end"></ion-icon>
-    </ion-button>
+      <ion-button size="small" expand="round" color="light">
+        supprimer tous!
+        <ion-icon name="close-circle-outline" slot="end"></ion-icon>
+      </ion-button>
     </div>
-
   </div>
-  <br/>
+  <br />
 
-
-<ion-card>
- <ion-card-header>
-      <ion-card-title> liste des superviseurs</ion-card-title>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"> liste des superviseurs</ion-card-title>
     </ion-card-header>
 
-     <ion-grid >
+    <ion-card
+      *ngFor="let l of list"
+      (click)="goToListPage('listSupervisor', l.id)"
+    >
+      <ion-item>
+        <ion-row>
+          <ion-avatar>
+            <ion-img src="assets/images/rania1.jpg"> </ion-img>
+          </ion-avatar>
 
-   <ion-item  *ngFor="let l of list" (click)="goToListPage('listSupervisor',l.id)">
+          <ion-col>
+            <ion-card-title class="ion-margin-horizontal"
+              >{{ l.Nom }} {{ l.prenom }}
+            </ion-card-title>
 
-      <ion-avatar>
-        <ion-img src="assets/images/rania1.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label class="ion-margin-horizontal">{{ l.Nom }} {{ l.prenom }} {{l.Email}} </ion-label>
-    </ion-item>
-
-  </ion-grid>
-
+            <ion-card-subtitle class="ion-margin-horizontal"> {{ l.Email }} </ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
   </ion-card>
-
-
-
-
 </ion-content>

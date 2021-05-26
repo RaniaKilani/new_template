@@ -42,7 +42,7 @@ export class DriverService {
 
  editDriver(fordata:FormData, id:number){
   const url = `${this.apiURL}/edit/?id=${id}`;
-  return this.http.post(this.apiURL, fordata);
+  return this.http.post(url, fordata);
 
 
 }

@@ -25,7 +25,7 @@ goToUpdatePage(UpdatePage:string, id:number):void{
 }
   ngOnInit(): void {
       this.driverService.consulterDriver(this.activatedRoute.snapshot.params.id).
-    subscribe( dr =>{ this.currentDriver = dr[1]; console.log(dr[1]) });
+    subscribe( dr =>{ this.currentDriver = dr; console.log(dr) });
     console.log(this.activatedRoute.snapshot.params.id);
 }
    deleteDriver()

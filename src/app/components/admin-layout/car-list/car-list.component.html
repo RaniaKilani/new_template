@@ -10,14 +10,12 @@
   <ion-row>
     <ion-col>
       <ion-card>
-        <ion-card-header>
-          <ion-card-title>Détails du véhicule</ion-card-title>
+        <ion-card-header color="light">
+          <ion-card-title class="ion-text-center">Détails du véhicule</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-label><b>Marque:</b> {{ currentCar.mr }}</ion-label>
-
           <br />
-
           <ion-label><b>Type de véhicule:</b> {{ currentCar.ty }}</ion-label>
           <br />
           <ion-label
@@ -41,11 +39,12 @@
           <br />
           <ion-label><b>Type de permis:</b>{{ currentCar.tyP }} </ion-label>
           <br />
-          <ion-label><b>Mot clé:</b>{{ currentCar.mot }} </ion-label>
+          <ion-label><b>Mot clé:</b>{{ currentCar.Mot }} </ion-label>
           <br />
           <ion-label><b>Disponibilité:</b>{{ currentCar.dispo }} </ion-label>
-
+ <br />
           <br />
+          <ion-footer>
           <ion-button
           shape="round"
             size="small"
@@ -62,6 +61,7 @@
           >
             supprimer
           </ion-button>
+          </ion-footer>
         </ion-card-content>
       </ion-card>
     </ion-col>

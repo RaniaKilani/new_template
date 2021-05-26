@@ -7,19 +7,26 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-card>
+    <ion-card-title class="ion-text-center"
+      >Liste des historiques
+    </ion-card-title>
+    <ion-card-content>
+      <ion-button
+        size="small"
+        color="danger"
+        shape="round"
+        (click)="deleteHisto()"
+      >
+        supprimer
+      </ion-button>
 
-
-      <ion-title class="ion-text-center"
-        >Liste des historiques
-      </ion-title>
-
-  <ion-card *ngFor = "let current of list" >
-
-    <ion-card-content >
-      <ion-item> Matricule:{{current.mat}} </ion-item>
-      <ion-item> opération:{{current.op}} </ion-item>
-      <ion-item> Date:{{current.date}} </ion-item>
-      <ion-button size="small" color="danger" shape="round" (click)="deleteHisto(current.Matricule)"> supprimer </ion-button>
+      <ion-item *ngFor="let current of list">
+        {{ current.Operation }} &nbsp;
+        <p style="color: #696969" slot="end">
+          {{ current.Dateoperation | date: "dd-MM-yyyy" }}
+        </p></ion-item
+      >
     </ion-card-content>
   </ion-card>
 </ion-content>

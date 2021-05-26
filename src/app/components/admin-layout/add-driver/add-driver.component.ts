@@ -13,10 +13,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class AddDriverComponent implements OnInit {
   newDriver = new Driver();
   form:FormGroup;
-  fo:FormArray;
   typ=[];
-
-  constructor(private driverService:DriverService,
+  constructor(
+    private driverService:DriverService,
      private router:Router,
      private fb:FormBuilder,
      private http:HttpClient) {
@@ -31,22 +30,9 @@ export class AddDriverComponent implements OnInit {
   nomsup:[''],
   typ:[''],
   pwd:[''],
-
-
     })
     this.typ= this.getPermis();
   }
-
-
-//   const typ: Array<{id: number, name: string}> = [
-//     { id: '1', name: 'A' },
-//     { id: '2', name: 'B' },
-//     { id: '3', name: 'C' },
-//     { id: '4', name: 'D' },
-//     { id: '5', name: 'E' },
-//     { id: '6', name: 'H' },
-// ];
-
   getPermis() {
     return [
       { id: '1', name: 'A' },
@@ -56,12 +42,11 @@ export class AddDriverComponent implements OnInit {
       { id: '5', name: 'E' },
       { id: '6', name: 'H' },
     ];}
-  goToListPage( ListPage:string){
-    this.router.navigate([`${ListPage}`]);}
 
   ngOnInit(): void {
   }
   addDriver(){
+    let selected = this.form.get('typ').value.toString().split(",").map(x=>x.trim())
     var formdata= new FormData();
     formdata.append('mail',this.form.get('mail').value);
     formdata.append('nom',this.form.get('nom').value);
@@ -71,9 +56,8 @@ export class AddDriverComponent implements OnInit {
     formdata.append('dn',this.form.get('dn').value);
     formdata.append('de',this.form.get('de').value);
     formdata.append('nomsup',this.form.get('nomsup').value);
-    formdata.append('typ',this.fo.get('typ').value);
     formdata.append('pwd',this.form.get('pwd').value);
-
+    formdata.append('typ',selected);
     this.driverService.addDriver(formdata).subscribe(drv => {
     console.log(drv);
     });

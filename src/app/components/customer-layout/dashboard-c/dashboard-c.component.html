@@ -7,42 +7,39 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-button color="light" size="small" shape="round" (click)="goToAddPage('addDemande')"> ajouter une demande</ion-button>
+  <ion-button
+    color="light"
+    size="small"
+    shape="round"
+    (click)="goToAddPage('addDemande')"
+  >
+    ajouter une demande</ion-button
+  >
 
-<ion-card>
-<ion-card-header>
-<ion-card-title>BIENVENUE!</ion-card-title>
-    <ion-card-subtitle><b>Mlle.Rania voilà les  détails de votre réservation!</b></ion-card-subtitle>
-
-  </ion-card-header>
-<ion-card-content>
-
-            <ion-label>Matricule :127TU2019</ion-label>
-            <br />
-
-            <ion-label>Objet:location</ion-label>
-            <br />
-            <ion-label>Type du véhicule: voiture</ion-label>
-            <br />
-
-            <ion-label>Capacité en kg:1500</ion-label>
-            <br />
-
-            <ion-label>Nombre des places:5</ion-label>
-
-            <br />
-            <ion-label>Date début:11/05/2021</ion-label>
-            <br />
-            <ion-label>Date fin:12/05/201</ion-label>
-            <br />
-            <ion-label>Région:Bizerte</ion-label>
-            <br />
-            <ion-label>Département:mateur</ion-label>
-            <br />
-            <ion-label>Rue:LFH</ion-label>
-            <br />
-            <ion-label>Chauffeur:ali chahbi</ion-label>
-
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>BIENVENUE!</ion-card-title>
+      <ion-card-subtitle
+        ><b
+          >Mlle.Rania voilà les détails de votre réservation!</b
+        ></ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid class>
+        <ion-row>
+          <ion-col size="3">Code reservation </ion-col>
+          <ion-col size="3">Date réservation  </ion-col>
+          <ion-col size="3">véhicule </ion-col>
+          <ion-col size="3"> Etat</ion-col>
+        </ion-row>
+        <ion-row *ngFor = "let l of list">
+          <ion-col size="3"> {{l.reference}} </ion-col>
+          <ion-col size="3"> {{dateRes}}-{{dateFin}} </ion-col>
+          <ion-col size="3">{{l.matricule}} </ion-col>
+          <ion-col size="3"> effectué </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,5 +1,5 @@
 export class Entretien{
-  codeEnt:number;
+  codeEnt:string;
   libelle:string;
 
   }

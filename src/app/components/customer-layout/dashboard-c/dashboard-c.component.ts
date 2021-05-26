@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Reservation } from '../models/reservation';
+import { ReservationService } from './reservation.service';
 
 @Component({
   selector: 'app-dashboard-c',
@@ -7,12 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-c.component.scss'],
 })
 export class DashboardCComponent implements OnInit {
-
-  constructor( private router:Router) { }
+  list: Reservation[];
+  constructor(
+     private router:Router,
+     private resService:ReservationService) { }
   goToAddPage( AddPage:string){
     this.router.navigate([`${AddPage}`]);}
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.resService.listReservation().subscribe(res => {
+      this.list = res;
+      console.log(res)
+
+      });
+  }
 
 }

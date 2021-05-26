@@ -7,52 +7,45 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-  <form>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Objet</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-    </div>
-
+  <form [formGroup]="form" (ngSubmit)="addReq()">
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Type de véhicule</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="type" name="type"></ion-input>
       </ion-item>
     </div>
-
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Capacité</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="cap" name="cap"></ion-input>
       </ion-item>
     </div>
-
-
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked"> Nombre de place</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input
+          type="number"
+          formControlName="nbplc"
+          name="nbplc"
+        ></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked"> date debut</ion-label>
-        <ion-input type="date"></ion-input>
+        <ion-input type="date" formControlName="dateR" name="dateR"></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked">Date fin</ion-label>
-        <ion-input type="date"></ion-input>
+        <ion-input type="date" formControlName="dateF" name="dateF"></ion-input>
       </ion-item>
     </div>
-
     <div class="col-3">
       <ion-item>
-        <ion-label position="stacked">Mot Clé</ion-label>
-        <ion-select type="text">
+        <ion-label position="stacked">Objet</ion-label>
+        <ion-select type="text" formControlName="objet" name="objet">
           <ion-select-option>Livraison</ion-select-option>
           <ion-select-option>Maintenance</ion-select-option>
           <ion-select-option>Transportation</ion-select-option>
@@ -64,43 +57,53 @@
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked"> Région</ion-label>
-        <ion-input type="texte"></ion-input>
+        <ion-input
+          type="texte"
+          formControlName="region"
+          name="region"
+        ></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked"> Département</ion-label>
-        <ion-input type="texte"></ion-input>
+        <ion-input
+          type="texte"
+          formControlName="departement"
+          name="departement"
+        ></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
       <ion-item>
         <ion-label position="stacked"> Rue</ion-label>
-        <ion-input type="texte"></ion-input>
+        <ion-input type="texte" formControlName="rue" name="rue"></ion-input>
       </ion-item>
     </div>
     <div class="col-3">
-    <ion-item>
-    <ion-label position="stacked"> chauffeur</ion-label>
+      <ion-label position="stacked"> chauffeur</ion-label>
 
-    <ion-checkbox color="light"></ion-checkbox>
-     </ion-item>
-     </div>
+      <ion-checkbox
+        color="light"
+        formControlName="chauffeur"
+        name="chauffeur"
+      ></ion-checkbox>
+    </div>
 
-      <div class="col-3">
-    <ion-item>
-    <ion-label position="stacked"> Urgence</ion-label>
+    <div class="col-3">
+      <ion-label position="stacked"> Urgence</ion-label>
 
-    <ion-checkbox color="light"></ion-checkbox>
-     </ion-item>
-     </div>
-
+      <ion-checkbox
+        color="light"
+        formControlName="urgent"
+        name="urgent"
+      > urgent</ion-checkbox>
+    </div>
 
     <div class="col-3">
       <div class="container-form-btn">
-        <ion-button shape="round" type="submit" size="small"
-    routerLink="/dispoCar">
-        Ajouter
+        <ion-button shape="round" type="submit" size="small">
+          Ajouter
         </ion-button>
       </div>
     </div>

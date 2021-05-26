@@ -1,55 +1,68 @@
-
 <ion-content>
+  <ion-card>
+    <ion-card-header color="light">
+      <ion-card-title class="ion-text-center"
+        >détails superviseur
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-label color="dark"
+          ><b>Nom </b> :{{ currentSupervisor.Nom }}
+        </ion-label>
+      </div>
+      <div>
+        <ion-label color="dark"
+          ><b>prenom:</b>{{ currentSupervisor.prenom }}</ion-label
+        >
+      </div>
+      <div>
+        <ion-label color="dark"
+          ><b>Date de naissance:</b
+          >{{ currentSupervisor.DateNaissance |date: 'MM/dd/yyyy' }}</ion-label
+        >
+      </div>
+      <div>
+        <ion-label color="dark"
+          ><b>Email:</b> {{ currentSupervisor.Email }}</ion-label
+        >
+      </div>
+      <div>
+        <ion-label color="dark"
+          ><b>N° téléphone:</b> {{ currentSupervisor.NumTel }}</ion-label
+        >
+      </div>
+      <div>
+        <ion-label color="dark"
+          ><b>Date d'embauche:</b
+          >{{ currentSupervisor.DateEmbauche |date: 'MM/dd/yyyy'}}</ion-label
+        >
+      </div>
 
-<ion-card>
-  <ion-card-header>
-    <ion-card-title class="ion-text-center">détails superviseur </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
       <div>
-        <ion-label color="dark"><b>Nom </b> :{{currentSupervisor.nom}} </ion-label>
+        <ion-label color="dark"
+          ><b>Adresse:</b>{{ currentSupervisor.Adresse }}</ion-label
+        >
       </div>
-      <div>
-        <ion-label color="dark"><b>prenom:</b>{{currentSupervisor.pre}}</ion-label>
-      </div>
-      <div>
-        <ion-label color="dark"><b>Date de naissance:</b>{{currentSupervisor.dn}}</ion-label>
-      </div>
-      <div>
-        <ion-label color="dark"><b>Email:</b> {{currentSupervisor.mail}}</ion-label>
-      </div>
-       <div>
-        <ion-label color="dark"><b>N° téléphone:</b> {{currentSupervisor.ntel}}</ion-label>
-      </div>
-<div>
-      <ion-label color="dark"><b>Date d'embauche:</b>{{currentSupervisor.de}}</ion-label>
-</div>
-
-      <div>
-        <ion-label color="dark"><b>Disponibilté:</b>{{currentSupervisor.Dispo}} </ion-label>
-      </div>
-
-      <div>
-        <ion-label color="dark"><b>Adresse:</b>{{currentSupervisor.adr}}</ion-label>
-      </div>
-
-    <ion-button size ="small" color="success"  shape="round" [routerLink]="['/updateSupervisor']">
-       modifier
-      </ion-button>
-      <ion-button size="small" color="danger"  shape="round" (click)="deleteSupervisor()">
-      supprimer
-      </ion-button>
-
-  </ion-card-content>
-</ion-card>
+      <br />
+      <ion-footer>
+        <ion-button
+          size="small"
+          color="success"
+          shape="round"
+          [routerLink]="['/updateSupervisor']"
+        >
+          modifier
+        </ion-button>
+        <ion-button
+          size="small"
+          color="danger"
+          shape="round"
+          (click)="deleteSupervisor()"
+        >
+          supprimer
+        </ion-button>
+      </ion-footer>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
-
-
-
-
-
-
-
-
-
-

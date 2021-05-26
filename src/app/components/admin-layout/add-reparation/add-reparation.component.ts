@@ -45,7 +45,7 @@ export class AddReparationComponent implements OnInit {
   }
 
   addReparation(){
-   
+
     var formdata= new FormData();
     formdata.append('Matricule',this.form.get('Matricule').value.toString().trim());
     formdata.append('codeEnt',this.form.get('codeEnt').value.toString().trim());
@@ -57,9 +57,9 @@ export class AddReparationComponent implements OnInit {
     console.log(res);
     });
 
-   this.router.navigate(['reparation']).then(() => {
-    window.location.reload();
-     });
+  //  this.router.navigate(['reparation']).then(() => {
+  //   window.location.reload();
+  //    });
 }
 
 }

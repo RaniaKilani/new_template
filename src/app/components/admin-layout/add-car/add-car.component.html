@@ -1,13 +1,10 @@
-
 <ion-header class="menu-header">
-
   <ion-toolbar translucent>
     <ion-title class="ion-text-center"> ajouter un véhicule</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
 <ion-content fullscreen="true">
   <form [formGroup]="form" (ngSubmit)="addCar()">
@@ -122,10 +119,10 @@
         <ion-label position="stacked" >Objet</ion-label>
         <ion-select formControlName="Mot" name="Mot"  multiple>
           <ion-select-option>Location</ion-select-option>
-          <ion-select-option>Livraison </ion-select-option>
+          <ion-select-option>Livraison</ion-select-option>
           <ion-select-option>Maintenance</ion-select-option>
-          <ion-select-option>Transportation </ion-select-option>
-          <ion-select-option>Déplacement </ion-select-option>
+          <ion-select-option>Transportation</ion-select-option>
+          <ion-select-option>Déplacement</ion-select-option>
         </ion-select>
       </ion-item>
     </div>

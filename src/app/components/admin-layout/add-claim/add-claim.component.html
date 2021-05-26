@@ -1,0 +1,43 @@
+<ion-header class="menu-header">
+  <ion-toolbar translucent>
+    <ion-title class="ion-text-center"> ajouter une réclamation</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        Ajouter une Réclamation</ion-card-title
+      >
+    </ion-card-header>
+
+    <ion-card-content>
+      <form>
+        <div class="col-3">
+          <ion-label> Objet</ion-label>
+          <ion-input placeholder="objet" type="string"></ion-input>
+        </div>
+        <div class="col-3">
+          <ion-label> Description</ion-label>
+          <ion-input placeholder="Description" type="string"></ion-input>
+        </div>
+
+        <div class="col-3">
+          <ion-label position="stacked">Type de réclamation</ion-label>
+          <ion-select>
+            <ion-select-option>Réclamation Technique </ion-select-option>
+            <ion-select-option>Réclamation du superviseur</ion-select-option>
+            <ion-select-option>Réclamation du client</ion-select-option>
+          </ion-select>
+        </div>
+
+        <ion-button size="small" color="primary" type="submit" shape="round">
+          ajouter
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -36,9 +36,9 @@ export class HistpriqueCarComponent implements OnInit {
      console.log("véhicule supprimé");
     });
 
-    this.router.navigate(['allCars']).then(() => {
-     window.location.reload();
-     });
+    // this.router.navigate(['allCars']).then(() => {
+    //  window.location.reload();
+    //  });
   }
 
 }
