@@ -7,19 +7,33 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-button size="small" color="light" (click)="_openPopover()"> ajouter une entretien </ion-button>
 
+ <div>
+  <ion-button size="small" color="light" (click)="_openPopover()"> ajouter une entretien </ion-button> </div>
+ <div>
   <ion-button size="small" color="light">
     supprimer tout les entretiens
   </ion-button>
+  </div>
 
-  <ion-card *ngFor="let l of listE">
+ <ion-grid style="display: flex;">
+    <ion-row   >
+    <ion-col *ngFor="let l of listE" padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+
+
+  <ion-card>
     <ion-item>
     <b> Code Entretien:</b>{{l.CodeEntretien}} </ion-item>
     <ion-item > <b>Nom Entretien:</b>{{l.NomEntretien}} </ion-item>
+    <center>
     <ion-button size="small" color="danger" shape="round" (click)="deleteEnt(l.CodeEntretien)"> supprimer </ion-button>
-    <ion-button size="small" color="success" (click)="_Popover()" shape="round">
+    <ion-button size="small" color="success" (click)="_Popover()" shape="round"  style="margin-left: 30px" color="primary">
       modifier
     </ion-button>
+    </center>
   </ion-card>
+   </ion-col>
+      </ion-row>
+
+    </ion-grid>
 </ion-content>

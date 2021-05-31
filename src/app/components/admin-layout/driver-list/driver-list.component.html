@@ -56,17 +56,21 @@
         </div>
         <br/>
 <ion-footer>
-      <ion-button size="small" shape="round" color="success" [routerLink]="['/updateDriver']">
+
+<center>
+      <ion-button size="small" shape="round" color="primary" [routerLink]="['/updateDriver']">
         modifier
       </ion-button>
       <ion-button
         size="small"
         color="danger"
         shape="round"
+        style="margin-left: 30px"
         (click)="deleteDriver()"
       >
         supprimer
       </ion-button>
+      </center>
       </ion-footer>
       </ion-list>
     </ion-card-content>

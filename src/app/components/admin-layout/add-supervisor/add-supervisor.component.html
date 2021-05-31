@@ -8,10 +8,15 @@
 </ion-header>
 <ion-content fullscreen="true">
   <ion-card>
-    <div class="ion-padding">
-      <div class="container">
-        <div class="row bg_1">
-          <form [formGroup]="form" (ngSubmit)="addSupervisor()">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: #9933ff">
+        Ajouter un superviseur</ion-card-title
+      >
+    </ion-card-header>
+    <form [formGroup]="form" (ngSubmit)="addSupervisor()">
+      <ion-grid style="display: flex">
+        <ion-row>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Email</ion-label>
@@ -32,7 +37,8 @@
                 ></ion-input>
               </ion-item>
             </div>
-
+          </ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Prénom</ion-label>
@@ -48,12 +54,14 @@
               <ion-item>
                 <ion-label position="stacked"> N° téléphone</ion-label>
                 <ion-input
-                  formControlName="ntel"
+                  formControlName="num"
                   type="text"
-                  name="ntel"
+                  name="num"
                 ></ion-input>
               </ion-item>
             </div>
+          </ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Date de naissance</ion-label>
@@ -67,16 +75,6 @@
 
             <div class="col-3">
               <ion-item>
-                <ion-label position="stacked">Date d'embauche</ion-label>
-                <ion-input
-                  formControlName="de"
-                  type="date"
-                  name="de"
-                ></ion-input>
-              </ion-item>
-            </div>
-            <div class="col-3">
-              <ion-item>
                 <ion-label position="stacked">Adresse</ion-label>
                 <ion-input
                   formControlName="adr"
@@ -85,24 +83,33 @@
                 ></ion-input>
               </ion-item>
             </div>
+          </ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item>
-                <ion-label position="stacked">Mot de passe</ion-label>
+                <ion-label position="stacked">Date d'embauche</ion-label>
                 <ion-input
-                  formControlName="pwd"
-                  type="text"
-                  name="pwd"
+                  formControlName="de"
+                  type="date"
+                  name="de"
                 ></ion-input>
               </ion-item>
             </div>
+
             <div class="col-3">
-              <div class="container-form-btn">
-                <ion-button shape="round" type="submit">Ajouter</ion-button>
-              </div>
+                <ion-label position="stacked">Image</ion-label>
+                <ion-input
+                  formControlName="pwd"
+                  type="file"
+                  name="pwd"
+                ></ion-input>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <center>
+        <ion-button shape="round" type="submit">Ajouter</ion-button>
+      </center>
+    </form>
   </ion-card>
 </ion-content>

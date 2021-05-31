@@ -7,7 +7,7 @@ export class Car{
   Puiss:number;
   Kilo:number;
   ConsoC:number;
-  NbrPlace: number;
+  NbrPlac: number;
   Cap:number;
   Dispo:string;
   TypeP:string;

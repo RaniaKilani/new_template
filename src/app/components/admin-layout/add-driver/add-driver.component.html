@@ -1,109 +1,166 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title class="ion-text-center">ajouter un chauffeur</ion-title>
+    <ion-title class="ion-text-center">Fleetlt</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-  <form [formGroup]="form" (ngSubmit)="addDriver()">
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input formControlName="mail" type="text" name="mail"></ion-input>
-      </ion-item>
-    </div>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Nom</ion-label>
-        <ion-input formControlName="nom" type="text" name="nom"></ion-input>
-      </ion-item>
-    </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: #9933ff">
+        Ajouter un chauffeur</ion-card-title
+      >
+    </ion-card-header>
+    <form [formGroup]="form" (ngSubmit)="addDriver()">
+      <ion-grid style="display: flex">
+        <ion-row>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input
+                  formControlName="mail"
+                  type="text"
+                  name="mail"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Nom</ion-label>
+                <ion-input
+                  formControlName="nom"
+                  type="text"
+                  name="nom"
+                ></ion-input>
+              </ion-item>
+            </div>
+</ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
 
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Prénom</ion-label>
-        <ion-input formControlName="pre" type="text" name="pre"></ion-input>
-      </ion-item>
-    </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Prénom</ion-label>
+                <ion-input
+                  formControlName="pre"
+                  type="text"
+                  name="pre"
+                ></ion-input>
+              </ion-item>
+            </div>
 
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked"> N° téléphone</ion-label>
-        <ion-input formControlName="ntel" type="text" name="ntel"></ion-input>
-      </ion-item>
-    </div>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Date de naissance</ion-label>
-        <ion-input formControlName="dn" type="date" name="dn"></ion-input>
-      </ion-item>
-    </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked"> N° téléphone</ion-label>
+                <ion-input
+                  formControlName="num"
+                  type="text"
+                  name="num"
+                ></ion-input>
+              </ion-item>
+            </div>
+</ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
 
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Date d'embauche</ion-label>
-        <ion-input formControlName="de" type="date" name="de"></ion-input>
-      </ion-item>
-    </div>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Adresse</ion-label>
-        <ion-input formControlName="adr" type="text" name="adr"></ion-input>
-      </ion-item>
-    </div>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Date de naissance</ion-label>
+                <ion-input
+                  formControlName="dn"
+                  type="date"
+                  name="dn"
+                ></ion-input>
+              </ion-item>
+            </div>
+<div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Adresse</ion-label>
+                <ion-input
+                  formControlName="adr"
+                  type="text"
+                  name="adr"
+                ></ion-input>
+              </ion-item>
+            </div>
 
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Nom de superviseur</ion-label>
-        <ion-input
-          formControlName="nomsup"
-          type="text"
-          name="nomsup"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Mot de passe</ion-label>
-        <ion-input
-          formControlName="pwd"
-          type="text"
-          name="pwd"
-        ></ion-input>
-      </ion-item>
-    </div>
 
-    <div class="col-3">
-      <ion-item>
-        <ion-label position="stacked">Type permis</ion-label>
 
-        <ion-select formControlName="typ" id="typ" multiple>
-          <ion-select-option
-            *ngFor="let p of typ; let i = index"
-            [value]="typ[i].id"
-          >
-            {{ typ[i].name }}
-          </ion-select-option>
-        </ion-select>
-      </ion-item>
-    </div>
-     <div class="col-3">
-      <ion-item>
+          </ion-col>
 
-        <ion-input
-          formControlName="image"
-          type="file"
-          name="image"
-        ></ion-input>
-      </ion-item>
-    </div>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+          <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Date d'embauche</ion-label>
+                <ion-input
+                  formControlName="de"
+                  type="date"
+                  name="de"
+                ></ion-input>
+              </ion-item>
+            </div>
 
-    <div class="col-3">
-      <div class="container-form-btn">
-        <ion-button shape="round" type="submit">Ajouter</ion-button>
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Nom de superviseur</ion-label>
+                <ion-input
+                  formControlName="nomsup"
+                  type="text"
+                  name="nomsup"
+                ></ion-input>
+              </ion-item>
+            </div>
+</ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="">
+
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Mot de passe</ion-label>
+                <ion-input
+                  formControlName="pwd"
+                  type="text"
+                  name="pwd"
+                ></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+            <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Type permis</ion-label>
+
+                <ion-select formControlName="typ" id="typ" multiple>
+                  <ion-select-option
+                    *ngFor="let p of typ; let i = index"
+                    [value]="typ[i].id"
+                  >
+                    {{ typ[i].name }}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+</ion-col>
+ </ion-row>
+      </ion-grid>
+            <div class="col-3">
+
+                <ion-input
+                  formControlName="image"
+                  type="file"
+                  name="image"
+                ></ion-input>
+
+            </div>
+
+
+    </form>
+    <center>
+      <div class="col-3">
+        <div class="container-form-btn">
+          <ion-button shape="round" type="submit">Ajouter</ion-button>
+        </div>
       </div>
-    </div>
-  </form>
+    </center>
+  </ion-card>
 </ion-content>

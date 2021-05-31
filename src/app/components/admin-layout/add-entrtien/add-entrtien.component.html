@@ -1,9 +1,7 @@
 <ion-content>
 
 <ion-card>
-  <ion-card-header>
-    <ion-card-title class="ion-text-center"> Ajouter une entretien</ion-card-title>
-  </ion-card-header>
+
   <ion-card-content>
   <form [formGroup]="form" (ngSubmit)="addEntretien()">
     <ion-item>
@@ -13,9 +11,10 @@
       <ion-input placeholder="Nom Entretien" formControlName="libelle" type="text" name="libelle"></ion-input>
 
       </ion-item>
+<center>
 
-
-      <ion-button size="small" color="success" type="submit"> ajouter </ion-button>
+      <ion-button size="small"  type="submit" shape="round"> ajouter </ion-button>
+      </center>
       </form>
 
        </ion-card-content>

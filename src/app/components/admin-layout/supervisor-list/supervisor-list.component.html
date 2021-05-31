@@ -46,9 +46,10 @@
       </div>
       <br />
       <ion-footer>
+      <center>
         <ion-button
           size="small"
-          color="success"
+          color="primary"
           shape="round"
           [routerLink]="['/updateSupervisor']"
         >
@@ -58,10 +59,12 @@
           size="small"
           color="danger"
           shape="round"
+          style="margin-left: 30px"
           (click)="deleteSupervisor()"
         >
           supprimer
         </ion-button>
+        </center>
       </ion-footer>
     </ion-card-content>
   </ion-card>

@@ -23,6 +23,7 @@ import { UpdateDriverComponent } from './components/admin-layout/update-driver/u
 import { UpdateEntretienComponent } from './components/admin-layout/update-entretien/update-entretien.component';
 import { UpdateReparationComponent } from './components/admin-layout/update-reparation/update-reparation.component';
 import { UpdateSupervisorComponent } from './components/admin-layout/update-supervisor/update-supervisor.component';
+import { LoginComponent } from './components/auth-layout/login/login.component';
 import { AddDemandeComponent } from './components/customer-layout/add-demande/add-demande.component';
 import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
 import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
@@ -56,16 +57,16 @@ const routes: Routes = [
   { path: 'entretien',         component:EntretienComponent },
   { path: 'reparation',         component:ReparationComponent },
   { path: 'addReparation',         component:AddReparationComponent },
-  { path: 'updateReparation',         component:UpdateReparationComponent },
+  { path: 'updateReparation/:id',         component:UpdateReparationComponent },
   { path: 'addDemande',         component:   AddDemandeComponent},
   { path: 'addEntretien',         component: AddEntrtienComponent },
   { path: 'addCar',         component: AddCarComponent },
-  { path: 'updateCar',      component: UpdateCarComponent },
+  { path: 'updateCar/:id',      component: UpdateCarComponent },
   { path: 'addDriver',      component: AddDriverComponent },
   { path: 'updateDriver/:id',   component: UpdateDriverComponent },
   { path: 'addSupervisor',  component: AddSupervisorComponent },
-  { path: 'updateSupervisor',component: UpdateSupervisorComponent },
-  { path: 'updateEntretien',component: UpdateEntretienComponent},
+  { path: 'updateSupervisor/:id',component: UpdateSupervisorComponent },
+  { path: 'updateEntretien/:id',component: UpdateEntretienComponent},
   { path: 'dispoCar',component:   DispoCarComponent},
   { path: 'reservation', component: ReservationComponent},
   { path: 'dashboardC', component: DashboardCComponent},
@@ -75,15 +76,8 @@ const routes: Routes = [
   { path: 'planning', component: PlanningComponent},
    { path: 'claim', component: ClaimComponent},
    { path: 'AddClaim', component: AddClaimComponent},
+   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminLayoutComponent},
-
-
-
-
-
-
-
-
 
 
 

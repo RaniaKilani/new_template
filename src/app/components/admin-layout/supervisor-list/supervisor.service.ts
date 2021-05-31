@@ -14,38 +14,34 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class SupervisorService {
-  apiURL: string = 'http://127.0.0.1:5000/superviseur';
+
+apiURL: string = 'http://127.0.0.1:5000/superviseur';
   list: Supervisor[];
   supervisor : Supervisor;
 
   constructor(private http : HttpClient) {
 
   }
-  listeSupervisor(): Observable<Supervisor[]>{
+ listeSupervisor(): Observable<Supervisor[]>{
     return this.http.get<Supervisor[]>(this.apiURL);
-
   }
 
-  addSupervisor(fordata:FormData){
+ addSupervisor(fordata:FormData){
     return this.http.post(this.apiURL, fordata);
-
   }
  deleteSupervisor(id : number):Observable<any>{
-    const url = `${this.apiURL}/?id=${id}`;
+  const url = `${this.apiURL}/?id=${id}`;
     return this.http.delete(url, httpOptions);
     }
 
- consulterSupervisor(id:number): Observable<Supervisor>{
+ consulterSupervisor(id:number): Observable<any>{
   const url = `${this.apiURL}/?id=${id}`;
-  return this.http.get<Supervisor>(url);
- }
+  return this.http.get<any>(url);
+  }
 
- updateSupervisor(sp :Supervisor) : Observable<Supervisor>
-{
-return this.http.put<Supervisor>(this.apiURL, sp, httpOptions);
-}
-
-
-
+ editSupervisor(fordata:FormData, id:number){
+  const url = `${this.apiURL}/?id=${id}`;
+   return this.http.post(url, fordata);
+  }
 }
 

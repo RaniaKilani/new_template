@@ -3,7 +3,7 @@ export class Supervisor{
   mail:string;
   nom:string;
   pre:string;
-  ntel:string;
+  num:string;
   dn:Date;
   de:Date;
   adr:string;

@@ -35,9 +35,9 @@ export class DriverService {
     return this.http.delete(url);
     }
 
- consulterDriver(id:number): Observable<Driver>{
+ consulterDriver(id:number): Observable<any>{
   const url = `${this.apiURL}/edit/?id=${id}`;
-  return this.http.get<Driver>(url);
+  return this.http.get<any>(url);
  }
 
  editDriver(fordata:FormData, id:number){

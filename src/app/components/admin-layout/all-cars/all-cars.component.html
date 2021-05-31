@@ -1,54 +1,54 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> véhicules</ion-title>
+    <ion-icon name="notifications-outline" slot="end" size="large"></ion-icon>
+    <ion-title class="ion-text-center"> Fleetlt</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <div>
-    <div>
-      <ion-button
-        size="small"
-        color="light"
-        expand="round"
-        slot="end"
-        (click)="goToAddPage('addCar')"
-      >
-        Ajouter une véhicule
-        <ion-icon name="add-circle-outline" slot="end"></ion-icon>
-      </ion-button>
-    </div>
-    <div>
-      <ion-button size="small" expand="round" color="light">
-        supprimer tous!
-        <ion-icon name="close-circle-outline" slot="end"></ion-icon>
-      </ion-button>
-    </div>
-  </div>
-  <br />
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="ion-text-center">
-        <b>liste des véhicules</b></ion-card-title
+<ion-content style="display: bloc;">
+  <div>
+    <ion-button
+      size="small"
+      color="light"
+      expand="round"
+      slot="end"
+      (click)="goToAddPage('addCar')"
+    >
+      Ajouter une véhicule
+      <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+
+<ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: #9933ff" >
+        liste des véhicules</ion-card-title
       >
     </ion-card-header>
-    <ion-grid *ngFor="let l of list">
-      <ion-card>
-        <ion-card-header
-          color="light"
-          (click)="goToListPage('listCar', l.Matricule)"
-        >
-          <ion-label> Matricule: {{ l.Matricule }}</ion-label>
-        </ion-card-header>
+    <ion-grid style="display: flex;">
+    <ion-row   >
+    <ion-col *ngFor="let l of list" padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+
+
+
+      <ion-card class="level">
+        <ion-item color="light"  >
+          <ion-icon name="eye" slot="end" style="color: #9933ff"></ion-icon>
+
+          <ion-card-header
+            color="light"
+            (click)="goToListPage('listCar', l.Matricule)"
+            class="dashboard-card-content"
+          >
+            <div>Matricule: {{ l.Matricule }}</div>
+          </ion-card-header>
+        </ion-item>
         <ion-card-content>
           <ion-label><b>Type de véhicule:</b> {{ l.Typev }}</ion-label>
           <br />
-          <br />
-          <ion-label><b>Puissance:</b>{{ l.Power }}</ion-label>
-          <br />
+
           <br />
           <ion-label><b>Nombre des places:</b>{{ l.NbrPlace }}</ion-label>
           <br />
@@ -59,23 +59,36 @@
           <ion-label><b>Disponibilité:</b>{{ l.Dispo }} </ion-label>
           <br />
           <br />
-          <ion-footer>
-            <ion-row>
 
-              <ion-col size="3">
-                <ion-button
-                  (click)="goToListPage('historiqueCar', l.Matricule)"
-                  size="small"
-                  color="danger"
-                  shape="round"
-                >
-                  Historique
-                </ion-button>
-              </ion-col>
-            </ion-row>
+          <ion-label><b>Etat:</b>valide </ion-label>
+          <br />
+          <br />
+
+          <ion-footer>
+          <center>
+            <ion-button
+              shape="round"
+              size="small"
+              color="primary"
+              [routerLink]="['/updateCar']"
+            >
+              modifier
+            </ion-button>
+
+            <ion-button style="margin-left: 30px"
+              size="small"
+              color="danger"
+              shape="round"
+              (click)="deleteCar()"
+            >
+              supprimer
+            </ion-button>
+            </center>
           </ion-footer>
         </ion-card-content>
       </ion-card>
+      </ion-col>
+      </ion-row>
+
     </ion-grid>
-  </ion-card>
 </ion-content>

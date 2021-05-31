@@ -16,32 +16,34 @@ const httpOptions = {
 
 
 export class CarService {
-  apiURL: string = 'http://127.0.0.1:5000/vehicule';
-list:Car[];
-car : Car;
-constructor(private http : HttpClient) {
-
-
-}
+apiURL: string = 'http://127.0.0.1:5000/vehicule';
+  list:Car[];
+  car : Car;
+constructor(private http : HttpClient) {}
 listeCar(): Observable<Car[]>{
   return this.http.get<Car[]>(this.apiURL);
-
 }
 
 AddCar(fordata:FormData){
   return this.http.post(this.apiURL, fordata);
-
 }
+
 deleteCar(Matricule : number):Observable<any>{
   const url = `${this.apiURL}/?Matricule=${Matricule}`;
   return this.http.delete(url);
   }
-consulterCar(Matricule:string): Observable<Car>{
+
+consulterCar(Matricule:string): Observable<any>{
   const url = `${this.apiURL}/?Matricule=${Matricule}`;
-  return this.http.get<Car>(url);
+  return this.http.get<any>(url);
 }
 
+editCar(fordata:FormData, Matricule:string){
+  const url = `${this.apiURL}/?Matricule=${Matricule}`;
+  return this.http.post(url, fordata);}
+
 apiH: string = 'http://127.0.0.1:5000/histo';
+
 consulterHistorique(Matricule:string): Observable<Historique[]>{
   const url = `${this.apiH}/?Matricule=${Matricule}`;
   return this.http.get<Historique[]>(url);
@@ -54,44 +56,62 @@ deleteHisto(Matricule: number):Observable<any>{
 
 
 apiE: string = 'http://127.0.0.1:5000/entretien';
-listE :Entretien[];
-
+ listE :Entretien[];
 
 listeEntretien(): Observable<Entretien[]>{
-  return this.http.get<Entretien[]>(this.apiE);}
+  return this.http.get<Entretien[]>(this.apiE);
+}
 
-  AddEntretien(fordata:FormData){
+AddEntretien(fordata:FormData){
     return this.http.post(this.apiE, fordata);
-
   }
-  consulterEnt(code:number): Observable<Entretien>{
-    const urlE = `${this.apiE}/?code=${code}`;
-    return this.http.get<Entretien>(urlE);}
 
-  deleteEntretien(code: number):Observable<any>{
+consulterEnt(code:number): Observable<any>{
+    const urlE = `${this.apiE}/?code=${code}`;
+    return this.http.get<any>(urlE);
+  }
+
+deleteEntretien(code: number):Observable<any>{
     const urlE = `${this.apiE}/?code=${code}`;
     return this.http.delete(urlE);
     }
-  apiR: string = 'http://127.0.0.1:5000/reparation';
+editEntretien(fordata:FormData, code:string){
+      const urlE = `${this.apiE}/?code=${code}`;
+      return this.http.post(urlE, fordata);
+    }
+
+apiR: string = 'http://127.0.0.1:5000/reparation';
+
  listR :Reparation[];
 listeReparation(): Observable<Reparation[]>{
-  return this.http.get<Reparation[]>(this.apiR);}
+  return this.http.get<Reparation[]>(this.apiR);
+}
 
-  AddReparation(fordata:FormData){
+AddReparation(fordata:FormData){
     return this.http.post(this.apiR, fordata);
-
   }
 
 listRepMat(matricule:string): Observable<Reparation[]>{
   const url = `${this.apiR}/vehicule/?matricule=${matricule}`;
   return this.http.get<Reparation[]>(url);
 }
+
 listRepEnt(code:string): Observable<Reparation[]>{
   const url = `${this.apiR}/entretien/?code=${code}`;
   return this.http.get<Reparation[]>(url);
 }
+
 deleteReparation(ref: string):Observable<any>{
   const urlR = `${this.apiR}/?ref=${ref}`;
   return this.http.delete(urlR);
   }
+
+consulterRep(ref:string): Observable<any>{
+    const urlR = `${this.apiR}/?ref=${ref}`;
+    return this.http.get<any>(urlR);
+  }
+
+editReparation(fordata:FormData, ref:string){
+    const urlR = `${this.apiURL}/?ref=${ref}`;
+    return this.http.post(urlR, fordata);}
  }

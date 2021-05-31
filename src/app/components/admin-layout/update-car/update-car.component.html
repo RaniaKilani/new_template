@@ -9,24 +9,24 @@
 </ion-header>
 <ion-content fullscreen="true">
 
-        <ion-list>
+        <form [formGroup]="form" (ngSubmit)="editCar()">
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Matricule</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" formControlName="Matricule"  name="Matricule"></ion-input>
             </ion-item>
           </div>
 
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Type de véhicule</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" formControlName="TypeV"  name="TypeV"></ion-input>
             </ion-item>
           </div>
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Marque</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" formControlName="Marque"  name="Marque" ></ion-input>
             </ion-item>
           </div>
 
@@ -54,13 +54,13 @@
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Puissance</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" formControlName="Puiss"  name="Puiss"></ion-input>
             </ion-item>
           </div>
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Capacité</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" formControlName="Cap"  name="Cap"></ion-input>
             </ion-item>
           </div>
 
@@ -78,13 +78,13 @@
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked"> Année de fabrication</ion-label>
-              <ion-input type="date"></ion-input>
+              <ion-input type="number" formControlName="AnFab"  name="AnFab"></ion-input>
             </ion-item>
           </div>
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Kilométrage</ion-label>
-              <ion-input type="number"></ion-input>
+              <ion-input type="number" formControlName="Kilo"  name="Kilo"></ion-input>
             </ion-item>
           </div>
 
@@ -108,13 +108,12 @@
               <ion-button
                 shape="round"
                 type="submit"
-                (click)="updateCar()"
-                (click)="goToListPage('allCars')"
+
                 >Ajouter</ion-button
               >
             </div>
           </div>
-        </ion-list>
+        </form>
 
 
 </ion-content>

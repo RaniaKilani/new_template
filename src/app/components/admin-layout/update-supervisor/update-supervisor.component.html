@@ -11,14 +11,22 @@
   <div class="ion-padding">
     <div class="container">
       <div class="row bg_1">
-        <ion-list>
+        <form [formGroup]="form" (ngSubmit)="editSup()">
+        <div class="col-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input
+                type="text"
+                formControlName="mail" name="mail"
+              ></ion-input>
+            </ion-item>
+          </div>
+
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Nom</ion-label>
               <ion-input
-                type="text"
-                [(ngModel)]="currentSupervisor.Nom"
-                name="Nom"
+                type="text" formControlName="nom" name="nom"
               ></ion-input>
             </ion-item>
           </div>
@@ -27,9 +35,7 @@
             <ion-item>
               <ion-label position="stacked">Prénom</ion-label>
               <ion-input
-                type="text"
-                [(ngModel)]="currentSupervisor.prenom"
-                name="prenom"
+                type="text" formControlName="pre" name="pre"
               ></ion-input>
             </ion-item>
           </div>
@@ -37,32 +43,17 @@
             <ion-item>
               <ion-label position="stacked">Date de naissance</ion-label>
               <ion-input
-                type="date"
-                [(ngModel)]="currentSupervisor.DateNaissance"
-                name="DateNaissance"
+                type="date" formControlName="dn" name="dn"
               ></ion-input>
             </ion-item>
           </div>
-
-          <div class="col-3">
-            <ion-item>
-              <ion-label position="stacked">Email</ion-label>
-
-              <ion-input
-                type="text"
-                [(ngModel)]="currentSupervisor.Email"
-                name="Email"
-              ></ion-input>
-            </ion-item>
-          </div>
-
           <div class="col-3">
             <ion-item>
               <ion-label position="stacked">Date d'embauche</ion-label>
               <ion-input
                 type="date"
-                [(ngModel)]="currentSupervisor.DateEmbauche"
-                name="DateEmbauche"
+
+                formControlName="de" name="de"
               ></ion-input>
             </ion-item>
           </div>
@@ -71,8 +62,7 @@
               <ion-label position="stacked">Adresse</ion-label>
               <ion-input
                 type="text"
-                [(ngModel)]="currentSupervisor.Adresse"
-                name="Adresse"
+               formControlName="adr" name="adr"
               ></ion-input>
             </ion-item>
           </div>
@@ -82,15 +72,13 @@
               <ion-label position="stacked"> N° téléphone</ion-label>
               <ion-input
                 type="texte"
-                [(ngModel)]="currentSupervisor.NumTel"
-                name="Telephone"
+                formControlName="num" name="num"
               ></ion-input>
             </ion-item>
           </div>
           <div class="col-3">
             <ion-input
               type="file"
-              [(ngModel)]="currentSupervisor.image"
               name="image"
             ></ion-input>
           </div>
@@ -100,13 +88,11 @@
               <ion-button
                 shape="round"
                 type="submit"
-                (click)="updateSupervisor()"
-                (click)="goToListPage('allSupervisors')"
                 >modifier</ion-button
               >
             </div>
           </div>
-        </ion-list>
+        </form>
       </div>
     </div>
   </div>

@@ -40,6 +40,7 @@ import { AddBilanComponent } from './components/driver-layout/add-bilan/add-bila
 import { PlanningComponent } from './components/driver-layout/planning/planning.component';
 import { ClaimComponent } from './components/admin-layout/claim/claim.component';
 import { AddClaimComponent } from './components/admin-layout/add-claim/add-claim.component';
+import { LoginComponent } from './components/auth-layout/login/login.component';
 
 
 @NgModule({
@@ -74,6 +75,8 @@ import { AddClaimComponent } from './components/admin-layout/add-claim/add-claim
     PlanningComponent,
     ClaimComponent,
     AddClaimComponent,
+    LoginComponent,
+
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule,ReactiveFormsModule],

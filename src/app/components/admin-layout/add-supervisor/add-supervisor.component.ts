@@ -18,7 +18,7 @@ form:FormGroup;
       mail:[''],
       nom:[''],
       pre:[''],
-      ntel:[''],
+      num:[''],
       adr:[''],
       dn:[''],
       de:[''],
@@ -37,7 +37,7 @@ form:FormGroup;
     formdata.append('mail',this.form.get('mail').value);
     formdata.append('nom',this.form.get('nom').value)
     formdata.append('pre',this.form.get('pre').value)
-    formdata.append('ntel',this.form.get('ntel').value)
+    formdata.append('num',this.form.get('num').value)
     formdata.append('adr',this.form.get('adr').value)
     formdata.append('dn',this.form.get('dn').value)
     formdata.append('de',this.form.get('de').value)

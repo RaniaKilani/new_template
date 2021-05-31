@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
+import { AddReparationComponent } from '../add-reparation/add-reparation.component';
 import { CarService } from '../car-list/car.service';
 import { Car } from '../models/car';
 import { Entretien } from '../models/entretien';
@@ -16,10 +18,36 @@ export class ReparationComponent implements OnInit {
   listE: Entretien[] = [];
   Mat: string;
   Ent:string;
-  constructor(private router: Router, private reparationService: CarService) {}
+  constructor(private router: Router, private reparationService: CarService,public popoverController: PopoverController) {}
   goToUpdatePage(UpdatePage: string, id: number): void {
     this.router.navigate([`${UpdatePage}/${id}`]);
   }
+
+  async _Popover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: AddReparationComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+  async pop(ev: any) {
+    const popover = await this.popoverController.create({
+      component: AddReparationComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
 
   ngOnInit() {
     this.reparationService.listeReparation().subscribe((rep) => {

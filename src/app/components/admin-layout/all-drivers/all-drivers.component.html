@@ -1,12 +1,12 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> chauffeurs</ion-title>
+    <ion-title class="ion-text-center">Fleetlt</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content style="display: bloc;">
   <div>
     <div>
       <ion-button
@@ -34,9 +34,12 @@
         liste des chauffeurs</ion-card-title
       >
     </ion-card-header>
+  <ion-grid style="display: flex;">
+    <ion-row   >
+    <ion-col *ngFor="let l of list" padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
 
 
-      <ion-card *ngFor="let l of list" (click)="goToListPage('listDriver', l.id)">
+      <ion-card  (click)="goToListPage('listDriver', l.id)">
         <ion-item>
 
             <ion-row >
@@ -60,6 +63,8 @@
 
         </ion-item>
       </ion-card>
-
+</ion-col>
+</ion-row>
+</ion-grid>
   </ion-card>
 </ion-content>
