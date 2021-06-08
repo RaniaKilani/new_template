@@ -1,9 +1,13 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title class="ion-text-center"> ajouter un superviseur </ion-title>
+    <ion-title class="ion-text-center"> <b>FLEETLT</b> </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+      <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
@@ -14,9 +18,9 @@
       >
     </ion-card-header>
     <form [formGroup]="form" (ngSubmit)="addSupervisor()">
-      <ion-grid style="display: flex">
+      <ion-grid >
         <ion-row>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+          <ion-col padding size-xs="12" size-sm="4" size-md="4" size-lg="4">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Email</ion-label>
@@ -26,7 +30,15 @@
                   name="mail"
                 ></ion-input>
               </ion-item>
+                   <div *ngFor="let error of errorMessages.mail">
+          <ng-container *ngIf="mail.hasError(error.type) && (mail.dirty || mail.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
+
+</ion-col>
+<ion-col padding size-xs="12" size-sm="4" size-md="4" size-lg="4">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Nom</ion-label>
@@ -36,9 +48,14 @@
                   name="nom"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.nom">
+          <ng-container *ngIf="nom.hasError(error.type) && (nom.dirty || nom.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
-          </ion-col>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+         </ion-col>
+         <ion-col padding size-xs="12" size-sm="4" size-md="4" size-lg="4">
             <div class="col-3">
               <ion-item>
                 <ion-label position="stacked">Prénom</ion-label>
@@ -48,7 +65,34 @@
                   name="pre"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.pre">
+          <ng-container *ngIf="pre.hasError(error.type) && (pre.dirty || pre.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+        </div>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+        
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+         <div class="col-3">
+              <ion-item>
+                <ion-label position="stacked">Adresse</ion-label>
+                <ion-input
+                  formControlName="adr"
+                  type="text"
+                  name="adr"
+                ></ion-input>
+              </ion-item>
+              <div *ngFor="let error of errorMessages.adr">
+          <ng-container *ngIf="adr.hasError(error.type) && (adr.dirty || adr.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
+           </ion-col>
+           <ion-col>
 
             <div class="col-3">
               <ion-item>
@@ -59,8 +103,16 @@
                   name="num"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.num">
+          <ng-container *ngIf="num.hasError(error.type) && (num.dirty || num.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
           </ion-col>
+
+</ion-row>
+<ion-row>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item>
@@ -71,18 +123,14 @@
                   name="dn"
                 ></ion-input>
               </ion-item>
+                 <div *ngFor="let error of errorMessages.dn">
+          <ng-container *ngIf="dn.hasError(error.type) && (dn.dirty || dn.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 
-            <div class="col-3">
-              <ion-item>
-                <ion-label position="stacked">Adresse</ion-label>
-                <ion-input
-                  formControlName="adr"
-                  type="text"
-                  name="adr"
-                ></ion-input>
-              </ion-item>
-            </div>
+           
           </ion-col>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
@@ -94,8 +142,15 @@
                   name="de"
                 ></ion-input>
               </ion-item>
+                   <div *ngFor="let error of errorMessages.de">
+          <ng-container *ngIf="de.hasError(error.type) && (de.dirty || de.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
-
+              </ion-col>
+              </ion-row>
+<ion-row>
             <div class="col-3">
                 <ion-label position="stacked">Image</ion-label>
                 <ion-input
@@ -104,7 +159,7 @@
                   name="pwd"
                 ></ion-input>
             </div>
-          </ion-col>
+        
         </ion-row>
       </ion-grid>
       <center>

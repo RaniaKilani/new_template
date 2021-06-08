@@ -1,51 +1,118 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> Liste des véhicules disponibles</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+     <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center"
-        >Les véhicules associées à votre Demande
+         style="color: #9933ff"> Les véhicules associées à votre Demande
       </ion-card-title>
+
     </ion-card-header>
+    <center>
+    <ion-label color="dark"><b> Les véhicules disponible du 01/06/2021 à 02/06/2021</b></ion-label>
+    </center>
+    <br/>
+<ion-row >
+    <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+<ion-card>
 
-    <br />
-    <ion-label color="dark">
-      <b>Les véhicules disponible à 11/05/2021:</b>
-    </ion-label>
-    <ion-list>
-      <br />
-      <ion-item>
-        <ion-label>Voiture1</ion-label>
-        <ion-button color="success" size="small" (click)="_openPopover()"> Réserver </ion-button>
-      </ion-item>
+<center>
+ <ion-card-header
+            color="light"
 
-      <ion-item>
-        <ion-label>voiture2</ion-label>
-        <ion-button color="success" size="small"> Réserver </ion-button>
-      </ion-item>
-      <ion-item>
-        <ion-label>voiture3 </ion-label>
-        <ion-button color="success" size="small"> Réserver </ion-button>
-      </ion-item>
-    </ion-list>
-    <ion-label color="dark">
-      <b> Les véhicules disponibles aprés 11/05/2021:</b>
-    </ion-label>
-    <ion-list>
-      <ion-item>
-        <ion-label>voiture1</ion-label>
-        <ion-button color="success" size="small"> Réserver </ion-button>
-      </ion-item>
-      <ion-item>
-        <ion-label> Voiture 2</ion-label>
-        <ion-button color="success" size="small"> Réserver </ion-button>
-      </ion-item>
-    </ion-list>
+            class="dashboard-card-content"
+          >
+            <div><b>Camion</b></div>
+          </ion-card-header>
+<br/>
+<ion-label color="dark"><b>Nombre de place:</b>3</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Objet:</b>Livraion
+            Transportation
+            Maintenance</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Capacité:</b>1407.6</ion-label>
+<br/> <br/>
+</center>
+<center>
+           <ion-col size="3" ><ion-button fill="clear"  size="small" shape="round">Reserver</ion-button></ion-col></center>
+
+
+</ion-card>
+</ion-col>
+<ion-col>
+
+ <ion-card>
+
+<center>
+
+ <ion-card-header
+            color="light"
+
+            class="dashboard-card-content"
+          >
+            <div><b>Camion</b></div>
+          </ion-card-header>
+<br/>
+<ion-label color="dark"><b>Nombre de place:</b>5</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Objet:</b>Livraison</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Capacité:</b>150.5</ion-label>
+<br/> <br/>
+</center>
+<center>
+           <ion-col size="3" ><ion-button fill="clear"  size="small" shape="round">Reserver</ion-button></ion-col></center>
+
+
+</ion-card>
+</ion-col>
+</ion-row>
+
+
+
+ <center>
+    <ion-label color="dark"><b> Les véhicules disponible Aprés le 01/06/2021</b></ion-label>
+    </center>
+    <br/>
+<ion-row >
+    <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+<ion-card>
+
+<center>
+ <ion-card-header
+            color="light"
+
+            class="dashboard-card-content"
+          >
+            <div><b>Camion</b></div>
+          </ion-card-header>
+<br/>
+<ion-label color="dark"><b>Nombre de place:</b>3</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Objet:</b>Livraion
+            Transportation
+            Maintenance</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Capacité:</b>1407.6 Kg</ion-label>
+<br/> <br/>
+</center>
+<center>
+           <ion-col size="3" ><ion-button fill="clear"  size="small" shape="round">Reserver</ion-button></ion-col></center>
+
+
+</ion-card>
+</ion-col>
+</ion-row>
   </ion-card>
 </ion-content>

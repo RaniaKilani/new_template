@@ -66,7 +66,7 @@ export class UpdateCarComponent implements OnInit {
 
     });
   }
-  editDriver() {
+  editCar() {
     var formdata = new FormData();
     formdata.append('Matricule', this.form.get('Matricule').value);
     formdata.append('TypeV', this.form.get('TypeV').value);

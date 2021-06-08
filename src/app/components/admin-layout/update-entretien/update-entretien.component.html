@@ -1,12 +1,26 @@
 <ion-content>
 <form [formGroup]="form" (ngSubmit)="editEnt()">
+<div>
 <ion-item>
 
         <ion-input placeholder="code Entretien" type="text" formControlName="codeEnt" name="codeEnt"></ion-input>
         </ion-item>
+          <div *ngFor="let error of errorMessages.codeEnt">
+          <ng-container *ngIf="codeEnt.hasError(error.type) && (codeEnt.dirty || codeEnt.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+      </div>
+      <div>
         <ion-item>
       <ion-input placeholder="Nom Entretien" type="text" formControlName="libelle" name="libelle"></ion-input>
       </ion-item>
+       <div *ngFor="let error of errorMessages.libelle">
+      <ng-container *ngIf="libelle.hasError(error.type) && (libelle.dirty ||libelle.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+      </div>
 <center>
         <ion-button size="small"  shappe="round" > modifier </ion-button>
         </center>

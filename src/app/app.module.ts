@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Geolocation} from '@ionic-native/geolocation/ngx';
+
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
@@ -41,6 +43,17 @@ import { PlanningComponent } from './components/driver-layout/planning/planning.
 import { ClaimComponent } from './components/admin-layout/claim/claim.component';
 import { AddClaimComponent } from './components/admin-layout/add-claim/add-claim.component';
 import { LoginComponent } from './components/auth-layout/login/login.component';
+import { SignUpComponent } from './components/auth-layout/sign-up/sign-up.component';
+import { ProfileComponent } from './components/auth-layout/profile/profile.component';
+import { LogoutComponent } from './components/auth-layout/logout/logout.component';
+import { ClaimCComponent } from './components/customer-layout/claim-c/claim-c.component';
+import { AddClaimCComponent } from './components/customer-layout/add-claim-c/add-claim-c.component';
+import { ClaimDComponent } from './components/driver-layout/claim-d/claim-d.component';
+import { AddClaimDComponent } from './components/driver-layout/add-claim-d/add-claim-d.component';
+import { GeolocationComponent } from './components/driver-layout/geolocation/geolocation.component';
+import { GeolocationDComponent } from './components/driver-layout/geolocation-d/geolocation-d.component';
+import { NotificationComponent } from './components/customer-layout/notification/notification.component';
+import { NotificationDComponent } from './components/driver-layout/notification-d/notification-d.component';
 
 
 @NgModule({
@@ -76,11 +89,24 @@ import { LoginComponent } from './components/auth-layout/login/login.component';
     ClaimComponent,
     AddClaimComponent,
     LoginComponent,
+    SignUpComponent,
+    ProfileComponent,
+    AddClaimCComponent,
+    ClaimCComponent,
+     AddClaimDComponent,
+    ClaimDComponent,
+    GeolocationComponent,
+    GeolocationDComponent,
+    NotificationComponent,
+    NotificationDComponent
+
+
+
 
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,CommonModule,FormsModule, NgbModule,HttpClientModule,ReactiveFormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Geolocation],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,17 +1,23 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> Entretien</ion-title>
+    <ion-title lass="ion-text-center"><b> FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+      <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
 
  <div>
-  <ion-button size="small" color="light" (click)="_openPopover()"> ajouter une entretien </ion-button> </div>
+  <ion-button size="small" color="light" (click)="_openPopover()" shape="round"> <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+  ajouter une entretien </ion-button> </div>
  <div>
-  <ion-button size="small" color="light">
+  <ion-button size="small" color="light" shape="round">
+  <ion-icon name="close-circle-outline" slot="end"></ion-icon>
     supprimer tout les entretiens
   </ion-button>
   </div>

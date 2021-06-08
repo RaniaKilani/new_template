@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from '../car-list/car.service';
 import { Car } from '../models/car';
@@ -25,11 +25,34 @@ export class AddReparationComponent implements OnInit {
     private entretienService:CarService)
     {
       this.form=this.fb.group({
-        Matricule:[''],
-        codeEnt:[''],
-        date:[''],
+        Matricule:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+        codeEnt:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+        date:['',[Validators.required]],
           })}
 
+          get Matricle() {
+            return this.form.get("Matricule");
+
+          }
+          get codeEnt() {
+            return this.form.get("codeEnt");
+          }
+          get date() {
+            return this.form.get("date");
+          }
+          public errorMessages = {
+            Matricule: [
+              { type: 'required', message: 'le champ Matricule est requis' },
+
+            ],
+            codeEnt: [
+              { type: 'required', message: 'le champ code entretien est requis' },
+
+            ],
+            date: [
+              { type: 'required', message: 'le champ date est requis' },
+
+            ],}
 
   goToListPage( ListPage:string){
     this.router.navigate([`${ListPage}`]);}
@@ -40,12 +63,9 @@ export class AddReparationComponent implements OnInit {
     });
     this.entretienService.listeEntretien().subscribe(en => {
       this.listE = en;
-  });
-
-  }
+  });}
 
   addReparation(){
-
     var formdata= new FormData();
     formdata.append('Matricule',this.form.get('Matricule').value.toString().trim());
     formdata.append('codeEnt',this.form.get('codeEnt').value.toString().trim());

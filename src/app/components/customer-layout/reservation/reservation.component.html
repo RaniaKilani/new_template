@@ -1,9 +1,13 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> Réservation</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+     <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -11,42 +15,49 @@
     <ion-col>
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Détails de la demande</ion-card-title>
+          <ion-card-title class="ion-text-center" style="color: #9933ff" >Détails de la demande</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-list>
-            <ion-label>Matricule :127TU2019</ion-label>
+          <center>
+          <ion-label color="dark"><b>Matricule:</b>155Tu2015</ion-label>
+          <br/>
+
+           <ion-label color="dark"><b>Type de véhicule:</b>Camion</ion-label>
+            <br />
+            <ion-label color="dark"><b>Objet:</b>Livraion
+            Transportation
+            Maintenance</ion-label>
+            <br/>
+
+          <ion-label color="dark"><b>Capacité:</b>1407.6 Kg</ion-label>
             <br />
 
-            <ion-label>Objet:Location</ion-label>
-            <br />
-            <ion-label>Type de véhicule:Voiture</ion-label>
-            <br />
-
-            <ion-label>Capacité en kg: 1500</ion-label>
-            <br />
-
-            <ion-label>Nombre des places:5</ion-label>
+            <ion-label color="dark"><b>Nombre de place:</b>3</ion-label>
 
             <br />
-            <ion-label>Date début:11/05/2021</ion-label>
+          <ion-label color="dark"><b>Date:</b>du 01/06/2021 à 02/06/2021</ion-label>
             <br />
-            <ion-label>Date fin:12/05/2021</ion-label>
+
+          <ion-label color="dark"><b>Région:</b>Auvergne-Rhône-Alpes</ion-label>
             <br />
-            <ion-label>Région:Bizerte</ion-label>
+          <ion-label color="dark"><b>Département:</b>Ain</ion-label>
             <br />
-            <ion-label>Département:Mateur</ion-label>
+          <ion-label color="dark"><b>Rue:L'Abergement-de-Varey</b>1407.6 Kg</ion-label>
             <br />
-            <ion-label>Rue:LFH</ion-label>
-            <br />
-            <ion-label>Chauffeur:Ali chahbi</ion-label>
+          <ion-label color="dark"><b>Chauffeur:</b>Salem Salem</ion-label>
+
+</center>
+<br/>
+<br/>
 
 
-
+<center>
 
           <ion-button
             size="small"
-            color="success"
+            color="primary"
+            shape="round"
             [routerLink]="['/dashboardC']"
           >
             Comfirmer
@@ -54,10 +65,13 @@
           <ion-button
             size="small"
             color="danger"
+            shape="round"
+            style="margin-left: 30px"
             [routerLink]="['/historiqueCar']"
           >
             Annuler
           </ion-button>
+          </center>
            </ion-list>
         </ion-card-content>
       </ion-card>

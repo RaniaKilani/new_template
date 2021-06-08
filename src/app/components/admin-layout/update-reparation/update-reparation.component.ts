@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from '../car-list/car.service';
 import { Reparation } from '../models/reparation';
@@ -18,12 +18,36 @@ export class UpdateReparationComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {
-     this.form = this.fb.group({
-      Matricule:[''],
-      codeEnt:[''],
-      date:[''],
-      });
-   }
+    this.form=this.fb.group({
+      Matricule:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+      codeEnt:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+      date:['',[Validators.required]],
+        })}
+
+        get Matricle() {
+          return this.form.get("Matricule");
+
+        }
+        get codeEnt() {
+          return this.form.get("codeEnt");
+        }
+        get date() {
+          return this.form.get("date");
+        }
+        public errorMessages = {
+          Matricule: [
+            { type: 'required', message: 'le nom est requis' },
+
+          ],
+          codeEnt: [
+            { type: 'required', message: 'le prénom est requis' },
+
+          ],
+          date: [
+            { type: 'required', message: 'Adresse est requis' },
+
+          ],}
+
 
   ngOnInit() {
      this.repService

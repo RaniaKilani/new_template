@@ -1,9 +1,13 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title class="ion-text-center">Fleetlt</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+      <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
@@ -25,7 +29,13 @@
                   type="text"
                   name="mail"
                 ></ion-input>
+
               </ion-item>
+              <div *ngFor="let error of errorMessages.mail">
+          <ng-container *ngIf="mail.hasError(error.type) && (mail.dirty || mail.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
             <div class="col-3">
               <ion-item>
@@ -35,9 +45,16 @@
                   type="text"
                   name="nom"
                 ></ion-input>
+
               </ion-item>
+              <div *ngFor="let error of errorMessages.nom">
+          <ng-container *ngIf="nom.hasError(error.type) && (nom.dirty || nom.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 </ion-col>
+
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
 
             <div class="col-3">
@@ -49,6 +66,13 @@
                   name="pre"
                 ></ion-input>
               </ion-item>
+
+                  <div *ngFor="let error of errorMessages.pre">
+          <ng-container *ngIf="pre.hasError(error.type) && (pre.dirty || pre.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
             </div>
 
             <div class="col-3">
@@ -60,6 +84,11 @@
                   name="num"
                 ></ion-input>
               </ion-item>
+               <div *ngFor="let error of errorMessages.num">
+          <ng-container *ngIf="num.hasError(error.type) && (num.dirty || num.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 </ion-col>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
@@ -73,6 +102,11 @@
                   name="dn"
                 ></ion-input>
               </ion-item>
+                  <div *ngFor="let error of errorMessages.dn">
+          <ng-container *ngIf="dn.hasError(error.type) && (dn.dirty || dn.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 <div class="col-3">
               <ion-item>
@@ -83,6 +117,11 @@
                   name="adr"
                 ></ion-input>
               </ion-item>
+    <div *ngFor="let error of errorMessages.adr">
+          <ng-container *ngIf="adr.hasError(error.type) && (adr.dirty || adr.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 
 
@@ -99,6 +138,11 @@
                   name="de"
                 ></ion-input>
               </ion-item>
+                  <div *ngFor="let error of errorMessages.de">
+          <ng-container *ngIf="de.hasError(error.type) && (de.dirty || de.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 
             <div class="col-3">
@@ -110,6 +154,11 @@
                   name="nomsup"
                 ></ion-input>
               </ion-item>
+    <div *ngFor="let error of errorMessages.nomsup">
+          <ng-container *ngIf="nomsup.hasError(error.type) && (nomsup.dirty || nomsup.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
             </div>
 </ion-col>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="">
@@ -139,19 +188,12 @@
                   </ion-select-option>
                 </ion-select>
               </ion-item>
+
             </div>
 </ion-col>
  </ion-row>
       </ion-grid>
-            <div class="col-3">
 
-                <ion-input
-                  formControlName="image"
-                  type="file"
-                  name="image"
-                ></ion-input>
-
-            </div>
 
 
     </form>

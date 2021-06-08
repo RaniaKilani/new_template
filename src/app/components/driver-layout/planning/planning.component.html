@@ -1,48 +1,96 @@
-
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> véhicules</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+     <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <br/>
   <ion-card>
     <ion-card-header>
-      <ion-card-title class="ion-text-center"> <b>Planning</b></ion-card-title>
+      <ion-card-title class="ion-text-center" style="color: #9933ff"> <b>Planning</b></ion-card-title>
     </ion-card-header>
     <ion-grid >
+    <ion-row >
+    <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
       <ion-card >
       <ion-card-header color ="light" >
-      <ion-label > Matricule: </ion-label>
+      <center>
+<div><b>Matricule:</b>156Tu2015</div></center>
     </ion-card-header>
         <ion-card-content>
-            <ion-label ><b>Destination:
-            -Ariana
-            -charguia
-            -Cité la gazelle</b> </ion-label>
-            <br />
-            <br />
-            <ion-label ><b>Client:
-            -XXXXXXX@gmail.com
-            -yyyyyyyy@gmail.com
-            --uuuuuuu@gmail.com</b></ion-label>
-            <br />
-            <br />
-            <ion-label  ><b>  Date de départ:12-06-2021 12:23AM</b> </ion-label>
-            <br />
-            <br />
 
+
+<br/>
+<ion-label color="dark"><b>Destination: </b>Auvergne-Rhône-Alpes, Ain, L'Abergement-de-Varey </ion-label>
+<br/> <br/>
+<ion-label color="dark"><b> Client:</b> Enrique Mario</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Date de départ:</b> 01-06-2021 </ion-label>
+<br/> <br/>
+
+
+<center>
              <ion-button
             size="small"
-            color="success">
-            Accorder Bilan
+            color="success"
+            shape="round">
+            <ion-icon name="checkmark-done-outline"slot="start" ></ion-icon>
+            valider Bilan
           </ion-button>
-          <ion-button size="small" color="danger"> Trajet</ion-button>
+          <ion-button size="small" color="primary" shape="round"  style="margin-left: 30px">
+          <ion-icon name="navigate-outline" slot="start"></ion-icon>Suivre Trajet</ion-button>
+          </center>
+          <br/> <br/>
+          <br/>
         </ion-card-content>
       </ion-card>
+      </ion-col>
+      <ion-col>
+       <ion-card >
+      <ion-card-header color ="light" >
+      <center>
+<div><b>Matricule:</b>186Tu1478</div></center>
+    </ion-card-header>
+        <ion-card-content>
+
+
+<br/>
+<ion-label color="dark"><b>Destination 1: </b>Grand Est, Aube, La Haie-Fouassière  </ion-label>
+<br/> <br/>
+<ion-label color="dark"><b>Destination 2: </b> Grand Est, Aube,Haute-Goulaine </ion-label>
+
+<br/> <br/>
+<ion-label color="dark"><b> Client 1:</b>   Sana salah</ion-label>
+<br/> <br/>
+<ion-label color="dark"><b> Client 2:</b> Ali salah  </ion-label>
+
+<br/> <br/>
+<ion-label color="dark"><b>Date de départ:</b> 05-06-2021 </ion-label>
+<br/> <br/>
+
+
+<center>
+             <ion-button
+            size="small"
+            color="success"
+            shape="round">
+            <ion-icon name="checkmark-done-outline" slot="start" style="margin-left: 15px"  ></ion-icon>
+            valider Bilan
+          </ion-button>
+          <ion-button size="small" color="primary" shape="round"  style="margin-left: 15px">
+          <ion-icon name="navigate-outline" slot="start"></ion-icon>Suivre Trajet</ion-button>
+          </center>
+        </ion-card-content>
+      </ion-card>
+      </ion-col>
+      </ion-row>
     </ion-grid>
   </ion-card>
 </ion-content>

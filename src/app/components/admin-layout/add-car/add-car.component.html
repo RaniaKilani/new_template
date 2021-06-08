@@ -1,6 +1,6 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title class="ion-text-center"> fleetlt</ion-title>
+    <ion-title class="ion-text-center"> <b> FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -16,9 +16,9 @@
     </ion-card-header>
 
     <form [formGroup]="form" (ngSubmit)="addCar()">
-      <ion-grid style="display: flex">
+      <ion-grid >
         <ion-row>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div>
               <ion-item >
                 <ion-label position="stacked">Matricule</ion-label>
@@ -29,7 +29,8 @@
                 ></ion-input>
               </ion-item>
             </div>
-
+</ion-col>
+<ion-col>
             <div>
               <ion-item >
                 <ion-label position="stacked">Type de véhicule</ion-label>
@@ -40,8 +41,10 @@
               </ion-item>
             </div>
           </ion-col>
+          </ion-row>
+          <ion-row>
 
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
             <div>
               <ion-item >
                 <ion-label position="stacked">Marque</ion-label>
@@ -52,9 +55,28 @@
                 ></ion-input>
               </ion-item>
             </div>
+
+            </ion-col>
+            <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="6">
+            <div >
+              <ion-item >
+                <ion-label position="stacked">Nombre de place</ion-label>
+                <ion-input
+                  type="number"
+                  formControlName="NbrPlace"
+                  name="NbrPlace"
+                ></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+
+          </ion-row>
+          <ion-row>
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+          
             <div class="col-3">
               <ion-item >
-                <ion-label position="stacked">Puissance</ion-label>
+                <ion-label position="stacked">Puissance(W)</ion-label>
                 <ion-input
                   type="number"
                   formControlName="Puiss"
@@ -62,24 +84,11 @@
                 ></ion-input>
               </ion-item>
             </div>
-          </ion-col>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
-            <div>
+            </ion-col>
+         <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+ <div >
               <ion-item >
-                <ion-label position="stacked">Objet</ion-label>
-                <ion-select formControlName="Mot" name="Mot" multiple>
-                  <ion-select-option>Location</ion-select-option>
-                  <ion-select-option>Livraison</ion-select-option>
-                  <ion-select-option>Maintenance</ion-select-option>
-                  <ion-select-option>Transportation</ion-select-option>
-                  <ion-select-option>Déplacement</ion-select-option>
-                </ion-select>
-              </ion-item>
-            </div>
-
-            <div >
-              <ion-item >
-                <ion-label position="stacked">Capacité</ion-label>
+                <ion-label position="stacked">Capacité(Kg)</ion-label>
                 <ion-input
                   type="number"
                   formControlName="Cap"
@@ -87,9 +96,23 @@
                 ></ion-input>
               </ion-item>
             </div>
+           
           </ion-col>
-
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+          </ion-row>
+<ion-row>
+<ion-col ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+            <div >
+              <ion-item >
+                <ion-label position="stacked">Type de Carburant</ion-label>
+                <ion-select formControlName="TypeC" name="TypeC">
+                  <ion-select-option>Essence</ion-select-option>
+                  <ion-select-option>Diesel</ion-select-option>
+                  <ion-select-option> Carburants gazeux </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
             <div >
               <ion-item >
                 <ion-label position="stacked"
@@ -102,19 +125,12 @@
                 ></ion-input>
               </ion-item>
             </div>
+</ion-col>
 
-            <div >
-              <ion-item >
-                <ion-label position="stacked">Type de Carburant</ion-label>
-                <ion-select formControlName="TypeC" name="TypeC">
-                  <ion-select-option>Essence</ion-select-option>
-                  <ion-select-option>Diesel</ion-select-option>
-                  <ion-select-option> Carburants gazeux </ion-select-option>
-                </ion-select>
-              </ion-item>
-            </div>
-          </ion-col>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+          </ion-row>
+
+          <ion-row>
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
             <div >
               <ion-item >
                 <ion-label position="stacked">Type de permis</ion-label>
@@ -128,7 +144,8 @@
                 </ion-select>
               </ion-item>
             </div>
-
+</ion-col>
+<ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
             <div >
               <ion-item >
                 <ion-label position="stacked"> Année de fabrication</ion-label>
@@ -140,10 +157,12 @@
               </ion-item>
             </div>
           </ion-col>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+          </ion-row>
+          <ion-row>
+          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
               <ion-item >
-                <ion-label position="stacked">Kilométrage</ion-label>
+                <ion-label position="stacked">Kilométrage(Km)</ion-label>
                 <ion-input
                   type="number"
                   formControlName="Kilo"
@@ -151,18 +170,24 @@
                 ></ion-input>
               </ion-item>
             </div>
-
-            <div >
+</ion-col>
+<ion-col size-xs="12" size-sm="6" size-md="6" size-lg="6">
+              <div>
               <ion-item >
-                <ion-label position="stacked">Nombre de place</ion-label>
-                <ion-input
-                  type="number"
-                  formControlName="NbrPlace"
-                  name="NbrPlace"
-                ></ion-input>
+                <ion-label position="stacked">Objet</ion-label>
+                <ion-select formControlName="Mot" name="Mot" multiple>
+                  <ion-select-option>Location</ion-select-option>
+                  <ion-select-option>Livraison</ion-select-option>
+                  <ion-select-option>Maintenance</ion-select-option>
+                  <ion-select-option>Transportation</ion-select-option>
+                  <ion-select-option>Déplacement</ion-select-option>
+                </ion-select>
               </ion-item>
             </div>
+           
+            
           </ion-col>
+
         </ion-row>
       </ion-grid>
 

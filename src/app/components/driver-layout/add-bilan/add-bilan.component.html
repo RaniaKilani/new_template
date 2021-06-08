@@ -1,68 +1,85 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> Bilan</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+     <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card>
+  <br/>
+
     <ion-card-header>
-      <ion-card-title class="ion-text-center">
-        <b>Bilan</b></ion-card-title
-      >
+      <ion-card-title class="ion-text-center" style="color: #9933ff"> <b>Planning</b></ion-card-title>
     </ion-card-header>
-    <ion-grid>
-      <ion-card>
+
+
+       <ion-card >
+      <ion-card-header  >
+      <center>
+<div><b>Matricule:</b>155Tu2015</div></center>
+    </ion-card-header>
         <ion-card-content>
-           <ion-grid class>
-    <ion-row>
-      <ion-col size="3"> id </ion-col>
+         <ion-row >
+    <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
 
-      <ion-col size="3"> Véhicule </ion-col>
+<ion-card>
 
-      <ion-col size="3"> Statut </ion-col>
-      <ion-col size="3"> Action </ion-col>
-    </ion-row>
 
-    <ion-row>
-      <ion-col size="3"> 1 </ion-col>
+        <ion-card-content>
+        <center>
+        <ion-label color="dark" ><b>Véhicule</b> </ion-label></center>
+          <br/>
+           <center>
+          <ion-label><b>Marque:</b> &nbsp;citroen </ion-label>
+          <br />
+          <ion-label><b>Type de véhicule:</b>&nbsp;Camion</ion-label>
+          <br />
+                    <ion-label><b>Nombre de place:</b>&nbsp;3 </ion-label> </center>
+   <br />
+            </ion-card-content>
+</ion-card>
+</ion-col>
+<ion-col>
+<ion-card>
+        <ion-card-content>
+        <center>
+                <ion-label color="dark"><b>Réparation</b> </ion-label></center>
+                <br/>
+ <center>
+          <ion-label><b>PM</b>  &nbsp; <ion-icon name="checkmark-done-sharp" color="success"></ion-icon> </ion-label>
+          <br />
+          <ion-label><b>MT</b>  &nbsp; <ion-icon name="checkmark-done-sharp" color ="success"></ion-icon></ion-label>
+          <br />
+                    <ion-label><b>CLM</b> &nbsp; <ion-icon name="checkmark-done-sharp" color="success"></ion-icon> </ion-label> </center>
 
-      <ion-col size="3"> 127TU2019 </ion-col>
-      <ion-col size="3"> Non effectué </ion-col>
+          <br />
+            </ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
 
-<ion-col size="3">   <ion-button size="small" color="success"> Accorder </ion-button>
-          </ion-col>    </ion-row>
-    <ion-row>
-      <ion-col size="2"> 2 </ion-col>
+<br/> <br/>
 
-      <ion-col size="2"> 127TU2019 </ion-col>
 
-      <ion-col size="2"> effectué </ion-col>
-<ion-col size="2">   <ion-button size="small" color="success"> Accorder </ion-button>
-           </ion-col>    </ion-row>
-    <ion-row>
-      <ion-col size="2"> 3 </ion-col>
-
-      <ion-col size="2"> 127TU2019 </ion-col>
-      <ion-col size="2"> effectué </ion-col>
-<ion-col size="2">   <ion-button size="small" color="success"> Accorder </ion-button>
-           </ion-col>    </ion-row>
-    <ion-row>
-      <ion-col size="2"> 4 </ion-col>
-
-      <ion-col size="2"> 127TU2019 </ion-col>
-
-      <ion-col size="2"> effectué </ion-col>
-      <ion-col size="2">   <ion-button size="small" color="success"> Accorder </ion-button>
-          </ion-col>
-    </ion-row>
-  </ion-grid>
+<center>
+             <ion-button
+            size="small"
+            color="success"
+            shape="round">
+            <ion-icon name="checkmark-done-outline" slot="start" style="margin-left: 15px"  ></ion-icon>
+          Valider
+          </ion-button>
+          <ion-button size="small" color="danger" shape="round"  style="margin-left: 15px">
+          <ion-icon name="alert-circle-outline" slot="start"></ion-icon>Réclamer</ion-button>
+          </center>
         </ion-card-content>
       </ion-card>
-    </ion-grid>
-  </ion-card>
+
 
 
 </ion-content>

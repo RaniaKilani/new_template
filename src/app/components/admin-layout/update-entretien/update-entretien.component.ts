@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { CarService } from '../car-list/car.service';
@@ -18,11 +18,29 @@ export class UpdateEntretienComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private fb: FormBuilder) {
-      this.form = this.fb.group({
-        codeEnt: [''],
-        libelle: [``],
-      });
-     }
+      this.form=this.fb.group({
+        codeEnt:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+        libelle:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+    })}
+
+    get codeEnt() {
+      return this.form.get("codeEnt");
+    }
+    get libelle() {
+      return this.form.get("libelle");
+    }
+    public errorMessages = {
+      codeEnt: [
+        { type: 'required', message: 'le champ code entretien est requis' },
+        { type: 'minlength', message: 'Le champ code entretien ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Le champ code entretien ne peut pas être  plus long de 20 caractères' }
+      ],
+      libelle: [
+        { type: 'required', message: 'le champ libelle est requis' },
+        { type: 'minlength', message: 'Le champ libelle ne peut pas être court de 3 caractères' },
+          { type: 'maxlength', message: 'Le champ libelle ne peut pas être  plus long de 20 caractères' }
+
+      ],}
 
 
 

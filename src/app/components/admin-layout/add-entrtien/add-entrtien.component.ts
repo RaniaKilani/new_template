@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from '../car-list/car.service';
 
@@ -18,9 +18,28 @@ export class AddEntrtienComponent implements OnInit {
      private http:HttpClient
   ) {
     this.form=this.fb.group({
-      codeEnt:[''],
-      libelle:[''],
+      codeEnt:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+      libelle:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
   })}
+
+  get codeEnt() {
+    return this.form.get("codeEnt");
+  }
+  get libelle() {
+    return this.form.get("libelle");
+  }
+  public errorMessages = {
+    codeEnt: [
+      { type: 'required', message: 'le champ code entretien est requis' },
+      { type: 'minlength', message: 'Le champ code entretien ne peut pas être court de 3 caractères' },
+      { type: 'maxlength', message: 'Le champ code entretien ne peut pas être  plus long de 20 caractères' }
+    ],
+    libelle: [
+      { type: 'required', message: 'le champ nom entretien est requis' },
+      { type: 'minlength', message: 'Le champ nom entretien ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Le champ nom entretien ne peut pas être  plus long de 20 caractères' }
+
+    ],}
 
   ngOnInit() {}
   addEntretien(){

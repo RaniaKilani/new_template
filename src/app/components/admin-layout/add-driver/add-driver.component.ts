@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DriverService } from '../driver-list/driver.service';
 import { Driver } from '../models/driver';
@@ -12,24 +12,26 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class AddDriverComponent implements OnInit {
   newDriver = new Driver();
+  submitted = false;
   form:FormGroup;
   typ=[];
   constructor(
     private driverService:DriverService,
      private router:Router,
      private fb:FormBuilder,
-     private http:HttpClient) {
+     private http:HttpClient,
+     private ngZone: NgZone,) {
     this.form=this.fb.group({
-  mail:[''],
-  nom:[''],
-  pre:[''],
-  num:[''],
-  adr:[''],
-  dn:[''],
-  de:[''],
-  nomsup:[''],
-  typ:[''],
-  pwd:[''],
+  mail:['',[Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+  nom:['', [Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  pre:['', [Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  num:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+  adr:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  dn:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  de:['',[Validators.required,Validators.minLength(3)]],
+  nomsup:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  typ:['',[Validators.required]],
+  pwd:['',[Validators.required,Validators.minLength(6)]],
     })
     this.typ= this.getPermis();
   }
@@ -42,6 +44,85 @@ export class AddDriverComponent implements OnInit {
       { id: '5', name: 'E' },
       { id: '6', name: 'H' },
     ];}
+
+    get mail() {
+      return this.form.get("mail");
+
+    }
+    get nom() {
+      return this.form.get("nom");
+    }
+    get pre() {
+      return this.form.get("pre");
+    }
+    get adr() {
+      return this.form.get("adr");
+    }
+    get nomsup() {
+      return this.form.get("nomsup");
+    }
+    get pwd() {
+      return this.form.get("pwd");
+    }
+    get num() {
+      return this.form.get("num");
+    }
+    get dn() {
+      return this.form.get("dn");
+    }
+    get de() {
+      return this.form.get("de");
+    }
+
+
+
+    public errorMessages = {
+      nom: [
+        { type: 'required', message: 'le nom est requis' },
+        { type: 'minlength', message: 'Le nom ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Le nom ne peut pas être pls long de 20 caractères' }
+
+      ],
+      pre: [
+        { type: 'required', message: 'le prénom est requis' },
+        { type: 'minlength', message: 'Le prénom ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Le prénom ne peut pas être  plus long de 20 caractères' }
+
+      ],
+      adr: [
+        { type: 'required', message: 'Adresse est requis' },
+        { type: 'minlength', message: 'Adress ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Adress ne peut pas être plus long de 20 caractères' },
+
+
+      ],
+      nomsup: [
+        { type: 'required', message: 'le nom du superviseur est requis' },
+        { type: 'minlength', message: 'Le nom du superviseur ne peut pas être court de 3 caractères' },
+        { type: 'maxlength', message: 'Le nom du superviseur ne peut pas être plus long de 20 caractères' }
+
+      ],
+      mail: [
+        { type: 'required', message: 'le Email est requis' },
+        { type: 'pattern', message: 'Veuillez saisir une adresse mail valide' }
+      ],
+      num: [
+        { type: 'required', message: 'le numéro de téléphone est requis' },
+        { type: 'pattern', message: 'Veuillez saisir un numéro de téléphone valide' }
+      ],
+      typ: [
+        { type: 'required', message: 'le type de permis est requis' }
+      ],
+      dn: [
+        { type: 'required', message: 'la date de naissance  est requise' },
+        { type: 'pattern', message: 'Please enter a valid phone number' }
+      ],
+      de: [
+        { type: 'required', message: 'la date de embauche est requise' },
+        { type: 'pattern', message: 'Please enter a valid phone number' }
+      ],
+
+    }
 
   ngOnInit(): void {
   }

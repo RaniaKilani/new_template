@@ -24,13 +24,24 @@ import { UpdateEntretienComponent } from './components/admin-layout/update-entre
 import { UpdateReparationComponent } from './components/admin-layout/update-reparation/update-reparation.component';
 import { UpdateSupervisorComponent } from './components/admin-layout/update-supervisor/update-supervisor.component';
 import { LoginComponent } from './components/auth-layout/login/login.component';
+import { LogoutComponent } from './components/auth-layout/logout/logout.component';
+import { ProfileComponent } from './components/auth-layout/profile/profile.component';
+import { SignUpComponent } from './components/auth-layout/sign-up/sign-up.component';
+import { AddClaimCComponent } from './components/customer-layout/add-claim-c/add-claim-c.component';
 import { AddDemandeComponent } from './components/customer-layout/add-demande/add-demande.component';
+import { ClaimCComponent } from './components/customer-layout/claim-c/claim-c.component';
 import { DashboardCComponent } from './components/customer-layout/dashboard-c/dashboard-c.component';
 import { DispoCarComponent } from './components/customer-layout/dispo-car/dispo-car.component';
+import { NotificationComponent } from './components/customer-layout/notification/notification.component';
 import { ReservationComponent } from './components/customer-layout/reservation/reservation.component';
 import { AddBilanComponent } from './components/driver-layout/add-bilan/add-bilan.component';
+import { AddClaimDComponent } from './components/driver-layout/add-claim-d/add-claim-d.component';
+import { ClaimDComponent } from './components/driver-layout/claim-d/claim-d.component';
 import { DashboardComponent } from './components/driver-layout/dashboard/dashboard.component';
 import { DriverLayoutComponent } from './components/driver-layout/driver-layout.component';
+import { GeolocationDComponent } from './components/driver-layout/geolocation-d/geolocation-d.component';
+import { GeolocationComponent } from './components/driver-layout/geolocation/geolocation.component';
+import { NotificationDComponent } from './components/driver-layout/notification-d/notification-d.component';
 import { PlanningComponent } from './components/driver-layout/planning/planning.component';
 import { TrajetComponent } from './components/driver-layout/trajet/trajet.component';
 
@@ -77,7 +88,20 @@ const routes: Routes = [
    { path: 'claim', component: ClaimComponent},
    { path: 'AddClaim', component: AddClaimComponent},
    { path: 'login', component: LoginComponent},
+   { path: 'register', component:SignUpComponent },
+   { path: 'profile', component:ProfileComponent },
   { path: 'admin', component: AdminLayoutComponent},
+  { path: 'claimC', component: ClaimCComponent},
+  { path: 'claimD', component: ClaimDComponent},
+  { path: 'AddClaimC', component: AddClaimCComponent},
+  { path: 'AddClaimD', component: AddClaimDComponent},
+  { path: 'geoloc', component: GeolocationComponent},
+  { path: 'geolocD', component: GeolocationDComponent},
+  { path: 'notifC', component:NotificationComponent},
+  { path: 'notifD', component:NotificationDComponent },
+
+
+
 
 
 

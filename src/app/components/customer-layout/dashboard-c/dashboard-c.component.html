@@ -1,9 +1,14 @@
+
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title> Dashboard</ion-title>
+    <ion-title class="ion-text-center"><b>FLEETLT</b></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+     <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
+
+
+<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -13,25 +18,39 @@
     shape="round"
     (click)="goToAddPage('addDemande')"
   >
+  <ion-icon name="add-circle-outline" slot="end"></ion-icon>
     ajouter une demande</ion-button
   >
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>BIENVENUE!</ion-card-title>
+      <ion-card-title style="color: #9933ff">BIENVENUE!</ion-card-title>
       <ion-card-subtitle
         ><b
-          >Mlle.Rania voilà les détails de votre réservation!</b
+          >Ons voilà votre réservations!</b
         ></ion-card-subtitle
       >
     </ion-card-header>
     <ion-card-content>
       <ion-grid class>
         <ion-row>
-          <ion-col size="3">Code reservation </ion-col>
-          <ion-col size="3">Date réservation  </ion-col>
-          <ion-col size="3">véhicule </ion-col>
-          <ion-col size="3"> Etat</ion-col>
+          <ion-col size="3" style="color: #9933ff">Code reservation </ion-col>
+          <ion-col size="3" style="color: #9933ff">Date réservation  </ion-col>
+          <ion-col size="3" style="color: #9933ff">véhicule </ion-col>
+          <ion-col size="3" style="color: #9933ff"> Etat</ion-col>
+        </ion-row>
+            <ion-row >
+          <ion-col size="3" > <ion-label color="dark">1</ion-label> </ion-col>
+          <ion-col size="3"> <ion-label color="dark">02/07/2020</ion-label> </ion-col>
+          <ion-col size="3"><ion-label color="dark">156Tu2015 </ion-label></ion-col>
+          <ion-col size="3"> <ion-icon name="checkmark-done-sharp" color="success" size="large"></ion-icon> </ion-col>
+        </ion-row>
+
+        <ion-row >
+          <ion-col size="3" > <ion-label color="dark">2 </ion-label> </ion-col>
+          <ion-col size="3"> <ion-label color="dark">01/06/2021-02/06/2021</ion-label> </ion-col>
+          <ion-col size="3"><ion-label color="dark">155Tu2015 </ion-label></ion-col>
+          <ion-col size="3"> <ion-icon name="close-sharp" size="large" color="danger"></ion-icon> </ion-col>
         </ion-row>
         <ion-row *ngFor = "let l of list">
           <ion-col size="3"> {{l.reference}} </ion-col>

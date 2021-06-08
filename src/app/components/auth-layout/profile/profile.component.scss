@@ -1,0 +1,100 @@
+.custom-font {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+ion-toolbar {
+
+
+
+  .back-circle {
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    background: #e5ecf1;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+
+
+}
+
+ion-content {
+  .wrap-input {
+    background-color: rgba(255,255, 255, .8);
+    border-radius: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.12);
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Josefin Sans;
+    font-size: 16px;
+    line-height: 1.2;
+    border:None;
+    outline: none;
+    height: 46px;
+    padding: 0 20px 0 23px;
+  }
+
+  .container-form-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 42px;
+    background-color: #394752;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding-top: 5px;
+    transition: all 0.4s;
+    box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+  }
+
+
+
+}
+[cards] {
+  .grid-full ion-col {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 5px 0;
+  }
+  .row {
+      padding: 0;
+  }
+  .col {
+      padding: 5px 0;
+  }
+  .card {
+      margin: 0 0 0 12px;
+      padding: 14px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+      border-radius: 4px;
+      h1 {
+          font-weight: 400;
+
+          font-size: 3.5rem;
+      }
+      p {
+          font-weight: 100;
+          font-size: 1.5rem;
+      }
+  }
+}
