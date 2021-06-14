@@ -12,6 +12,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class AddDriverComponent implements OnInit {
   newDriver = new Driver();
+
   submitted = false;
   form:FormGroup;
   typ=[];
@@ -27,7 +28,7 @@ export class AddDriverComponent implements OnInit {
   pre:['', [Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
   num:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
   adr:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
-  dn:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
+  dn:['',[Validators.required]],
   de:['',[Validators.required,Validators.minLength(3)]],
   nomsup:['',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
   typ:['',[Validators.required]],
@@ -114,12 +115,16 @@ export class AddDriverComponent implements OnInit {
         { type: 'required', message: 'le type de permis est requis' }
       ],
       dn: [
-        { type: 'required', message: 'la date de naissance  est requise' },
-        { type: 'pattern', message: 'Please enter a valid phone number' }
+        { type: 'required', message: 'la date de naissance  est requis' },
+        
       ],
       de: [
         { type: 'required', message: 'la date de embauche est requise' },
-        { type: 'pattern', message: 'Please enter a valid phone number' }
+    
+      ],
+      pwd: [
+        { type: 'required', message: 'le mot de passe  est requis' },
+        { type: 'minlength', message: 'Le mot de passse ne peut pas être court de 6 caractères' },
       ],
 
     }

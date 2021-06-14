@@ -4,7 +4,6 @@ import { Observable, observable } from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Driver } from '../models/driver';
 
-
 const httpOptions = {
   headers: new HttpHeaders( {'Content-Type': 'application/json'} )
   };

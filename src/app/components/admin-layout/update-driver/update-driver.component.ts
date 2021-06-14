@@ -65,6 +65,7 @@ export class UpdateDriverComponent implements OnInit {
     return this.form.get("de");
   }
 
+  
   public errorMessages = {
     nom: [
       { type: 'required', message: 'le nom est requis' },
@@ -104,11 +105,15 @@ export class UpdateDriverComponent implements OnInit {
     ],
     dn: [
       { type: 'required', message: 'la date de naissance  est requise' },
-      { type: 'pattern', message: 'Please enter a valid phone number' }
+     
     ],
     de: [
       { type: 'required', message: 'la date de embauche est requise' },
-      { type: 'pattern', message: 'Please enter a valid phone number' }
+    
+    ],
+    pwd: [
+      { type: 'required', message: 'le mot de passe  est requis' },
+      { type: 'minlength', message: 'Le mot de passse ne peut pas être court de 6 caractères' },
     ],
 
   }

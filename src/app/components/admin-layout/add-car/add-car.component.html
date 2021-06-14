@@ -16,11 +16,11 @@
     </ion-card-header>
 
     <form [formGroup]="form" (ngSubmit)="addCar()">
-      <ion-grid >
+      <ion-grid>
         <ion-row>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div>
-              <ion-item >
+              <ion-item>
                 <ion-label position="stacked">Matricule</ion-label>
                 <ion-input
                   type="text"
@@ -28,25 +28,43 @@
                   name="Matricule"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Matricule">
+                <ng-container
+                  *ngIf="
+                    Matricule.hasError(error.type) &&
+                    (Matricule.dirty || Matricule.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-</ion-col>
-<ion-col>
+          </ion-col>
+          <ion-col>
             <div>
-              <ion-item >
+              <ion-item>
                 <ion-label position="stacked">Type de véhicule</ion-label>
                 <ion-select type="text" formControlName="TypeV" name="TypeV">
                   <ion-select-option>Voiture</ion-select-option>
                   <ion-select-option>Camion</ion-select-option>
                 </ion-select>
               </ion-item>
+              <div *ngFor="let error of errorMessages.TypeV">
+                <ng-container
+                  *ngIf="
+                    TypeV.hasError(error.type) && (TypeV.dirty || TypeV.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
           </ion-col>
-          </ion-row>
-          <ion-row>
-
+        </ion-row>
+        <ion-row>
           <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
             <div>
-              <ion-item >
+              <ion-item>
                 <ion-label position="stacked">Marque</ion-label>
                 <ion-input
                   type="text"
@@ -54,12 +72,21 @@
                   name="Marque"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Marque">
+                <ng-container
+                  *ngIf="
+                    Marque.hasError(error.type) &&
+                    (Marque.dirty || Marque.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-
-            </ion-col>
-            <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="6">
-            <div >
-              <ion-item >
+          </ion-col>
+          <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="6">
+            <div>
+              <ion-item>
                 <ion-label position="stacked">Nombre de place</ion-label>
                 <ion-input
                   type="number"
@@ -67,15 +94,23 @@
                   name="NbrPlace"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.NbrPlace">
+                <ng-container
+                  *ngIf="
+                    NbrPlace.hasError(error.type) &&
+                    (NbrPlace.dirty || NbrPlace.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
           </ion-col>
-
-          </ion-row>
-          <ion-row>
+        </ion-row>
+        <ion-row>
           <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
-          
             <div class="col-3">
-              <ion-item >
+              <ion-item>
                 <ion-label position="stacked">Puissance(W)</ion-label>
                 <ion-input
                   type="number"
@@ -83,11 +118,20 @@
                   name="Puiss"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Puiss">
+                <ng-container
+                  *ngIf="
+                    Puiss.hasError(error.type) && (Puiss.dirty || Puiss.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-            </ion-col>
-         <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
- <div >
-              <ion-item >
+          </ion-col>
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+            <div>
+              <ion-item>
                 <ion-label position="stacked">Capacité(Kg)</ion-label>
                 <ion-input
                   type="number"
@@ -95,14 +139,27 @@
                   name="Cap"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Cap">
+                <ng-container
+                  *ngIf="Cap.hasError(error.type) && (Cap.dirty || Cap.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-           
           </ion-col>
-          </ion-row>
-<ion-row>
-<ion-col ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
-            <div >
-              <ion-item >
+        </ion-row>
+        <ion-row>
+          <ion-col
+            ion-col
+            padding
+            size-xs="6"
+            size-sm="6"
+            size-md="6"
+            size-lg="6"
+          >
+            <div>
+              <ion-item>
                 <ion-label position="stacked">Type de Carburant</ion-label>
                 <ion-select formControlName="TypeC" name="TypeC">
                   <ion-select-option>Essence</ion-select-option>
@@ -110,11 +167,20 @@
                   <ion-select-option> Carburants gazeux </ion-select-option>
                 </ion-select>
               </ion-item>
+              <div *ngFor="let error of errorMessages.TypeC">
+                <ng-container
+                  *ngIf="
+                    TypeC.hasError(error.type) && (TypeC.dirty || TypeC.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
           </ion-col>
           <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
-            <div >
-              <ion-item >
+            <div>
+              <ion-item>
                 <ion-label position="stacked"
                   >Consommation de carburant</ion-label
                 >
@@ -124,15 +190,24 @@
                   name="ConsoC"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.ConsoC">
+                <ng-container
+                  *ngIf="
+                    ConsoC.hasError(error.type) &&
+                    (ConsoC.dirty || ConsoC.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-</ion-col>
+          </ion-col>
+        </ion-row>
 
-          </ion-row>
-
-          <ion-row>
+        <ion-row>
           <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
-            <div >
-              <ion-item >
+            <div>
+              <ion-item>
                 <ion-label position="stacked">Type de permis</ion-label>
                 <ion-select formControlName="TypeP" name="TypeP">
                   <ion-select-option>A</ion-select-option>
@@ -143,11 +218,20 @@
                   <ion-select-option>H</ion-select-option>
                 </ion-select>
               </ion-item>
+              <div *ngFor="let error of errorMessages.TypeP">
+                <ng-container
+                  *ngIf="
+                    TypeP.hasError(error.type) && (TypeP.dirty || TypeP.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-</ion-col>
-<ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
-            <div >
-              <ion-item >
+          </ion-col>
+          <ion-col padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+            <div>
+              <ion-item>
                 <ion-label position="stacked"> Année de fabrication</ion-label>
                 <ion-input
                   type="number"
@@ -155,13 +239,22 @@
                   name="AnFab"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.AnFab">
+                <ng-container
+                  *ngIf="
+                    AnFab.hasError(error.type) && (AnFab.dirty || AnFab.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
           </ion-col>
-          </ion-row>
-          <ion-row>
+        </ion-row>
+        <ion-row>
           <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
             <div class="col-3">
-              <ion-item >
+              <ion-item>
                 <ion-label position="stacked">Kilométrage(Km)</ion-label>
                 <ion-input
                   type="number"
@@ -169,11 +262,20 @@
                   name="Kilo"
                 ></ion-input>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Kilo">
+                <ng-container
+                  *ngIf="
+                    Kilo.hasError(error.type) && (Kilo.dirty || Kilo.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-</ion-col>
-<ion-col size-xs="12" size-sm="6" size-md="6" size-lg="6">
-              <div>
-              <ion-item >
+          </ion-col>
+          <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="6">
+            <div>
+              <ion-item>
                 <ion-label position="stacked">Objet</ion-label>
                 <ion-select formControlName="Mot" name="Mot" multiple>
                   <ion-select-option>Location</ion-select-option>
@@ -183,16 +285,20 @@
                   <ion-select-option>Déplacement</ion-select-option>
                 </ion-select>
               </ion-item>
+              <div *ngFor="let error of errorMessages.Mot">
+                <ng-container
+                  *ngIf="Mot.hasError(error.type) && (Mot.dirty || Mot.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
             </div>
-           
-            
           </ion-col>
-
         </ion-row>
       </ion-grid>
 
       <center>
-        <div >
+        <div>
           <div class="container-form-btn">
             <ion-button shape="round" type="submit">Ajouter</ion-button>
           </div>
