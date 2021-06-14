@@ -14,7 +14,7 @@
   <br/>
 
     <ion-card-header>
-      <ion-card-title class="ion-text-center" style="color: #9933ff"> <b>Planning</b></ion-card-title>
+      <ion-card-title class="ion-text-center" style="color: #9933ff"> <b>Bilan</b></ion-card-title>
     </ion-card-header>
 
 
@@ -51,11 +51,11 @@
                 <ion-label color="dark"><b>Réparation</b> </ion-label></center>
                 <br/>
  <center>
-          <ion-label><b>PM</b>  &nbsp; <ion-icon name="checkmark-done-sharp" color="success"></ion-icon> </ion-label>
+          <ion-label><b>PM</b>  &nbsp; <ion-checkbox color ="success"></ion-checkbox>    </ion-label>
           <br />
-          <ion-label><b>MT</b>  &nbsp; <ion-icon name="checkmark-done-sharp" color ="success"></ion-icon></ion-label>
+          <ion-label><b>MT</b>  &nbsp; <ion-checkbox color ="success"></ion-checkbox></ion-label>
           <br />
-                    <ion-label><b>CLM</b> &nbsp; <ion-icon name="checkmark-done-sharp" color="success"></ion-icon> </ion-label> </center>
+                    <ion-label><b>CLM</b> &nbsp; <ion-checkbox color ="success"></ion-checkbox> </ion-label> </center>
 
           <br />
             </ion-card-content>
@@ -70,12 +70,12 @@
              <ion-button
             size="small"
             color="success"
-            shape="round">
+            shape="round" routerLink="/dashboardDriver">
             <ion-icon name="checkmark-done-outline" slot="start" style="margin-left: 15px"  ></ion-icon>
           Valider
           </ion-button>
-          <ion-button size="small" color="danger" shape="round"  style="margin-left: 15px">
-          <ion-icon name="alert-circle-outline" slot="start"></ion-icon>Réclamer</ion-button>
+          <ion-button size="small" color="danger" shape="round"  style="margin-left: 10px" routerLink="/addClaim">
+          <ion-icon name="alert-circle-outline" slot="start" ></ion-icon>Réclamer</ion-button>
           </center>
         </ion-card-content>
       </ion-card>

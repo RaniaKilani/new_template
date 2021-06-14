@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
   <ion-toolbar translucent>
     <ion-title class="ion-text-center"><b> FLEETL</b>T</ion-title>
     <ion-buttons slot="start"> </ion-buttons>
@@ -6,86 +6,167 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-
   <ion-card>
-  <ion-card-header class="ion-text-center"  style="color: #9933ff"> <b>Créer un compte</b> </ion-card-header>
-  <ion-card-content>
-  <form class="ion-padding">
-   <ion-grid style="display: flex">
-        <ion-row>
-          <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
+    <ion-card-header class="ion-text-center" style="color: #9933ff">
+      <b>Créer un compte</b>
+    </ion-card-header>
+    <ion-card-content>
+      <form class="ion-padding" form [formGroup]="form" (ngSubmit)="addUser()">
+        <ion-grid >
+          <ion-row>
+            <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  formControlName="mail"
+                  name="mail"
+                  type="text"
+                  placeholder="Email"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.mail">
+                <ng-container
+                  *ngIf="
+                    mail.hasError(error.type) && (mail.dirty || mail.touched)
+                  "
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+              </ion-col>
+              <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
 
-    <div class="wrap-input">
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="text"
+                  formControlName="nom"
+                  name="nom"
+                  placeholder="Nom"
+                />
+              </div>
 
-
-      <input class="input" type="text" name="user-email" placeholder="Email" />
-
-    </div>
-
-
-    <div class="wrap-input">
-      <input class="input" type="text" name="user-email" placeholder="Nom" />
-    </div>
-    </ion-col>
-              <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
-
-    <div class="wrap-input">
-      <input class="input" type="text" name="pre" placeholder="Prénom" />
-    </div>
-    <div class="wrap-input">
-      <input
-        class="input"
-        type="date"
-        name="user-email"
-        placeholder="Date de Naissance"
-      />
-    </div>
-    </ion-col>
-              <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
-
-    <div class="wrap-input">
-      <input
-        class="input"
-        type="text"
-        name="user-email"
-        placeholder="N° Téléphone"
-      />
-    </div>
-    <div class="wrap-input">
-      <input
-        class="input"
-        type="text"
-        name="user-email"
-        placeholder="Adresse"
-      />
-    </div>
-    </ion-col>
-              <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4">
-
-
-    <div class="wrap-input">
-      <input
-        class="input"
-        type="password"
-        name="password"
-        placeholder="Mot de passe"
-      />
-    </div>
-    <div class="wrap-input">
-      <input
-        class="input"
-        type="password"
-        name="password"
-        placeholder="Comfirmer Mot de passe"
-      />
-    </div>
-</ion-col>
-</ion-row>
-</ion-grid>
-    <center>
-      <ion-button shape="round" size="default">Enregistrer </ion-button>
-    </center>
-  </form>
-  </ion-card-content>
+              <div *ngFor="let error of errorMessages.nom">
+                <ng-container
+                  *ngIf="nom.hasError(error.type) && (nom.dirty || nom.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+            </ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="text"
+                  formControlName="pre"
+                  name="pre"
+                  placeholder="Prénom"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.pre">
+                <ng-container
+                  *ngIf="pre.hasError(error.type) && (pre.dirty || pre.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+              </ion-col>
+              <ion-col>
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="date"
+                  formControlName="dn"
+                  name="dn"
+                  placeholder="Date de Naissance"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.dn">
+                <ng-container
+                  *ngIf="dn.hasError(error.type) && (dn.dirty || dn.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+            </ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="text"
+                  formControlName="num"
+                  name="num"
+                  placeholder="N° Téléphone"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.num">
+                <ng-container
+                  *ngIf="num.hasError(error.type) && (num.dirty || num.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+              </ion-col>
+              <ion-col>
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="text"
+                  formControlName="adr"
+                  name="adr"
+                  placeholder="Adresse"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.adr">
+                <ng-container
+                  *ngIf="adr.hasError(error.type) && (adr.dirty || adr.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+            </ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="6">
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="password"
+                  formControlName="pwd"
+                  name="pwd"
+                  placeholder="Mot de passe"
+                />
+              </div>
+              <div *ngFor="let error of errorMessages.pwd">
+                <ng-container
+                  *ngIf="pwd.hasError(error.type) && (pwd.dirty || pwd.touched)"
+                >
+                  <small class="error-message">{{ error.message }}</small>
+                </ng-container>
+              </div>
+              </ion-col>
+              <ion-col>
+              <div class="wrap-input">
+                <input
+                  class="input"
+                  type="password"
+                  formControlName="pwd"
+                  name="pwd"
+                  placeholder="Comfirmer Mot de passe"
+                />
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <center>
+          <ion-button shape="round" size="default">Enregistrer </ion-button>
+        </center>
+      </form>
+    </ion-card-content>
   </ion-card>
 </ion-content>

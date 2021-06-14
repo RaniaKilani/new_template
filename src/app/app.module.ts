@@ -54,6 +54,8 @@ import { GeolocationComponent } from './components/driver-layout/geolocation/geo
 import { GeolocationDComponent } from './components/driver-layout/geolocation-d/geolocation-d.component';
 import { NotificationComponent } from './components/customer-layout/notification/notification.component';
 import { NotificationDComponent } from './components/driver-layout/notification-d/notification-d.component';
+import { GeolocationSComponent } from './components/admin-layout/geolocation-s/geolocation-s.component';
+import { GeolocCarsComponent } from './components/admin-layout/geoloc-cars/geoloc-cars.component';
 
 
 @NgModule({
@@ -98,7 +100,10 @@ import { NotificationDComponent } from './components/driver-layout/notification-
     GeolocationComponent,
     GeolocationDComponent,
     NotificationComponent,
-    NotificationDComponent
+    NotificationDComponent,
+    GeolocationSComponent,
+    GeolocCarsComponent,
+
 
 
 

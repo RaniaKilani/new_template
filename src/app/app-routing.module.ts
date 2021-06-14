@@ -15,6 +15,8 @@ import { CarListComponent } from './components/admin-layout/car-list/car-list.co
 import { ClaimComponent } from './components/admin-layout/claim/claim.component';
 import { DriverListComponent } from './components/admin-layout/driver-list/driver-list.component';
 import { EntretienComponent } from './components/admin-layout/entretien/entretien.component';
+import { GeolocCarsComponent } from './components/admin-layout/geoloc-cars/geoloc-cars.component';
+import { GeolocationSComponent } from './components/admin-layout/geolocation-s/geolocation-s.component';
 import { HistpriqueCarComponent } from './components/admin-layout/histprique-car/histprique-car.component';
 import { ReparationComponent } from './components/admin-layout/reparation/reparation.component';
 import { SupervisorListComponent } from './components/admin-layout/supervisor-list/supervisor-list.component';
@@ -99,6 +101,10 @@ const routes: Routes = [
   { path: 'geolocD', component: GeolocationDComponent},
   { path: 'notifC', component:NotificationComponent},
   { path: 'notifD', component:NotificationDComponent },
+  { path: 'geolocS', component: GeolocationSComponent},
+  { path: 'geolocCars', component: GeolocCarsComponent},
+
+
 
 
 
