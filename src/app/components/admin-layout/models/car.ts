@@ -7,9 +7,8 @@ export class Car{
   Puiss:number;
   Kilo:number;
   ConsoC:number;
-  NbrPlac: number;
+  NbrPlace: number;
   Cap:number;
-  Dispo:string;
   TypeP:string;
   Mot:string[];
 

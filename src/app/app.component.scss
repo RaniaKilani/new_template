@@ -2,9 +2,10 @@
 .menu-header-bg{
   height : 180px;
   width: 350px;
-  background-color : #9933ff;
-  background: linear-gradient(60deg , #9933ff 10% , #9933ff 100% , #4ec3c7 50%);
-  box-shadow : 0px 1px 10px rgba(98,140,255,0.5);
+background-color : #78C9DD;
+ background: linear-gradient(125deg, #9933FF , #55D1F0);
+color:white;
+  box-shadow: 0px 1px 10 px rgba( 98 , 140, 255 , 0.5) ;
   transform: rotate(-15deg);
   border-radius : 10px 10px 10px 50px ;
   margin-left: -18px;
@@ -22,7 +23,10 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 7px solid #9933ff;
+    background-color : #78C9DD;
+    background: linear-gradient(125deg, #9933FF , #55D1F0);
+   color:white;
+     box-shadow: 0px 1px 10 px rgba( 98 , 140, 255 , 0.5) ;
     margin-right: 14px;
   }
   h2 {

@@ -92,21 +92,12 @@
               <ion-item>
                 <ion-label position="stacked">Nombre de place</ion-label>
                 <ion-input
-                  type="number"
-                  formControlName=" NbrPlac"
-                  name=" NbrPlac"
+                 type="number"
+                  formControlName="NbrPlace"
+                  name="NbrPlace"
                 ></ion-input>
               </ion-item>
-              <div *ngFor="let error of errorMessages.NbrPlace">
-                <ng-container
-                  *ngIf="
-                    NbrPlace.hasError(error.type) &&
-                    (NbrPlace.dirty || NbrPlace.touched)
-                  "
-                >
-                  <small class="error-message">{{ error.message }}</small>
-                </ng-container>
-              </div>
+
             </div>
           </ion-col>
         </ion-row>

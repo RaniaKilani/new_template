@@ -26,7 +26,7 @@ export class UpdateCarComponent implements OnInit {
       Puiss:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       Kilo:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       ConsoC:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      NbrPlac:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      NbrPlace:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       Cap:['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       TypeC:['',[Validators.required]],
       Mot:['',[Validators.required]],
@@ -61,7 +61,7 @@ export class UpdateCarComponent implements OnInit {
     return this.form.get("ConsoC");
 
   }
-  get NbrPlac() {
+  get NbrPlace() {
     return this.form.get("NbrPlace");
 
   }
@@ -117,7 +117,7 @@ export class UpdateCarComponent implements OnInit {
       { type: 'required', message: 'la consommation du carburant est requise'},
        { type: 'pattern', message: 'Veuillez saisir un Kilométrage  valide' }
     ],
-    NbrPlac: [
+    NbrPlace: [
        { type: 'required', message: 'le nombre de place   est requis' },
        { type: 'pattern', message: 'Veuillez saisir un nombre de place valide' }
 
@@ -153,7 +153,7 @@ export class UpdateCarComponent implements OnInit {
       this.currentCar.Puiss = dr.powr;
       this.currentCar.Kilo = dr.kilo;
       this.currentCar.ConsoC = dr.conso;
-      this.currentCar.NbrPlac = dr.nb;
+      this.currentCar.NbrPlace = dr.nb;
       this.currentCar.Cap = dr.cap;
       this.currentCar.TypeP = dr.typeP
       this.currentCar.Mot = dr.Mot
@@ -167,7 +167,7 @@ export class UpdateCarComponent implements OnInit {
       this.form.get('Kilo').setValue(this.currentCar.Kilo);
       this.form.get('ConsoC').setValue(this.currentCar.ConsoC);
       this.form.get('Cap').setValue(this.currentCar.Cap);
-      this.form.get('NbrPlac').setValue(this.currentCar.NbrPlac);
+      this.form.get('NbrPlace').setValue(this.currentCar.NbrPlace);
       this.form.get('TypeP').setValue(this.currentCar.TypeP);
       this.form.get('Mot').setValue(this.currentCar.Mot);
     });
@@ -183,8 +183,8 @@ export class UpdateCarComponent implements OnInit {
     formdata.append('Kilo', this.form.get('Kilo').value);
     formdata.append('ConsoC', this.form.get('ConsoC').value);
     formdata.append('Cap', this.form.get('Cap').value);
-    formdata.append('NbrPlac', this.form.get('NbrPlac').value);
-    formdata.append('TypeP', this.form.get('TypeP').value);
+    formdata.append('NbrPlace',this.form.get('NbrPlace').value);
+        formdata.append('TypeP', this.form.get('TypeP').value);
     formdata.append('Mot', this.form.get('Mot').value);
 
     console.log(formdata.get('mail'));
