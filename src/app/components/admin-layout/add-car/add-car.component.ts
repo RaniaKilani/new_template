@@ -161,8 +161,8 @@ export class AddCarComponent implements OnInit {
     this.carService.AddCar(formdata).subscribe(cr => {
     console.log(cr);
     });
-  //  this.router.navigate(['allCars']).then(() => {
-  //   window.location.reload();
-  //    });
+   this.router.navigate(['allCars']).then(() => {
+    window.location.reload();
+     });
 }
 }

@@ -3,9 +3,9 @@
     <ion-content>
       <div class="menu-header-bg"></div>
       <div class="header-content">
-        <a><img src="../assets/images/rania1.jpg" alt=""></a>
+        <a><img src="../assets/images/man.jpg" alt=""></a>
         <ion-label>
-          <h2><b>Rania Kilani</b></h2>
+          <h2><b>ahmed salah</b></h2>
           <a href="">voir profile</a>
         </ion-label>
       </div>
@@ -13,19 +13,62 @@
 
       <ion-list class="menu-items" lines="none">
 
-        <ion-item class="{{ cls1 }}">
+        <ion-item routerLink="/allCars">
           <ion-grid>
             <ion-row>
               <ion-col size-xs="4" offset-xs="3">
-                <ion-img src="assets/icon/home.png"></ion-img>
+                <ion-img src="assets/icon/vh.png"></ion-img>
               </ion-col>
             </ion-row>
           </ion-grid>
-          <ion-label>Acceuil</ion-label>
-
+          <ion-label>Mes Véhicules</ion-label>
         </ion-item>
 
+            <ion-item routerLink="/entretien">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-xs="4" offset-xs="3">
+                <ion-img src="assets/icon/En.png"></ion-img>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-label>Entretiens</ion-label>
 
+
+        </ion-item>
+          <ion-item routerLink="/reparation">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-xs="4" offset-xs="3">
+                <ion-img src="assets/icon/rep.png"></ion-img>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-label>Réparations</ion-label>
+
+        </ion-item>
+  <ion-item routerLink="/allDrivers">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-xs="4" offset-xs="3">
+                <ion-img src="assets/icon/dr.png"></ion-img>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-label>Chauffeurs</ion-label>
+
+        </ion-item>
+  <ion-item routerLink="/allSupervisors">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-xs="4" offset-xs="3">
+                <ion-img src="assets/icon/sup.png"></ion-img>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-label>Superviseurs</ion-label>
+
+        </ion-item>
 
 
         <ion-item class="{{ cls5 }}" routerLink="/claim">
@@ -41,7 +84,7 @@
 
 
 
-         <ion-item class="{{ cls5 }}" routerLink="/notif">
+         <ion-item class="{{ cls5 }}" routerLink="/notifD">
           <ion-grid>
             <ion-row>
               <ion-col size-xs="4" offset-xs="3">
@@ -53,16 +96,7 @@
         </ion-item>
 
 
- <ion-item class="{{ cls5 }}">
-          <ion-grid>
-            <ion-row>
-              <ion-col size-xs="4" offset-xs="3">
-                <ion-img src="assets/icon/pl.png"></ion-img>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-label>Planning</ion-label>
-        </ion-item>
+
 
       </ion-list>
     </ion-content>

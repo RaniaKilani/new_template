@@ -37,18 +37,58 @@
     <ion-card-header>
       <ion-card-title class="ion-text-center"> liste des superviseurs</ion-card-title>
     </ion-card-header>
-     <ion-grid style="display: flex;">
+     <ion-grid >
     <ion-row   >
-    <ion-col *ngFor="let l of list" padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+    <ion-col padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+ <ion-card >
 
-    <ion-card
+        <ion-item>
+
+            <ion-row >
+                <ion-avatar >
+                  <ion-img src="assets/images/man.jpg"> </ion-img>
+                </ion-avatar>
+              <ion-col >
+                <ion-card-title class="ion-margin-horizontal">
+                 Ahmed Salah
+                </ion-card-title>
+                <ion-card-subtitle class="ion-margin-horizontal">
+               ahmedsalah@gmail.com
+                </ion-card-subtitle>
+
+              </ion-col>
+            </ion-row>
+        </ion-item>
+      </ion-card>
+      <ion-card >
+
+        <ion-item>
+
+            <ion-row >
+                <ion-avatar >
+                  <ion-img src="assets/images/woman.jpg"> </ion-img>
+                </ion-avatar>
+              <ion-col >
+                <ion-card-title class="ion-margin-horizontal">
+              myriam  Salem Salem
+                </ion-card-title>
+                <ion-card-subtitle class="ion-margin-horizontal">
+                myriamsalem@gmail.com
+                </ion-card-subtitle>
+
+              </ion-col>
+            </ion-row>
+        </ion-item>
+      </ion-card>
+
+    <ion-card *ngFor="let l of list"
 
       (click)="goToListPage('listSupervisor', l.id)"
     >
-      <ion-item>
+      <ion-item  >
         <ion-row>
           <ion-avatar>
-            <ion-img src="assets/images/rania1.jpg"> </ion-img>
+            <ion-img src="assets/images/ons.jpg"> </ion-img>
           </ion-avatar>
 
           <ion-col>

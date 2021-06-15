@@ -36,11 +36,9 @@ goToUpdatePage(UpdatePage:string, id:number):void{
    if (conf)
      this.supervisorService.deleteSupervisor(this.activatedRoute.snapshot.params.id).subscribe(()=>{
       console.log("superviseur supprimé");
-
-
      });
 
-     this.router.navigate(['listSupervisor']).then(() => {
+     this.router.navigate(['allSupervisors']).then(() => {
       window.location.reload();
       });
    }

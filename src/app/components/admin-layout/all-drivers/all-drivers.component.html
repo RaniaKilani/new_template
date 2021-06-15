@@ -1,6 +1,6 @@
 <ion-header class="menu-header">
   <ion-toolbar translucent>
-    <ion-title class="ion-text-center">Fleetlt</ion-title>
+    <ion-title class="ion-text-center">FLEETLT</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -38,20 +38,62 @@
         liste des chauffeurs</ion-card-title
       >
     </ion-card-header>
-  <ion-grid style="display: flex;">
+  <ion-grid >
     <ion-row   >
-    <ion-col *ngFor="let l of list" padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+    <ion-col  padding size-xs="12" size-sm="6" size-md="6" size-lg="4" >
+     <ion-card >
 
-
-      <ion-card  (click)="goToListPage('listDriver', l.id)">
         <ion-item>
 
             <ion-row >
+                <ion-avatar >
+                  <ion-img src="assets/images/salah.jpg"> </ion-img>
+                </ion-avatar>
+              <ion-col >
+                <ion-card-title class="ion-margin-horizontal">
+                 Salah Salah
+                </ion-card-title>
+                <ion-card-subtitle class="ion-margin-horizontal">
+                salah@gmail.com
+                </ion-card-subtitle>
+                 <ion-card-subtitle class="ion-margin-horizontal">
+                  true
+                </ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+        </ion-item>
+      </ion-card>
+      <ion-card >
 
-                <ion-avatar dlot="start">
+        <ion-item>
+
+            <ion-row >
+                <ion-avatar >
+                  <ion-img src="assets/images/salem.jpg"> </ion-img>
+                </ion-avatar>
+              <ion-col >
+                <ion-card-title class="ion-margin-horizontal">
+                 Salem Salem
+                </ion-card-title>
+                <ion-card-subtitle class="ion-margin-horizontal">
+                salem@gmail.com
+                </ion-card-subtitle>
+                 <ion-card-subtitle class="ion-margin-horizontal">
+                  true
+                </ion-card-subtitle>
+              </ion-col>
+            </ion-row>
+        </ion-item>
+      </ion-card>
+
+      <ion-card  (click)="goToListPage('listDriver', l.id)" *ngFor="let l of list">
+
+        <ion-item>
+
+            <ion-row >
+                <ion-avatar >
                   <ion-img src="assets/images/rania1.jpg"> </ion-img>
                 </ion-avatar>
-
               <ion-col >
                 <ion-card-title class="ion-margin-horizontal">
                   {{ l.Nom }} {{ l.prenom }}
@@ -64,7 +106,6 @@
                 </ion-card-subtitle>
               </ion-col>
             </ion-row>
-
         </ion-item>
       </ion-card>
 </ion-col>
