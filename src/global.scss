@@ -25,12 +25,17 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 ion-toolbar,
-.menu-header > ion-toolbar,
-ion-button{
+.menu-header > ion-toolbar{
   --background-color : #78C9DD;
  --background: linear-gradient(125deg, #9933FF , #55D1F0);
  --color:white;
   box-shadow: 0px 1px 10 px rgba( 98 , 140, 255 , 0.5) ;
+}
+ ion-button{
+  --background : #9933ff;
+
+  --color:white;
+
 }
 
 .grid-container {

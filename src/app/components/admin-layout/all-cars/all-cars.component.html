@@ -1,17 +1,16 @@
 
 <ion-header class="menu-header">
   <ion-toolbar >
-    <ion-title class="ion-text-center"> <b>FLEETLT</b> </ion-title>
+    <ion-title class="ion-text-center"> <b>Fleetlt</b> </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
-      <ion-icon name="notifications-circle" slot="end" size="large"></ion-icon>
-<ion-icon name="arrow-forward-circle" slot="end" size="large"></ion-icon>
+      <ion-icon name="notifications" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content style="display: bloc;">
+<ion-content >
   <div>
     <ion-button
       size="small"
@@ -26,9 +25,10 @@
   </div>
 
 <ion-card-header>
+<center>
       <ion-card-title class="ion-text-center" style="color: #9933ff"  class="tools">
-        liste des véhicules</ion-card-title
-      >
+       <b> liste des véhicules</b></ion-card-title
+      ></center>
     </ion-card-header>
     <ion-grid style="display: flex;">
     <ion-row   >
@@ -56,9 +56,9 @@
               </ion-col>
             </ion-row>
           </ion-grid>
+
           <ion-label><b>Type de véhicule:</b> {{ l.Typev }}</ion-label>
           <br />
-
           <br />
           <ion-label><b>Nombre des places:</b>{{ l.NbrPlace }}</ion-label>
           <br />
